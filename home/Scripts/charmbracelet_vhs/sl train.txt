@@ -1,0 +1,4 @@
+Set Theme "Catppuccin Frappe"
+Type 'sl'
+Enter
+Sleep 15.5s

@@ -1,0 +1,5 @@
+#!/bin/sh
+# weather from wttr.in
+# idea from https://git.sr.ht/~whynothugo/dotfiles/tree/main/item/home/.local/bin/weather
+
+curl https://wttr.in/New+York?F0A

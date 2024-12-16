@@ -1,0 +1,4 @@
+#!/bin/bash
+# check USA covid stats from terminal
+
+curl -L https://covid19-cli.wareneutron.com/quiet/basic/usa
