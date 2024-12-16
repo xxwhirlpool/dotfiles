@@ -1,6 +1,6 @@
 import urllib.request
 import json
-url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${USER}&format=json&limit=1'
+url = 'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${API_KEY}&format=json&limit=1'
 req = urllib.request.Request(url)
 
 slay = urllib.request.urlopen(req).read()
