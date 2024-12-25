@@ -8,3 +8,4 @@ i have nothing to put in this readme just a small list of the CLI apps i like a 
 bonus mentions even though they're not in the repo for reasons:
 
 * [movie](https://github.com/mayankchd/movie) - handy for searching any movie and getting data on it, especially useful for media server management.
+* [doing](https://github.com/ttscoff/doing) - task management. yet another to-do kinda thing i'm trying to use to sort myself out
