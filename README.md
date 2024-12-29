@@ -11,3 +11,4 @@ i have nothing to put in this readme just a small list of the CLI apps i like a 
 - [micro](https://github.com/zyedidia/micro) - finally stop using nano fucking loser
 - [asciinema](https://github.com/asciinema/asciinema) - record terminal
 - [mdlt](https://github.com/metadelta/mdlt) - do math in terminal
+- [ddgr](https://github.com/jarun/ddgr) - duckduckgo search
