@@ -12,3 +12,4 @@ i have nothing to put in this readme just a small list of the CLI apps i like a 
 - [asciinema](https://github.com/asciinema/asciinema) - record terminal
 - [mdlt](https://github.com/metadelta/mdlt) - do math in terminal
 - [ddgr](https://github.com/jarun/ddgr) - duckduckgo search
+- [gdown](https://github.com/wkentaro/gdown) - google drive CLI downloader, bypasses google things that curl/wget sometimes can't
