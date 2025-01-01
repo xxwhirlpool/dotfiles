@@ -1,7 +1,8 @@
 ## my dotfiles
 
-i have nothing to put in this readme just a small list of the CLI apps i like a lot
+dotfiles yeahhhh. i usually use the catppuccin frappe (sometimes latte) themes wherever possible. i like cute things.
 
+here's some CLI apps i like a lot
 - [min](https://github.com/a-h/min) - gemini browser
 - [lyrics-in-terminal](https://github.com/Jugran/lyrics-in-terminal/) - well, yeah
 - [epy](https://github.com/wustho/epy) - epub reader
