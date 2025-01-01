@@ -14,3 +14,4 @@ here's some CLI apps i like a lot
 - [mdlt](https://github.com/metadelta/mdlt) - do math in terminal
 - [ddgr](https://github.com/jarun/ddgr) - duckduckgo search
 - [gdown](https://github.com/wkentaro/gdown) - google drive CLI downloader, bypasses google things that curl/wget sometimes can't
+- [idea](https://github.com/IonicaBizau/idea) - jotting down quick ideas and listing them in a table
