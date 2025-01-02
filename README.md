@@ -1,6 +1,6 @@
 ## my dotfiles
 
-dotfiles yeahhhh. i usually use the catppuccin frappe (sometimes latte) themes wherever possible. i like cute things.
+i usually use the catppuccin (specifically frappe, sometimes latte) themes wherever possible. i like cute things.
 
 here's some CLI apps i like a lot
 - [min](https://github.com/a-h/min) - gemini browser
@@ -16,3 +16,4 @@ here's some CLI apps i like a lot
 - [gdown](https://github.com/wkentaro/gdown) - google drive CLI downloader, bypasses google things that curl/wget sometimes can't
 - [idea](https://github.com/IonicaBizau/idea) - jotting down quick ideas and listing them in a table
 - [arttime](https://github.com/poetaman/arttime) - timer/clock with gorgeous ASCII art that you can add to. i added newjeans ASCII art. it's incredible.
+- [taskbook](https://github.com/klaudiosinani/taskbook) - to-do list and task management
