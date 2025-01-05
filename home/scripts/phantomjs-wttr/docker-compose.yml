@@ -1,0 +1,8 @@
+services:
+  pjs:
+    build: .
+    ports:
+      - "9283:5000"
+    command: /bin/sh -c "entrypoint.sh"
+    volumes:
+      - /home/kat/pjs/output:/raster-output
