@@ -17,3 +17,4 @@ here's some CLI apps i like a lot
 - [idea](https://github.com/IonicaBizau/idea) - jotting down quick ideas and listing them in a table
 - [arttime](https://github.com/poetaman/arttime) - timer/clock with gorgeous ASCII art that you can add to. i added newjeans ASCII art. it's incredible.
 - [taskbook](https://github.com/klaudiosinani/taskbook) - to-do list and task management
+- [pastel](https://github.com/sharkdp/pastel/) & [xcolor](https://soft.github.io/xcolor/) - just for the screen color picking functionality. i could use xcolor on its own but pastel gives a neat graphic for the color and the RGB and HSL values along with the hex code. i aliased this to "pick"
