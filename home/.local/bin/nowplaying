@@ -1,3 +1,28 @@
 #!/bin/bash
+# inspired by https://codeberg.org/hyperreal/bin/src/branch/main/amimullvad
+#
+# requires curl & charmbracelet/gum
+#
+# i have my API key stored in a private var file sourced by bashrc so either do that too or just uncomment below and put it there
+#
+#
+# LASTFM_APIKEY=""
 
-python3 /home/kat/Documents/Scripts/lastfm.py
+user="springpool"
+
+URL="https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=$user&api_key=$LASTFM_APIKEY&format=json&limit=1"
+
+artist=$(curl -s ${URL} | jq -r '.recenttracks.track[0].artist."#text"')
+album=$(curl -s ${URL} | jq -r '.recenttracks.track[0].album."#text"')
+song=$(curl -s ${URL} | jq -r '.recenttracks.track[0].name')
+
+left=$(printf "%s\n%s\n%s\n" "artist" "album" "song")
+right=$(printf "%s\n%s\n%s\n" "$artist" "$album" "$song")
+
+final_left=$(gum style --foreground "#a6d189" --border none --width 20 --margin "1 2" --padding "0 1" --align left "$left")
+final_right=$(gum style --foreground "#f4b8e4" --border none --width 20 --margin "1 0" --align left "$right")
+
+join=$(gum join --horizontal --align right "$final_left" "$final_right")
+all=$(gum style --border-foreground "#99d1db" --border double --width 50 --padding "0 1" --align center "$join")
+
+gum join --vertical "$all"
