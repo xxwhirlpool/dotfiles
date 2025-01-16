@@ -4,7 +4,7 @@ add_newline = false
 
 palette = "catppuccin_frappe"
 
-format = '$all$character$username$hostname$directory '
+format = '$all$character$username$hostname$character$directory '
 
 [character]
 success_symbol = '[❥](bold pink)'
