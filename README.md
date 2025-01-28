@@ -1,5 +1,7 @@
 ## my dotfiles
 
+i usually use the catppuccin (specifically frappe, sometimes latte) themes wherever possible. i like cute things.
+
 ### install
 
 ```bash
@@ -10,7 +12,7 @@ chmod +x stow.sh
 ./stow.sh
 ```
 
-i usually use the catppuccin (specifically frappe, sometimes latte) themes wherever possible. i like cute things.
+### misc
 
 here's some CLI apps i like a lot
 - [min](https://github.com/a-h/min) - gemini browser
