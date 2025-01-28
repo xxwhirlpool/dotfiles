@@ -1,3 +1,5 @@
+### i don't use this anymore (i replaced it with a curl command piped to imagemagick. felt like a god doing that.) but keeping here just in case...
+
 ## for optiplex 9020 server
 
 run with following cron job on the server:
