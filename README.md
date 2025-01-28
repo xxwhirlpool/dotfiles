@@ -1,5 +1,15 @@
 ## my dotfiles
 
+### install
+
+```bash
+git clone https://git.sr.ht/~chasinglightning/dotfiles
+
+chmod +x stow.sh
+
+./stow.sh
+```
+
 i usually use the catppuccin (specifically frappe, sometimes latte) themes wherever possible. i like cute things.
 
 here's some CLI apps i like a lot
