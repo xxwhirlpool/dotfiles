@@ -2,7 +2,9 @@
 
 echo "pulling from git..." | gum style --foreground "#f4b8e4" --border none
 
-git pull
+git pull dotfiles main
+
+echo "git pull complete!" | gum style --foreground "#f4b8e4" --border none
 
 echo "stowing your shit..." | gum style --foreground "#f4b8e4" --border none
 
