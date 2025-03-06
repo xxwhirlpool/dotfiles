@@ -1,0 +1,4 @@
+#!/bin/bash
+# launch qterminal session excluded from VPN connection
+
+nohup mullvad-exclude qterminal > /dev/null 2>&1 &
