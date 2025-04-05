@@ -1,4 +1,3 @@
 #!/bin/bash
-# launch filezilla session excluded from VPN connection
 
 nohup mullvad-exclude filezilla > /dev/null 2>&1 &
