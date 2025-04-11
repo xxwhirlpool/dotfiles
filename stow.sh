@@ -8,7 +8,7 @@ echo "git pull complete!" | gum style --foreground "#f4b8e4" --border none
 
 echo "stowing your shit..." | gum style --foreground "#f4b8e4" --border none
 
-stow -v -t ~ "config"
+stow -v -t ~ "config" --adopt
 
 stow -v -t ~ "git" --adopt 
 
