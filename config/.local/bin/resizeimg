@@ -1,0 +1,9 @@
+#!/bin/bash
+
+WORKDIR=$(pwd)
+
+TMPDIR="/home/kat/Pictures/Camera/tmp-resize"
+
+cd ${WD}
+
+for f in *.jpg; do mv $f ${TMPDIR} && cd ${TMPDIR} && magick -size 3000x4000 $f -resize 40% "${f%.*}-resized.jpg" && rm -rf $f; done

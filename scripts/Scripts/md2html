@@ -1,0 +1,9 @@
+#!/bin/bash
+
+FILE=$(gum input --placeholder "without an extension")
+
+HTML="/home/kat/Documents/Code/Templates/pandoc/md2html.html"
+
+CSS="/home/kat/Documents/Code/Templates/pandoc/md2html.css"
+
+pandoc --standalone "$FILE.md" --template=$HTML --no-highlight -o "$FILE.html"
