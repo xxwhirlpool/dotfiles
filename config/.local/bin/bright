@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" == "up" ]; then
+	lxqt-config-brightness -i "$1"
+elif [ "$1" == "down" ]; then
+	lxqt-config-brightness -d "$2"
+else
+	echo "fuck"
+fi
