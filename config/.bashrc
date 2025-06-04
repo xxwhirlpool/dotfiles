@@ -118,6 +118,7 @@ fi
 
 alias nano=micro
 alias sudo="sudo "
+alias pick="pastel pick"
 
 eval "$(starship init bash)"
 
@@ -143,3 +144,4 @@ pomodoro () {
 alias quick="pomodoro 'quick'"
 alias work="pomodoro 'work'"
 alias break="pomodoro 'break'"
+. "$HOME/.cargo/env"
