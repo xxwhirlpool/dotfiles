@@ -1,0 +1,3 @@
+#!/bin/bash
+
+unzip -O CP949 $1
