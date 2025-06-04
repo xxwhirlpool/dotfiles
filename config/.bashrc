@@ -119,6 +119,7 @@ fi
 alias nano=micro
 alias sudo="sudo "
 alias pick="pastel pick"
+alias gitall="git remote | xargs -L1 git push --all"
 
 eval "$(starship init bash)"
 
