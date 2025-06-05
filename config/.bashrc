@@ -125,24 +125,6 @@ eval "$(starship init bash)"
 
 export PATH=$PATH:/usr/local/go/bin
 
-# timer pomodoro thing
-declare -A pomo_options
-pomo_options=(
-	["quick"]="15"
-    ["work"]="45"
-    ["break"]="20"
-)
-
-pomodoro () {
-  if [ -n "$1" -a -n "{pomo_options["$1"]}" ]; then
-  val=$1;
-  echo $val | lolcat
-  timer "${pomo_options["$val"]}m"
-  notify-send "'$val' session done" && spd-say -t female3 -r +35 "'$val' session done"
-  fi
-}
-
-alias quick="pomodoro 'quick'"
-alias work="pomodoro 'work'"
-alias break="pomodoro 'break'"
-. "$HOME/.cargo/env"
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
