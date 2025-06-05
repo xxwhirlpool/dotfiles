@@ -22,6 +22,13 @@ elif [ "$1" == "break" ]; then
 	timer "20m"
 	notify-send "'$val' session done"
 	spd-say -t female3 -r +35 "'$val' session done"
+elif [ "$1" == "custom" ]; then
+	val=$1
+	choice=$(gum input --placeholder duration | awk '{print $0"m"}' )
+	echo -e "⏱️ $val: $choice ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
+	timer "$choice"
+	notify-send "'$val' session done"
+	spd-say -t female3 -r +35 "'$val' session done"
 else
 	echo -n "something failed"
 fi
