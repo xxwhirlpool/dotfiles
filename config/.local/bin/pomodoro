@@ -4,31 +4,32 @@
 #
 # https://gist.github.com/bashbunni/3880e4194e3f800c4c494de286ebc1d7
 
+notif() {
+	notify-send "'$val' session done"
+	spd-say -t female3 -r +35 "'$val' session done"
+}
+
 if [ "$1" == "quick" ]; then
 	val=$1
 	echo -e "⏱️ $val ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
 	timer "15m"
-	notify-send "'$val' session done"
-	spd-say -t female3 -r +35 "'$val' session done"
+	notif
 elif [ "$1" == "work" ]; then
 	val=$1
 	echo -e "⏱️ $val ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
 	timer "45m"
-	notify-send "'$val' session done"
-	spd-say -t female3 -r +35 "'$val' session done"
+	notif
 elif [ "$1" == "break" ]; then
 	val=$1
 	echo -e "⏱️ $val ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
 	timer "20m"
-	notify-send "'$val' session done"
-	spd-say -t female3 -r +35 "'$val' session done"
+	notif
 elif [ "$1" == "custom" ]; then
 	val=$1
 	choice=$(gum input --placeholder duration | awk '{print $0"m"}' )
 	echo -e "⏱️ $val: $choice ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
 	timer "$choice"
-	notify-send "'$val' session done"
-	spd-say -t female3 -r +35 "'$val' session done"
+	notif
 else
 	echo -n "something failed"
 fi
