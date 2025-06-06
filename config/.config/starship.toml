@@ -20,6 +20,9 @@ format = '[$user](bold lavender)[@](bold green)'
 [directory]
 style = "bold green"
 
+[[battery.display]]
+threshold = 0
+
 [palettes.catppuccin_frappe]
 rosewater = "#f2d5cf"
 flamingo = "#eebebe"

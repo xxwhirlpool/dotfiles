@@ -1,0 +1,15 @@
+[Unit]
+Description=Conky
+After=network.target
+
+[Service]
+Type=simple
+User=kat
+Group=kat
+Environment="DISPLAY=:0"
+ExecStart=/usr/bin/conky-start.sh
+Restart=always
+RuntimeMaxSec=30m
+
+[Install]
+WantedBy=multi-user.target
