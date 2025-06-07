@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# modified from this GH script:
+#
+# https://github.com/BreadOnPenguins/scripts/blob/master/screenshot_extra_features
+
+export DISPLAY=:0
+SHOTPATH="/home/kat/Pictures/Screenshots"
+COUNT=$(find $SHOTPATH -type f -printf x | wc -c | awk '{print $1+1}' | awk '{printf "%04d\n", $0}')
+FILE="$SHOTPATH/$COUNT.png"
+
+
+selection () { # draw a selection, or click to select a window
+		import "$FILE" && post
+}
+
+
+post () { # copy image to clip & send a notification
+		xclip -selection clipboard -t image/png -i $FILE && notify-send -i "$FILE" "$FILE copied to clipboard"
+}
+
+selection
