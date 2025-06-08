@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# this is my shortcut for pushing to the remote for my site eunoia and also generating a new changelog file
+
+git push bytes main && cd /home/kat/Documents/Code/Git/-mine/astro-eunoia/eunoia/src/utils && node git-changelog.js
