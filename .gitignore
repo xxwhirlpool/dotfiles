@@ -3,3 +3,4 @@ git/.gitconfig
 config/.config/conky/wttr.png
 
 config/.bashrc
+config/.local/bin/pusheu
