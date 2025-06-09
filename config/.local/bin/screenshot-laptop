@@ -5,7 +5,7 @@
 # https://github.com/BreadOnPenguins/scripts/blob/master/screenshot_extra_features
 
 export DISPLAY=:0
-SHOTPATH="/media/kat/disk/Pictures/Screenshots"
+SHOTPATH="/home/kat/Pictures/Screenshots"
 COUNT=$(find $SHOTPATH -type f -printf x | wc -c | awk '{print $1+1}' | awk '{printf "%04d\n", $0}')
 FILE="$SHOTPATH/$COUNT.png"
 
