@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# inspired by bread on penguins
+#
+# https://github.com/BreadOnPenguins/scripts/blob/master/record
+
+VIDPATH="/home/kat/Videos/Screencasts"
+
+record() {
+	ffmpeg -s "$(xdpyinfo | awk '/dimensions/{print $2}')" -f x11grab -r 30 -i :0.0 -c:v h264 -qp 0 "$VIDPATH/screencast_ffmpeg_$(date '+%a__%b%d__%H_%M_%S').mp4" &
+	echo $! > /tmp/recpid
+
+	notify-send "screen recording started"
+}
+
+end() {
+	kill -15 "$(cat /tmp/recpid)" && rm -f /tmp/recpid
+
+	notify-send "screen recording ended"
+}
+
+([[ -f /tmp/recpid ]] && end && exit 0) || record
