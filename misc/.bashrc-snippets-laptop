@@ -1,0 +1,21 @@
+# from my laptop
+
+alias nano=micro
+alias sudo="sudo "
+alias pick="pastel pick"
+alias gitall="git remote | xargs -L1 git push --all"
+
+alias fd="fdfind "
+
+alias neofetch="hyfetch"
+alias fastfetch="hyfetch"
+
+cdmess() {
+	# from this blog post:
+	#
+	# https://blog.larah.me/mess-directory/
+	#
+    today_tmpdir="${TMPDIR-/tmp}/${USER}_mess/$(date +%F)"
+    mkdir -p "$today_tmpdir"
+    cd "$(mktemp -d -p "${today_tmpdir}" XXXX)"
+}
