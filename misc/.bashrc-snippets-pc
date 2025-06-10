@@ -1,4 +1,16 @@
 #!/bin/bash
+#
+# from my pc
+
+alias sudo="sudo TERMINFO=\"$TERMINFO\" "
+alias pick='pastel pick'
+alias fd='fdfind'
+
+if [ -f ~/.privatevars ]; then                                                                               
+  . ~/.privatevars                                                                                         
+fi  
+
+alias gitall="git remote | xargs -L1 git push --all"
 
 cdmess() {
 	# from this blog post:
