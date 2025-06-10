@@ -1,0 +1,58 @@
+#!/bin/bash
+#
+# quick and easy directory bookmarks. pure bash
+
+MARK_FILE="$HOME/.marksh"
+
+# create bm file if it doesn't exist
+mark_file_create() {
+	if [[ -z $MARK_FILE ]]; then
+		touch $MARK_FILE
+	else
+		echo "MARK_FILE already exists"
+	fi
+}
+
+# add bookmark to file
+mark_create() {
+	printf "$(pwd)\n" >> $MARK_FILE
+}
+
+# search bookmarks
+mark_search() {
+	choice="$(cat $MARK_FILE | fzf)"
+	printf "$choice" | xclip -sel clip
+	echo "$choice"
+}
+
+# clear bookmark file
+mark_clear() {
+	read -p "clear bookmarks; are you sure? y/n/c" choice
+	
+	case $choice in
+	[yY]* ) echo -n "" > $MARK_FILE ;;
+	[nN]* ) echo "nothing cleared :)" ;;
+	[cC]* ) echo "canceled!" ;;
+	*) exit ;;
+	esac
+}
+
+# whole thing
+case "$1" in
+	"")
+		printf "usage: mark add | mark search | mark clear"
+		exit 0
+		;;
+    "add")
+		mark_create
+		exit 0
+		;;
+	"search" | "list")
+		mark_search
+		exit 0
+		;;
+	"clear")
+		mark_clear
+		exit 0
+		;;
+esac

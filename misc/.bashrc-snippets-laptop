@@ -36,3 +36,7 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#C6D0F5,header:#E78284,info:#CA9EE6,pointer:#F2D5CF \
 --color=marker:#BABBF1,fg+:#C6D0F5,prompt:#CA9EE6,hl+:#E78284 \
 --color=border:#414559,label:#C6D0F5"
+
+# lazy ass way for me to get my idol mp3s from youtube
+# usage: ytmp3 url
+alias ytmp3="yt-dlp -f ba -x --audio-format mp3"
