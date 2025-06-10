@@ -1,17 +1,5 @@
 #!/bin/bash
 
-# from my laptop
-
-alias nano=micro
-alias sudo="sudo "
-alias pick="pastel pick"
-alias gitall="git remote | xargs -L1 git push --all"
-
-alias fd="fdfind "
-
-alias neofetch="hyfetch"
-alias fastfetch="hyfetch"
-
 cdmess() {
 	# from this blog post:
 	#
@@ -36,3 +24,15 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#C6D0F5,header:#E78284,info:#CA9EE6,pointer:#F2D5CF \
 --color=marker:#BABBF1,fg+:#C6D0F5,prompt:#CA9EE6,hl+:#E78284 \
 --color=border:#414559,label:#C6D0F5"
+
+# get a random free port. this is useful for my
+# insane sysadmin website woman adventures
+portfree() {
+	while
+		port=$(shuf -n 1 -i 49152-65535)
+		netstat -atun | grep -q "$port"
+	do
+		continue
+	done
+	echo "$port"
+}
