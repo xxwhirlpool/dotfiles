@@ -1,0 +1,14 @@
+#!/bin/bash
+
+battery=$(upower -i $(upower -e | grep 'BAT') | awk '/percentage/ {print $NF}' | sed 's/%//g')
+batteryint=$((battery))
+
+if (( "$batteryint" < "50" )); then
+	notify-send "battery is under 50%!"
+elif (( "$batteryint" < "20")); then
+	notify-send "battery is under 20%!"
+elif (( "$batteryint" < "10")); then
+	notify-send "battery is under 10%!!! charge ur laptop!!!!"
+elif (( "$batteryint" < "5")); then
+	notify-send "battery is under 5%!!!!! CHARGE LAPTOP!!!!!!!!!"
+fi

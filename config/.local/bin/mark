@@ -21,8 +21,7 @@ mark_create() {
 # search bookmarks
 mark_search() {
 	choice="$(cat $MARK_FILE | fzf)"
-	printf "$choice" | xclip -sel clip
-	echo "$choice"
+	printf '%s' "$choice" | tee >(xclip -sel clip)
 }
 
 # clear bookmark file
