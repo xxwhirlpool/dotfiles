@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cbr2cbz() {
+	for f in *.cbr; do unar -d "$f"; done
+}
+
+dir2cbz() {
+	for i in */; do zip -r "${i%/}.cbz" "$i"; done
+}
+
+choice() {
+	choose=$(gum choose "cbr2cbz" "dir2cbz")
+	case "$choose" in
+		*cbr2cbz) cbr2cbz;;
+		*dir2cbz) dir2cbz;;
+		*) exit;;
+	esac
+}
+
+choice

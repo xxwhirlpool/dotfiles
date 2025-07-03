@@ -40,3 +40,33 @@ export FZF_DEFAULT_OPTS=" \
 # lazy ass way for me to get my idol mp3s from youtube
 # usage: ytmp3 url
 alias ytmp3="yt-dlp -f ba -x --audio-format mp3"
+
+# some cd bookmarks
+alias dotf="cd /home/kat/dotfiles"
+alias gmine="cd /home/kat/Documents/Git/-mine"
+
+# weather stuff
+alias wttr="curl https://wttr.in/New+York?F0AS"
+alias weather=wttr
+
+alias wttrlg="curl https://wttr.in/New+York?F1uq"
+alias weatherlg=wttrlg
+
+alias sun="daylight --short --timezone='America/New_York' | lolcat"
+
+# print internal & external IPs
+function whatip() {
+	# internal
+	echo -n "internal IP: " | lolcat -p 0.7; hostname -I | awk '{print $1}'
+	# external
+	echo -n "external IP: " | lolcat -p 0.7; curl -4 icanhazip.com
+}
+
+# password generator. takes input for password length by number
+function passgen() {
+	PASSLENGTH=$(gum input --placeholder "type a number")
+	date +%s | sha256sum | base64 | head -c $PASSLENGTH ; echo
+}
+
+# used to be a ~/.local/bin entry but that was dumb
+alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-astro/src/utils && node git-changelog.js"

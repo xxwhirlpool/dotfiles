@@ -1,4 +1,0 @@
-#!/bin/bash
-# news from getnews.tech
-
-curl us.getnews.tech/category=general,n=5,nocolor

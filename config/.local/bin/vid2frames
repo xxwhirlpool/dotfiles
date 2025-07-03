@@ -1,3 +1,0 @@
-#!/bin/bash
-
-for f in *.mp4; do ffmpeg -i "$f" '%04d.png'; done

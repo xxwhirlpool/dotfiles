@@ -1,3 +1,0 @@
-#!/bin/bash
-
-for f in *.cbr; do unar -d "$f"; done

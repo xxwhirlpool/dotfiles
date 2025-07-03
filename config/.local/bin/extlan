@@ -1,0 +1,20 @@
+#!/bin/bash
+
+kr() {
+	unzip -O CP932 $1
+}
+
+jp() {
+	unzip -O CP932 $1
+}
+
+choice() {
+	choose=$(gum choose "JP" "KR")
+	case "$choose" in
+		*JP) jp ;;
+		*KR) kr ;;
+		*) exit;;
+	esac
+}
+
+choice

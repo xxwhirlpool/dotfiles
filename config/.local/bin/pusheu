@@ -1,3 +1,0 @@
-#!/bin/bash
-
-git push bytes main && cd /home/kat/Documents/Code/Git/-mine/astro-eunoia/eunoia/src/utils && node git-changelog.js
