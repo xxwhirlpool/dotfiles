@@ -1,4 +1,4 @@
 #!/bin/sh
 # weather from wttr.in
 
-curl https://wttr.in/New+York?F0AS
+curl https://wttr.in/New+York?F1uq
