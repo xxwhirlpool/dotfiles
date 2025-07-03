@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# launch any program split-tunneled from mullvad VPN
+
+nohup mullvad-exclude $1 > /dev/null 2>&1 &

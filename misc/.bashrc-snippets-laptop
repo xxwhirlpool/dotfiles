@@ -70,3 +70,7 @@ function passgen() {
 
 # used to be a ~/.local/bin entry but that was dumb
 alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-astro/src/utils && node git-changelog.js"
+
+# vpn split tunnel aliases based on a small script @ ~/.local/bin/mvpn
+alias mftp="mvpn filezilla"
+alias mterm="mvpn kitty"
