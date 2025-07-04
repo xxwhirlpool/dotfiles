@@ -1,0 +1,24 @@
+{
+  "window": true,
+  "theme": "catppuccin-frappe",
+  "border": {
+    "radius": 0,
+    "width": 0,
+    "color": "#515151"
+  },
+  "shadow": false,
+  "padding": [
+    20,
+    40,
+    20,
+    20
+  ],
+  "margin": "0",
+  "background": "#303446",
+  "font": {
+    "family": "JetBrains Mono",
+    "size": 14,
+    "ligatures": true
+  },
+  "line_height": 1.2
+}
