@@ -9,27 +9,44 @@ notif() {
 	spd-say -t female3 -r +35 "'$val' session done"
 }
 
-if [ "$1" == "quick" ]; then
-	val=$1
+quick() {
+	val="quick"
 	echo -e "⏱️ $val ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
 	timer "15m"
 	notif
-elif [ "$1" == "work" ]; then
-	val=$1
+}
+
+work() {
+	val="work"
 	echo -e "⏱️ $val ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
 	timer "45m"
 	notif
-elif [ "$1" == "break" ]; then
-	val=$1
+}
+
+break() {
+	val="break"
 	echo -e "⏱️ $val ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
 	timer "20m"
 	notif
-elif [ "$1" == "custom" ]; then
-	val=$1
+}
+
+custom() {
+	val="custom"
 	choice=$(gum input --placeholder duration | awk '{print $0"m"}' )
 	echo -e "⏱️ $val: $choice ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
 	timer "$choice"
 	notif
-else
-	echo -n "something failed"
-fi
+}
+
+list() {
+	pick=$(gum choose --limit 1 --header "pomodoro timer!" "quick" "work" "break" "custom")
+	case "$pick" in
+		*quick) quick;;
+		*work) work;;
+		*break) break;;
+		*custom) custom;;
+		*) exit;;
+	esac
+}
+
+list
