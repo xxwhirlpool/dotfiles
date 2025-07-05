@@ -2,7 +2,7 @@
 
 echo "pulling from git..." | gum style --foreground "#f4b8e4" --border none
 
-git pull srht main
+git pull bytes main
 
 echo "git pull complete!" | gum style --foreground "#f4b8e4" --border none
 

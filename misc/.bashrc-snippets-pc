@@ -2,34 +2,42 @@
 #
 # from my pc
 
+eval "$(starship init bash)"
+
+export PATH=$PATH:/usr/local/go/bin
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias nano=micro
 alias sudo="sudo TERMINFO=\"$TERMINFO\" "
 alias pick='pastel pick'
 alias fd='fdfind'
-
-if [ -f ~/.privatevars ]; then                                                                               
-  . ~/.privatevars                                                                                         
-fi  
-
+alias neofetch="hyfetch"
+alias fastfetch="hyfetch"
 alias gitall="git remote | xargs -L1 git push --all"
+ 
+# lazy ass way for me to get my idol mp3s from youtube
+# usage: ytmp3 url
+alias ytmp3="yt-dlp -f ba -x --audio-format mp3"
+ 
+# weather stuff
+alias wttr="curl https://wttr.in/New+York?F0AS"
+alias weather=wttr
+ 
+alias wttrlg="curl https://wttr.in/New+York?F1uq"
+alias weatherlg=wttrlg
+ 
+alias sun="daylight --short --timezone='America/New_York' | lolcat"
+ 
+# vpn split tunnel aliases based on a small script @ ~/.local/bin/mvpn
+alias mftp="mvpn filezilla"
+alias mterm="mvpn kitty"
 
-cdmess() {
-	# from this blog post:
-	#
-	# https://blog.larah.me/mess-directory/
-	#
-    today_tmpdir="${TMPDIR-/tmp}/${USER}_mess/$(date +%F)"
-    mkdir -p "$today_tmpdir"
-    cd "$(mktemp -d -p "${today_tmpdir}" XXXX)"
-}
-
-# don't log commands that start with a space
-export HISTCONTROL=ignorespace
-
-# fuzzy find/search thru (recent) bash history
-hist() {
-	cat ~/.bash_history | fzf | sh
-}
-
+export EDITOR=/usr/bin/micro
+export "MICRO_TRUECOLOR=1"
+ 
 # catppuccin colors for fzf
 export FZF_DEFAULT_OPTS=" \
 --color=spinner:#F2D5CF,hl:#E78284 \
@@ -37,6 +45,20 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#BABBF1,fg+:#C6D0F5,prompt:#CA9EE6,hl+:#E78284 \
 --color=border:#414559,label:#C6D0F5"
 
+cdmess() {
+	# from this blog post:
+	# https://blog.larah.me/mess-directory/
+	#
+    today_tmpdir="${TMPDIR-/tmp}/${USER}_mess/$(date +%F)"
+    mkdir -p "$today_tmpdir"
+    cd "$(mktemp -d -p "${today_tmpdir}" XXXX)"
+}
+ 
+# fuzzy find/search thru (recent) bash history
+hist() {
+	cat ~/.bash_history | fzf | sh
+}
+ 
 # get a random free port. this is useful for my
 # insane sysadmin website woman adventures
 portfree() {
@@ -48,3 +70,47 @@ portfree() {
 	done
 	echo "$port"
 }
+ 
+# from http://dotfiles.org/~pseup/.bashrc
+function extract() {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2) tar xjf $1 ;;
+      *.tar.gz) tar xzf $1 ;;
+      *.bz2) bunzip2 $1 ;;
+      *.rar) rar x $1 ;;
+      *.gz) gunzip $1 ;;
+      *.tar) tar xf $1 ;;
+      *.tbz2) tar xjf $1 ;;
+      *.tgz) tar xzf $1 ;;
+      *.zip) unzip $1 ;;
+      *.Z) uncompress $1 ;;
+      *.7z) 7z x $1 ;;
+      *) echo "'$1' cannot be extracted via extract()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+ 
+# print internal & external IPs
+function whatip() {
+	# internal
+	echo -n "internal IP: " | lolcat -p 0.7; hostname -I | awk '{print $1}'
+	# external
+	echo -n "external IP: " | lolcat -p 0.7; curl -4 icanhazip.com
+}
+ 
+# password generator. takes input for password length by number
+function passgen() {
+	PASSLENGTH=$(gum input --placeholder "type a number")
+	date +%s | sha256sum | base64 | head -c $PASSLENGTH ; echo
+}
+
+# cd bookmarks
+alias dotf="cd /home/kat/Documents/Code/Git/-mine/dotfiles"
+alias gmine="cd /home/kat/Documents/Code/Git/-mine"
+ 
+alias pusheu="git push bytes main && cd /home/kat/Documents/Code/Git/-mine/astro-eunoia/eunoia/src/utils && node git-changelog.js"
+
+alias iconsubfol="find . -mindepth 2 -type f -print -exec mv {} . \;"
