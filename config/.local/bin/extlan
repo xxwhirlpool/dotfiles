@@ -1,18 +1,20 @@
 #!/bin/bash
 
 kr() {
-	unzip -O CP932 $1
+	fnpick=$(gum input --placeholder "file name")
+	unzip -O CP932 $fnpick
 }
 
 jp() {
-	unzip -O CP932 $1
+	fnpick=$(gum input --placeholder "file name")
+	unzip -O CP932 $fnpick
 }
 
 choice() {
 	choose=$(gum choose "JP" "KR")
 	case "$choose" in
-		*JP) jp ;;
-		*KR) kr ;;
+		*JP) jp;;
+		*KR) kr;;
 		*) exit;;
 	esac
 }

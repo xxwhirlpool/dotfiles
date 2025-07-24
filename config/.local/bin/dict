@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# https://github.com/aryuuu/dmenu-dict/blob/main/dmenu-dict
+#
+# https://github.com/BreadOnPenguins/scripts/blob/master/define_word
+
+word=$(echo " " | dmenu -i -c -l 10)
+
+if [ -n "$word" ]; then
+	response=$(curl -s --connect-timeout 5 --max-time 10 "https://api.dictionaryapi.dev/api/v2/entries/en_US/$word")
+	notif=$(echo $response | jq '.[]? | .meanings[]? | ["("+.partOfSpeech+") ", .definitions[]?.definition] | join(", ")' | dmenu -i -c -l 10)
+fi
+
+notif=$(echo $notif | sed -e $'s/\.,/\\n -/g')
