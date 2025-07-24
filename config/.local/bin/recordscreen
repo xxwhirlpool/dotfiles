@@ -14,9 +14,19 @@ record() {
 }
 
 end() {
-	kill -15 "$(cat /tmp/recpid)" && rm -f /tmp/recpid
-
-	notify-send "screen recording ended"
+	if [ ! -z $(cat /tmp/recpid) > /dev/null ]; then
+		kill -15 "$(cat /tmp/recpid)" && rm -f /tmp/recpid
+		notify-send "screen recording ended"
+	fi
 }
 
-([[ -f /tmp/recpid ]] && end && exit 0) || record
+cmd=$(printf "start\nend\n" | dmenu -i -c -l 2 -p "screen rec")
+
+if [ -z "$cmd" ]; then
+	exit 0
+fi
+
+case "$cmd" in
+	start) record;;
+	end) end;;
+esac
