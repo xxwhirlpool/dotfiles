@@ -4,7 +4,7 @@
 #
 # https://github.com/BreadOnPenguins/scripts/blob/master/define_word
 
-word=$(echo " " | dmenu -i -c -l 10)
+word=$(echo " " | dmenu -i -c -l 10 -p "dictionary!")
 
 if [ -n "$word" ]; then
 	response=$(curl -s --connect-timeout 5 --max-time 10 "https://api.dictionaryapi.dev/api/v2/entries/en_US/$word")
