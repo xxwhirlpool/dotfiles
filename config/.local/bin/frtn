@@ -1,0 +1,5 @@
+#!/bin/bash
+
+frtn=$(fortune ~/.local/fortune/reminders)
+
+notify-send "reminders" "$frtn"

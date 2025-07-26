@@ -1,0 +1,10 @@
+[Unit]
+Description=Run frtn every 30m
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=30min
+Unit=frtn-reminders.service
+
+[Install]
+WantedBy=timers.target

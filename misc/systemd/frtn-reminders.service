@@ -1,0 +1,12 @@
+[Unit]
+Description=Regular reminders.
+After=network.target
+
+[Service]
+Type=simple
+Environment="DISPLAY=:0"
+ExecStart=/home/kat/.local/bin/frtn
+Restart=unless-stopped
+
+[Install]
+WantedBy=multi-user.target
