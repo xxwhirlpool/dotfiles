@@ -114,3 +114,15 @@ alias iconsubfol="find . -mindepth 2 -type f -print -exec mv {} . \;"
 cheat() {
 	curl cheat.sh/"$1"
 }
+
+# display random ASCII art from
+# custom dir of art in dotfiles
+# using arttime (github: poetaman/arttime)
+playart() {
+	ARTDIR="/home/kat/Documents/Code/Git/-mine/dotfiles/config/.local/share/arttime/textart"
+	ARTSHUF=$(find "$ARTDIR" -type f | shuf -n1)
+
+	for art in "$ARTSHUF"; do
+		arttime --nolearn -a ${art} --ac 5
+	done
+}
