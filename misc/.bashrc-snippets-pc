@@ -54,11 +54,6 @@ cdmess() {
     cd "$(mktemp -d -p "${today_tmpdir}" XXXX)"
 }
  
-# fuzzy find/search thru (recent) bash history
-hist() {
-	cat ~/.bash_history | fzf | sh
-}
- 
 # get a random free port. this is useful for my
 # insane sysadmin website woman adventures
 portfree() {
@@ -72,7 +67,7 @@ portfree() {
 }
  
 # from http://dotfiles.org/~pseup/.bashrc
-function extract() {
+extract() {
   if [ -f $1 ] ; then
     case $1 in
       *.tar.bz2) tar xjf $1 ;;
@@ -94,7 +89,7 @@ function extract() {
 }
  
 # print internal & external IPs
-function whatip() {
+whatip() {
 	# internal
 	echo -n "internal IP: " | lolcat -p 0.7; hostname -I | awk '{print $1}'
 	# external
@@ -102,7 +97,7 @@ function whatip() {
 }
  
 # password generator. takes input for password length by number
-function passgen() {
+passgen() {
 	PASSLENGTH=$(gum input --placeholder "type a number")
 	date +%s | sha256sum | base64 | head -c $PASSLENGTH ; echo
 }
@@ -114,3 +109,8 @@ alias gmine="cd /home/kat/Documents/Code/Git/-mine"
 alias pusheu="git push bytes main && cd /home/kat/Documents/Code/Git/-mine/astro-eunoia/eunoia/src/utils && node git-changelog.js"
 
 alias iconsubfol="find . -mindepth 2 -type f -print -exec mv {} . \;"
+
+# quickly look up a program on cheat.sh
+cheat() {
+	curl cheat.sh/"$1"
+}

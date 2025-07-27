@@ -25,11 +25,6 @@ cdmess() {
 # don't log commands that start with a space
 export HISTCONTROL=ignorespace
 
-# fuzzy find/search thru (recent) bash history
-hist() {
-	cat ~/.bash_history | fzf | sh
-}
-
 # catppuccin colors for fzf
 export FZF_DEFAULT_OPTS=" \
 --color=spinner:#F2D5CF,hl:#E78284 \
@@ -55,7 +50,7 @@ alias weatherlg=wttrlg
 alias sun="daylight --short --timezone='America/New_York' | lolcat"
 
 # print internal & external IPs
-function whatip() {
+whatip() {
 	# internal
 	echo -n "internal IP: " | lolcat -p 0.7; hostname -I | awk '{print $1}'
 	# external
@@ -63,7 +58,7 @@ function whatip() {
 }
 
 # password generator. takes input for password length by number
-function passgen() {
+passgen() {
 	PASSLENGTH=$(gum input --placeholder "type a number")
 	date +%s | sha256sum | base64 | head -c $PASSLENGTH ; echo
 }
@@ -74,3 +69,8 @@ alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-ast
 # vpn split tunnel aliases based on a small script @ ~/.local/bin/mvpn
 alias mftp="mvpn filezilla"
 alias mterm="mvpn kitty"
+
+# quickly look up a program on cheat.sh
+cheat() {
+	curl cheat.sh/"$1"
+}
