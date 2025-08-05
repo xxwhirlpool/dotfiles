@@ -250,7 +250,7 @@ QCalendarWidget QWidget {
     padding: 1px;
     border: 1px;
     qproperty-icon: url(penguin.png);
-    color: #1E1E2E;
+    color: #f2f1f0;
 }
 
 #MainMenu:pressed {

@@ -4,3 +4,8 @@ config/.config/conky/wttr.png
 
 config/.bashrc
 config/.local/bin/pusheu
+
+config/.local/bin/fd
+config/.local/bin/hyfetch
+config/.local/bin/neowofetch
+config/.local/bin/wheel

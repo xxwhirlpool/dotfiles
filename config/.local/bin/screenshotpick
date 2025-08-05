@@ -6,7 +6,7 @@
 
 export DISPLAY=:0
 SHOTPATH="/media/kat/disk/Pictures/Screenshots"
-COUNT=$(find $SHOTPATH -type f -printf x | wc -c | awk '{print $1+1}' | awk '{printf "%04d\n", $0}')
+COUNT=$(find $SHOTPATH -type f -printf x | wc -c | awk '{print $1+2}' | awk '{printf "%04d\n", $0}')
 FILE="$SHOTPATH/$COUNT.png"
 
 
