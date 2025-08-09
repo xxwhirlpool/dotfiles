@@ -10,3 +10,4 @@ config/.local/bin/hyfetch
 config/.local/bin/neowofetch
 config/.local/bin/wheel
 config/.config/micro/buffers/history
+config/.local/bin/shmoji
