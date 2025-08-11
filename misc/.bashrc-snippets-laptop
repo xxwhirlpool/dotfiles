@@ -71,6 +71,14 @@ alias mftp="mvpn filezilla"
 alias mterm="mvpn kitty"
 
 # quickly look up a program on cheat.sh
-cheat() {
-	curl cheat.sh/"$1"
+cheatsh() {
+	curl "cheat.sh/$1"
+}
+
+# to get quick notifs
+# after long commands
+notif() {
+	notify-send "done!"
+	aplay -q /usr/share/sounds/sound-icons/start
+	spd-say -t female3 -r +25 "done!"
 }
