@@ -1,0 +1,15 @@
+#!/bin/bash
+
+notif() {
+	notify-send "'$time' timer done!"
+	spd-say -t female3 -r +25 "timer done!"
+}
+
+if [[ ! "$1" =~ "m" ]]; then
+	echo "add a time or a time unit (m for minutes)"
+else
+	time="$1"
+	echo -e "$time: 🌈✩₊˚.⋆⋆⁺₊✧🦋"  | lolcat -p 0.2
+	timer "$time"
+	notif
+fi
