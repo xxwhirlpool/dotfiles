@@ -15,4 +15,4 @@ post () { # copy image to clip & send a notification
 
 import -window root "$FILE" && post || exit 1
 
-notify-send "screenshot taken" "saved as ${FILE} in ${SHOTPATH}"
+# notify-send "screenshot taken" "saved as ${FILE} in ${SHOTPATH}"
