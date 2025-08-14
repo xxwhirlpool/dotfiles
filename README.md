@@ -2,12 +2,10 @@
 
 ![lesbian badge](https://pride-badges.pony.workers.dev/static/v1?label=lesbian&labelColor=%23555&stripeWidth=6&stripeColors=D52D00%2CEF7627%2CFF9A56%2CFFFFFF%2CD162A4%2CB55690%2CA30262) ![trans rights](https://pride-badges.pony.workers.dev/static/v1?label=trans%20rights&stripeWidth=6&stripeColors=5BCEFA,F5A9B8,FFFFFF,F5A9B8,5BCEFA)
 
-<br>
-
 <div align="left">
-	<img src="./misc/assets/pc-wall-2025_08_14.png" alt="desktop PC screen shot showing my custom new jeans hanni catppuccin wallpaper, and a sidebar made with conky that shows the weather, sunrise/sunset info, system statistics, and my last listened or currently playing song">
+	<img src="./misc/assets/pc-wall-2025_08_14.png" alt="desktop PC screen shot showing my custom new jeans hanni catppuccin wallpaper, and a sidebar made with conky that shows the weather, sunrise/sunset info, system statistics, and my last listened or currently playing song" width="800px">
 	<br>
-	<img src="./misc/assets/laptop-wall-2025_08_14.png" alt="laptop screen shot showing my new jeans wallpaper and a music listening widget that plays a saidan song, plus the time">
+	<img src="./misc/assets/laptop-wall-2025_08_14.png" alt="laptop screen shot showing my new jeans wallpaper and a music listening widget that plays a saidan song, plus the time" width="800px">
 	</p>
 </div>
 
