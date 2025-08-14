@@ -3573,3 +3573,4 @@
 🧍 person male standing
 🧍‍person female standing
 👀 eyes looking
+🫡 saluting salute face
