@@ -1,16 +1,14 @@
 # my dotfiles
 
+<img src="./misc/assets/pc-wall-2025_08_14.png" alt="desktop PC screen shot showing my custom new jeans hanni catppuccin wallpaper, and a sidebar made with conky that shows the weather, sunrise/sunset info, system statistics, and my last listened or currently playing song">
+
+<details>
+	<summary>bonus: laptop</summary>
+	
+	<img src="./misc/assets/laptop-wall-2025_08_14.png" alt="laptop screen shot showing my new jeans wallpaper and a music listening widget that plays a saidan song, plus the time">
+</details>
+
 i usually use the catppuccin (specifically frappe, sometimes latte) themes wherever possible. i like cute things.
-
-## install
-
-```bash
-git clone https://git.sr.ht/~chasinglightning/dotfiles # or wherever you found this from
-
-chmod +x stow.sh
-
-./stow.sh
-```
 
 ## CLI and/or TUI program recs
 
