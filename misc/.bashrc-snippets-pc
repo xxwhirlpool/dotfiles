@@ -103,10 +103,10 @@ passgen() {
 }
 
 # cd bookmarks
-alias dotf="cd /home/kat/Documents/Code/Git/-mine/dotfiles"
-alias gmine="cd /home/kat/Documents/Code/Git/-mine"
+alias dotf="cd /home/kat/dotfiles"
+alias gmine="cd /home/kat/Documents/Git/-mine"
  
-alias pusheu="git push bytes main && cd /home/kat/Documents/Code/Git/-mine/astro-eunoia/eunoia/src/utils && node git-changelog.js"
+alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-astro/src/utils && node git-changelog.js"
 
 alias iconsubfol="find . -mindepth 2 -type f -print -exec mv {} . \;"
 
@@ -126,3 +126,13 @@ playart() {
 		arttime --nolearn -a ${art} --ac 5
 	done
 }
+
+# to get quick notifs
+# after long commands
+notif() {
+	notify-send "done!"
+	aplay -q /usr/share/sounds/sound-icons/start
+	spd-say -t female3 -r +25 "done!"
+}
+
+alias icat="kitten icat"
