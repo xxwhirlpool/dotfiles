@@ -1,0 +1,8 @@
+[user]
+	email = witnesslachesis@disroot.org
+	name = xxwhirlpool
+	signingkey = /home/kat/.ssh/id_rsa.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgSign = true
