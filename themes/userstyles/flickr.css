@@ -1,0 +1,5 @@
+@-moz-document domain("flickr.com") {
+.global-nav-view.desktop-nav-ad, .global-nav-view.desktop-nav-ad .global-nav-content {
+    margin-top: 0 !important;
+}
+}
