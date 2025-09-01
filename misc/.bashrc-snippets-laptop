@@ -82,3 +82,7 @@ notif() {
 	aplay -q /usr/share/sounds/sound-icons/start
 	spd-say -t female3 -r +25 "done!"
 }
+
+alias icat="kitten icat"
+
+alias gyolo="git add . && git commit -m 'yolo'"
