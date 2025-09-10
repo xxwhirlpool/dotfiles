@@ -1,0 +1,9 @@
+include catppuccin-latte
+
+set selection-clipboard clipboard
+
+set font "Maple Mono NF CN"
+
+set adjust-open width
+
+set window-title-basename true
