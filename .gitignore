@@ -13,3 +13,9 @@ config/.config/micro/buffers/history
 config/.local/bin/shmoji
 config/.config/micro/plug/wc/*
 config/.local/bin/gallery-dl
+config/.local/bin/ikhal
+config/.local/bin/khal
+config/.local/bin/khard
+config/.local/bin/vdirsyncer
+config/.config/vdirsyncer/contacts/
+config/.config/vdirsyncer/status/
