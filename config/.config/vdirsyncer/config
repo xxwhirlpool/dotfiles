@@ -5,7 +5,6 @@ status_path = "~/.config/vdirsyncer/status/"
 a = "katcontacts_local"
 b = "katcontacts_remote"
 collections = ["from a", "from b"]
-
 metadata = ["displayname"]
 
 [storage katcontacts_local]
@@ -19,12 +18,35 @@ url = "https://calendar.girlonthemoon.xyz/springpool/52ad2c31-65bb-a4c7-23c7-bea
 username = "springpool"
 password.fetch = ["command", "cat", "~/.vcardpass"]
 
+[pair katcal]
+a = "katcal_local"
+b = "katcal_remote"
+collections = ["from a", "from b"]
+metadata = ["displayname"]
+
 [storage katcal_local]
 type = "filesystem"
 path = "~/.config/vdirsyncer/calendar"
 fileext = ".ics"
 
 [storage katcal_remote]
-type = "http"
+type = "caldav"
 url = "https://calendar.girlonthemoon.xyz/springpool/9f677c31-9924-4a76-8763-73fd3025acdb/"
-read_only = "false"
+username = "springpool"
+password.fetch = ["command", "cat", "~/.vcardpass"]
+
+[pair rockness]
+a = "rockness_local"
+b = "rockness_remote"
+collections = null
+
+[storage rockness_local]
+type = "filesystem"
+path = "~/.config/vdirsyncer/calendar_rockness"
+fileext = ".ics"
+
+[storage rockness_remote]
+type = "caldav"
+url = "https://calendar.girlonthemoon.xyz/springpool/e558f6dc-3080-9e30-7bed-667fefd47182/"
+username = "springpool"
+password.fetch = ["command", "cat", "~/.vcardpass"]

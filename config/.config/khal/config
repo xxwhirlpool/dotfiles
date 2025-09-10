@@ -4,7 +4,7 @@ default_calendar = kat
 highlight_event_days = true
 
 [view]
-dynamic_days= false
+dynamic_days = false
 
 [locale]
 unicode_symbols = false
@@ -18,3 +18,6 @@ longdateformat = %Y-%m-%d
 
 [[kat]]
 path = ~/.config/vdirsyncer/calendars/kat/
+
+[[rockness]]
+path = ~/.config/vdirsyncer/calendar_rockness/
