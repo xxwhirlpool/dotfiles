@@ -21,3 +21,4 @@ config/.config/vdirsyncer/contacts/
 config/.config/vdirsyncer/status/
 config/.config/vdirsyncer/calendar/*
 config/.config/vdirsyncer/calendar_rockness/*
+config/.config/vdirsyncer/calendars/kat/katcal/*

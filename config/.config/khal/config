@@ -1,6 +1,6 @@
 [default]
 
-default_calendar = kat
+default_calendar = katcal
 highlight_event_days = true
 
 [view]
@@ -11,13 +11,13 @@ unicode_symbols = false
 local_timezone = America/New_York
 default_timezone = America/New_York
 timeformat = %I:%m
-dateformat = %A
+dateformat = %Y-%m-%d
 longdateformat = %Y-%m-%d
 
 [calendars]
 
-[[kat]]
-path = ~/.config/vdirsyncer/calendars/kat/
+[[katcal]]
+path = ~/.config/vdirsyncer/calendars/kat/katcal
 
 [[rockness]]
 path = ~/.config/vdirsyncer/calendar_rockness/

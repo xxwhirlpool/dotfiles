@@ -26,12 +26,12 @@ metadata = ["displayname"]
 
 [storage katcal_local]
 type = "filesystem"
-path = "~/.config/vdirsyncer/calendar"
+path = "~/.config/vdirsyncer/calendars/kat"
 fileext = ".ics"
 
 [storage katcal_remote]
 type = "caldav"
-url = "https://calendar.girlonthemoon.xyz/springpool/9f677c31-9924-4a76-8763-73fd3025acdb/"
+url = "https://calendar.girlonthemoon.xyz/springpool/katcal/"
 username = "springpool"
 password.fetch = ["command", "cat", "~/.vcardpass"]
 
