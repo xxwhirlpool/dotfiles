@@ -22,3 +22,4 @@ config/.config/vdirsyncer/status/
 config/.config/vdirsyncer/calendar/*
 config/.config/vdirsyncer/calendar_rockness/*
 config/.config/vdirsyncer/calendars/kat/katcal/*
+config/.local/bin/batman.sh
