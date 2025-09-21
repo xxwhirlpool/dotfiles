@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
-#
-# NOT BY ME
-#
-# from here:
-#
-# blog.nytsoi.net/2024/04/26/digital-retro-photography
 
 set -euxo pipefail
 

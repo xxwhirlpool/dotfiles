@@ -1,4 +1,4 @@
-address "chat.4-walls.net:6697"
+address "chat.4-walls.net:6698"
 nickname "kat"
 password-cmd cat "/home/kat/.ircpass"
 on-highlight-beep true

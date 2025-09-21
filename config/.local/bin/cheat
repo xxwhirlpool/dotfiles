@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# wasn't working in my .bashrc so...
+
+curl -s cheat.sh/"$1"
