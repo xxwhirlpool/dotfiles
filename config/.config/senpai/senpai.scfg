@@ -2,3 +2,4 @@ address "chat.4-walls.net:6697"
 nickname "kat"
 password-cmd cat "/home/kat/.ircpass"
 on-highlight-beep true
+on-highlight-path "/home/kat/.config/senpai/highlight"
