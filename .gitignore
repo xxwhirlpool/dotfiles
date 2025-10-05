@@ -24,3 +24,8 @@ config/.config/vdirsyncer/calendar_rockness/*
 config/.config/vdirsyncer/calendars/kat/katcal/*
 config/.local/bin/batman.sh
 config/.local/bin/retroify
+config/.config/vdirsyncer/calendars/
+config/.local/bin/dotenv
+config/.local/bin/icalendar
+config/.local/bin/normalizer
+config/.local/bin/x-wr-timezone

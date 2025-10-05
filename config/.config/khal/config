@@ -21,3 +21,6 @@ path = ~/.config/vdirsyncer/calendars/kat/katcal
 
 [[rockness]]
 path = ~/.config/vdirsyncer/calendar_rockness/
+
+[[katmusic]]
+path = ~/.config/vdirsyncer/calendars/katmusic/76e2e79f-639d-ea44-540e-2b6009b9b1fe

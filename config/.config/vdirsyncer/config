@@ -35,6 +35,23 @@ url = "https://calendar.girlonthemoon.xyz/springpool/katcal/"
 username = "springpool"
 password.fetch = ["command", "cat", "~/.vcardpass"]
 
+[pair katmusic]
+a = "katmusic_local"
+b = "katmusic_remote"
+collections = ["from a", "from b"]
+metadata = ["displayname"]
+
+[storage katmusic_local]
+type = "filesystem"
+path = "~/.config/vdirsyncer/calendars/katmusic"
+fileext = ".ics"
+
+[storage katmusic_remote]
+type = "caldav"
+url = "https://calendar.girlonthemoon.xyz/springpool/76e2e79f-639d-ea44-540e-2b6009b9b1fe/"
+username = "springpool"
+password.fetch = ["command", "cat", "~/.vcardpass"]
+
 [pair rockness]
 a = "rockness_local"
 b = "rockness_remote"
