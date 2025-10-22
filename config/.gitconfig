@@ -10,3 +10,5 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
+[core]
+	pager = "batcat --paging=always"
