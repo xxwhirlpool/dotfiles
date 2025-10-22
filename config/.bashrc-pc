@@ -129,7 +129,8 @@ alias neofetch="hyfetch"
 alias fastfetch="hyfetch"
 alias bat="batcat"
 alias cat="bat --paging=never"
-alias iconsubfolalias iconsubfol="find . -mindepth 2 -type f -print -exec mv {} . \;"
+alias iconsubfol="find . -mindepth 2 -type f -print -exec mv {} . \;"
+alias rced="micro ~/.bashrc && source ~/.bashrc"
 
 # lazy ass way for me to get my idol mp3s from youtube
 # usage: ytmp3 url
@@ -159,7 +160,8 @@ alias gmine="cd /home/kat/Documents/Git/-mine"
 alias fujo="kitty +kitten ssh fujo"
 alias fujohost="kitty +kitten ssh fujohost"
 alias fujobuild="kitty +kitten ssh fujobuild"
-alias steff="kitty +kitten ssh steff"
+alias goldstar="kitty +kitten ssh goldstar"
+alias ncc="kitty +kitten ssh ncc1701"
 
 ######################################
 # variables
@@ -188,6 +190,8 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 . "$HOME/.cargo/env"
+
+. "/home/kat/.deno/env"
 
 ######################################
 # functions
@@ -243,7 +247,7 @@ playart() {
 # after long commands
 notif() {
 	notify-send "done!"
-	aplay -q /usr/share/sounds/sound-icons/start
+	paplay /usr/share/sounds/sound-icons/start
 	spd-say -t female3 -r +25 "done!"
 }
 

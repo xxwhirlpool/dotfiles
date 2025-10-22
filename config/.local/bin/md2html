@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+#
+# convert markdown to HTML
+# can read from STDIN or file
+#
+# this is a *very* opinionated script, using:
+# gum, bat, perl, and xclip
+# pandoc is mandatory!!!
+# edit to suit your system
+
+# functions
+read() {
+	# declare some vars
+	MDFILE="/tmp/$(today time && openssl rand -hex 5).md"
+	HTMLFILE="${MDFILE%.*}.html"
+	HTMLFILE_FINAL="${HTMLFILE%.*}_final.html"
+	# prompt user to paste markdown formatted text, then write it to a temp file
+	gum write > "$MDFILE"
+	# the conversion!
+	pandoc --no-highlight --wrap=none "$MDFILE" -o "$HTMLFILE"
+	# swap unicode/HTML entities to their actual characters
+	perl -C -MHTML::Entities -pe 'decode_entities($_);' < "$HTMLFILE" > "$HTMLFILE_FINAL"
+	# show final file
+	batcat --paging=never "$HTMLFILE_FINAL"
+	# copy file to clipboard too
+	xclip -sel clip "$HTMLFILE_FINAL"
+}
+
+fromfile() {
+	# declare some vars
+	MDFILE=$(gum filter)
+	HTMLFILE="${MDFILE%.*}.html"
+	HTMLFILE_FINAL="${HTMLFILE%.*}_final.html"
+	# the conversion!
+	pandoc --no-highlight --wrap=none "$MDFILE" -o "$HTMLFILE"
+	# swap unicode/HTML entities to their actual characters
+	perl -C -MHTML::Entities -pe 'decode_entities($_);' < "$HTMLFILE" > "$HTMLFILE_FINAL"
+	# show final file
+	batcat --paging=never "$HTMLFILE_FINAL"
+	# copy file to clipboard too
+	xclip -sel clip "$HTMLFILE_FINAL"
+}
+
+# execute it
+choice() {
+	choose=$(gum choose "paste" "file")
+	case "$choose" in
+		*paste) read ;;
+		*file) fromfile ;;
+		*) exit ;;
+	esac
+}
+
+choice
