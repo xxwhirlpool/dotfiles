@@ -4,14 +4,14 @@
 # can read from STDIN or file
 #
 # this is a *very* opinionated script, using:
-# gum, bat, perl, and xclip
+# gum, bat, perl, openssl, and xclip
 # pandoc is mandatory!!!
 # edit to suit your system
 
 # functions
 read() {
 	# declare some vars
-	MDFILE="/tmp/$(today time && openssl rand -hex 5).md"
+	MDFILE="/tmp/$(openssl rand -hex 5).md"
 	HTMLFILE="${MDFILE%.*}.html"
 	HTMLFILE_FINAL="${HTMLFILE%.*}_final.html"
 	# prompt user to paste markdown formatted text, then write it to a temp file
@@ -24,6 +24,8 @@ read() {
 	batcat --paging=never "$HTMLFILE_FINAL"
 	# copy file to clipboard too
 	xclip -sel clip "$HTMLFILE_FINAL"
+	# cleanup
+	rm "$HTMLFILE"
 }
 
 fromfile() {
@@ -39,6 +41,8 @@ fromfile() {
 	batcat --paging=never "$HTMLFILE_FINAL"
 	# copy file to clipboard too
 	xclip -sel clip "$HTMLFILE_FINAL"
+	# cleanup
+	rm "$HTMLFILE"
 }
 
 # execute it
