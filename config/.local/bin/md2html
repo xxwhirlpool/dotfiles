@@ -9,13 +9,13 @@
 # edit to suit your system
 
 # functions
-read() {
+fromstdin() {
 	# declare some vars
 	MDFILE="/tmp/$(openssl rand -hex 5).md"
 	HTMLFILE="${MDFILE%.*}.html"
 	HTMLFILE_FINAL="${HTMLFILE%.*}_final.html"
 	# prompt user to paste markdown formatted text, then write it to a temp file
-	gum write > "$MDFILE"
+	gum write --header="paste MD-formatted text below" > "$MDFILE"
 	# the conversion!
 	pandoc --no-highlight --wrap=none "$MDFILE" -o "$HTMLFILE"
 	# swap unicode/HTML entities to their actual characters
@@ -49,7 +49,7 @@ fromfile() {
 choice() {
 	choose=$(gum choose "paste" "file")
 	case "$choose" in
-		*paste) read ;;
+		*paste) fromstdin ;;
 		*file) fromfile ;;
 		*) exit ;;
 	esac
