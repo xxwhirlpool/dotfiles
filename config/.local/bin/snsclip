@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#
+# yt-dlp wrapper for quickly making clips
+# to share on social media
+#
+# usage:
+# snsclip YT_LINK "desired title of output file"
+
+URL="$1"
+FILE_OUT_NAME="$2"
+
+if [ $# -eq 0 ]; then
+	echo "please specify a URL followed by a title"
+	exit 1
+fi
+
+yt-dlp -f "ba+bv*[height<=1080p]" -o "$FILE_OUT_NAME" "$URL" --merge-output-format mp4

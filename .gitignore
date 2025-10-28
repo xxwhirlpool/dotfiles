@@ -31,3 +31,4 @@ config/.local/bin/normalizer
 config/.local/bin/x-wr-timezone
 config/.config/micro/plug/
 config/.local/bin/pylsp
+config/.local/bin/kaomoji.sh
