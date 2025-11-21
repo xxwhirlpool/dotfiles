@@ -1,8 +1,8 @@
 {
     "colorscheme": "catppuccin-frappe",
-    "softwrap": true,
-    "wordwrap": true,
+    "lsp.formatOnSave": true,
     "lsp.server": "python=pyls,go=gopls,typescript=deno lsp,nix=nixd",
     "lsp.tabcompletion": true,
-    "lsp.formatOnSave": true
+    "softwrap": true,
+    "wordwrap": true
 }

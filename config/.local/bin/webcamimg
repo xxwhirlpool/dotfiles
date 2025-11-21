@@ -4,6 +4,6 @@ PICPATH="/home/kat/Pictures/Camera/webcam"
 
 echo "taking pictures!" | gum style --foreground "#f4b8e4" --border none
 
-ffmpeg -f video4linux2 -i /dev/video0 -vframes 2 -video_size 1920x1080 "$PICPATH/webcam_pic_$(date '+%a__%b%d__%H_%M_%S')%3d.jpeg" -hide_banner -loglevel error
+ffmpeg -f video4linux2 -i /dev/video0 -vframes 2 -video_size 1920x1080 "$PICPATH/webcam_pic_$(today time)_%3d.jpeg" -hide_banner -loglevel error
 
 echo "done!" | gum style --foreground "#f4b8e4" --border none

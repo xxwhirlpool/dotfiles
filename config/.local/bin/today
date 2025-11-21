@@ -8,5 +8,5 @@ fi
 # if you also want time then supply `time` arg:
 # today time
 if [ "$1" == "time" ]; then
-	echo -e "$(date '+%Y-%m-%d_%I:%M%p')"
+	echo -e "$(date '+%Y-%m-%d__%I_%M%p')"
 fi
