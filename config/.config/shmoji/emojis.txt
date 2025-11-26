@@ -2697,7 +2697,7 @@
 🔥 fire
 💧 droplet
 🌊 water wave
-🎃 jack-o-lantern
+🎃 jack-o-lantern pumpkin halloween
 🎄 Christmas tree
 🎆 fireworks
 🎇 sparkler
@@ -3181,9 +3181,7 @@
 ❇️ sparkle
 ❇ sparkle
 ‼️ double exclamation mark
-‼ double exclamation mark
 ⁉️ exclamation question mark
-⁉ exclamation question mark
 ❓ question mark
 ❔ white question mark
 ❕ white exclamation mark
