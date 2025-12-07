@@ -10,7 +10,7 @@ URL="$1"
 FILE_OUT_NAME="$2"
 
 if [ $# -eq 0 ]; then
-	echo "please specify a URL followed by a title"
+	echo "Usage: snsclip [URL] [FILENAME]"
 	exit 1
 fi
 

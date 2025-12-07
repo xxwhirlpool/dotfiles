@@ -130,6 +130,9 @@ alias freeze="freeze -c user $1"
 alias fd="fdfind "
 alias neofetch="hyfetch"
 alias fastfetch="hyfetch"
+alias bat="batcat"
+alias cat="bat --paging=never"
+alias rced="micro ~/.bashrc && source ~/.bashrc"
 
 # lazy ass way for me to get my idol mp3s from youtube
 # usage: ytmp3 url
@@ -159,7 +162,9 @@ alias mterm="mvpn kitty"
 alias fujo="kitty +kitten ssh fujo"
 alias fujobuild="kitty +kitten ssh fujobuild"
 alias fujohost="kitty +kitten ssh fujohost"
-alias steff="kitty +kitten ssh steff"
+alias fujoat="kitty +kitten ssh fujoat"
+alias goldstar="kitty +kitten ssh goldstar"
+alias ncc="kitty +kitten ssh ncc1701"
 
 ######################################
 # variables
@@ -237,5 +242,5 @@ notif() {
 ######################################
 
 eval "$(starship init bash)"
-
 eval "$(fzf --bash)"
+eval "$(batman --export-env)"

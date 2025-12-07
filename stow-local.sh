@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 stow -v -t ~ "config" --adopt
 
