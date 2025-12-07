@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+unwraptxt() {
+	TXTFILE="/tmp/$(openssl rand -hex 5).txt"
+	TXTFILE_FIN="${TXTFILE%.*}_final.txt"
+	gum write --header="paste wrapped text below" > "$TXTFILE"
+	perl -00 -lpe 's/\n/ /g' < "$TXTFILE" > "$TXTFILE_FIN"
+	batcat --paging=never "$TXTFILE_FIN"
+	xclip -sel clip "$TXTFILE_FIN"
+	rm "$TXTFILE" "$TXTFILE_FIN"
+}
+
+choice() {
+	choose=$(gum choose "unwrap")
+	case "$choose" in
+		*unwrap) unwraptxt ;;
+		*) exit 0;;
+	esac
+}
+
+choice
