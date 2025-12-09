@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# mostly to stop myself from accidentally
+# wiping my own hard drive again with `dd`
+
+if [ $# -eq 0 ]; then
+	echo "Usage: ask [COMMAND]"
+	exit 1
+fi
+
+gum confirm && $@ || echo "nope"
