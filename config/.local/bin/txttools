@@ -10,10 +10,31 @@ unwraptxt() {
 	rm "$TXTFILE" "$TXTFILE_FIN"
 }
 
+wraptxt() {
+	WRTXTFILE="/tmp/$(openssl rand -hex 5).txt"
+	WRTXTFILE_FIN="${WRTXTFILE%.*}_final.txt"
+	gum write --header="paste text below" > "$WRTXTFILE"
+	FOLDNUM=$(gum input --placeholder "number of characters to wrap to")
+	fold -w "$FOLDNUM" -s "$WRTXTFILE" > "$WRTXTFILE_FIN"
+	batcat --paging=never "$WRTXTFILE_FIN"
+	xclip -sel clip "$WRTXTFILE_FIN"
+	rm "$WRTXTFILE" "$WRTXTFILE_FIN"
+}
+
+wdcount() {
+	WCTXTFL="/tmp/$(openssl rand -hex 5).txt"
+	gum write --header="paste text below" > "$WCTXTFL"
+	WCNUM=$(wc -w "$WCTXTFL" | awk '{print $1}')
+	echo -e "$(gum style --foreground=#f4b8e4 --border none 'total word count'): $WCNUM"
+	rm "$WCTXTFL"
+}
+
 choice() {
-	choose=$(gum choose "unwrap")
+	choose=$(gum choose "unwrap" "wrap" "wordcount")
 	case "$choose" in
 		*unwrap) unwraptxt ;;
+		*wrap) wraptxt ;;
+		*wordcount) wdcount ;;
 		*) exit 0;;
 	esac
 }
