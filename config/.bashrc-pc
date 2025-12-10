@@ -131,13 +131,17 @@ alias bat="batcat"
 alias cat="bat --paging=never"
 alias iconsubfol="find . -mindepth 2 -type f -print -exec mv {} . \;"
 alias rced="micro ~/.bashrc && source ~/.bashrc"
+alias icat="kitty +kitten icat"
+alias ps="ps auxww"
+alias dd="ask dd"
+alias copy="xclip -sel clipboard"
 
 # lazy ass way for me to get my idol mp3s from youtube
 # usage: ytmp3 url
 alias ytmp3="yt-dlp -f ba -x --audio-format mp3"
  
 # weather stuff
-alias wttr="curl https://wttr.in/New+York?F0AS"
+alias wttr="curl https://wttr.in/New+York?F0ASu"
 alias weather=wttr
 alias wttrlg="curl https://wttr.in/New+York?F1uq"
 alias weatherlg=wttrlg
@@ -160,6 +164,7 @@ alias gmine="cd /home/kat/Documents/Git/-mine"
 alias fujo="kitty +kitten ssh fujo"
 alias fujohost="kitty +kitten ssh fujohost"
 alias fujobuild="kitty +kitten ssh fujobuild"
+alias fujoat="kitty +kitten ssh fujoat"
 alias goldstar="kitty +kitten ssh goldstar"
 alias ncc="kitty +kitten ssh ncc1701"
 

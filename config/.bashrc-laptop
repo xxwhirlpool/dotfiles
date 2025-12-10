@@ -133,6 +133,7 @@ alias fastfetch="hyfetch"
 alias bat="batcat"
 alias cat="bat --paging=never"
 alias rced="micro ~/.bashrc && source ~/.bashrc"
+alias dd="ask dd"
 
 # lazy ass way for me to get my idol mp3s from youtube
 # usage: ytmp3 url
