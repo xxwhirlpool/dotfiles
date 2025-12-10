@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+livetime() {
+	TOP=$(echo -e "$(date '+%A, %B %Y' | gum style --foreground '#a6d189' --border-foreground '#99d1db' --border double --width 50 --padding '0 1' --align center)")
+	BOTTOM=$(echo -e "$(date '+%Y-%m-%d %I:%M%p %Ss' | gum style --foreground '#f4b8e4' --width 50 --padding '0 1' --align center)")
+	gum join --align center --vertical "$TOP" "$BOTTOM"
+}
+
+while true; do
+	lines=$(tput lines)
+	output="$(livetime | head -n $lines)"
+	clear
+	echo -e "$output"
+	sleep 1
+done
