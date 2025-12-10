@@ -133,7 +133,8 @@ alias fastfetch="hyfetch"
 alias bat="batcat"
 alias cat="bat --paging=never"
 alias rced="micro ~/.bashrc && source ~/.bashrc"
-alias dd="ask dd"
+alias dd="askdd"
+alias copy="xclip -sel clipboard"
 
 # lazy ass way for me to get my idol mp3s from youtube
 # usage: ytmp3 url
@@ -153,6 +154,9 @@ alias sun="daylight --short --timezone='America/New_York' | lolcat"
 # git
 alias gitall="git remote | xargs -L1 git push --all"
 alias gyolo="git add . && git commit -m 'yolo'"
+alias gitd="git diff --staged"
+alias gdiff="gitd"
+alias gits="git status"
 alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-astro/src/utils && node git-changelog.js"
 
 # vpn split tunnel aliases based on a small script @ ~/.local/bin/mvpn
