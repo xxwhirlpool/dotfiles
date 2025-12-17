@@ -249,3 +249,4 @@ notif() {
 eval "$(starship init bash)"
 eval "$(fzf --bash)"
 eval "$(batman --export-env)"
+. "/home/kat/.deno/env"

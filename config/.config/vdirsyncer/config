@@ -16,7 +16,7 @@ fileext = ".vcf"
 type = "carddav"
 url = "https://calendar.girlonthemoon.xyz/springpool/52ad2c31-65bb-a4c7-23c7-beac8c3f48e8/"
 username = "springpool"
-password.fetch = ["command", "cat", "~/.vcardpass"]
+password.fetch = ["command", "pass", "config/vdirsyncer"]
 
 [pair katcal]
 a = "katcal_local"
@@ -33,7 +33,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://calendar.girlonthemoon.xyz/springpool/katcal/"
 username = "springpool"
-password.fetch = ["command", "cat", "~/.vcardpass"]
+password.fetch = ["command", "pass", "config/vdirsyncer"]
 
 [pair katmusic]
 a = "katmusic_local"
@@ -50,7 +50,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://calendar.girlonthemoon.xyz/springpool/76e2e79f-639d-ea44-540e-2b6009b9b1fe/"
 username = "springpool"
-password.fetch = ["command", "cat", "~/.vcardpass"]
+password.fetch = ["command", "pass", "config/vdirsyncer"]
 
 [pair rockness]
 a = "rockness_local"
@@ -66,4 +66,4 @@ fileext = ".ics"
 type = "caldav"
 url = "https://calendar.girlonthemoon.xyz/springpool/e558f6dc-3080-9e30-7bed-667fefd47182/"
 username = "springpool"
-password.fetch = ["command", "cat", "~/.vcardpass"]
+password.fetch = ["command", "pass", "config/vdirsyncer"]

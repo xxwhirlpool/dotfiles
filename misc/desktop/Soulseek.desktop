@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Soulseek
+GenericName=
+Comment=
+Exec=/home/kat/Downloads/Programs/SoulseekQt-2024-6-30.AppImage
+Type=Application
+Categories=AudioVideo;Audio;Video;
+Icon=/home/kat/dotfiles/misc/desktop/icons/Soulseek.png
+Terminal=false
