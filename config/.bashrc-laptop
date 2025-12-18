@@ -135,6 +135,7 @@ alias cat="bat --paging=never"
 alias rced="micro ~/.bashrc && source ~/.bashrc"
 alias dd="askdd"
 alias copy="xclip -sel clipboard"
+alias calc="python3 -Sq"
 
 # lazy ass way for me to get my idol mp3s from youtube
 # usage: ytmp3 url

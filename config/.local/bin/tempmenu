@@ -1,0 +1,29 @@
+#!/bin/bash
+
+f_to_c() {
+	fah=$(echo "" | dmenu -i -c -l 3 -p 'enter temp in fahrenheit')
+	cel=$(bc <<< "scale=2; ($fah - 32) * 5/9")
+	result="$fah°F is equal to $cel°C"
+	notify-send "$result"
+}
+
+c_to_f() {
+	cel=$(echo "" | dmenu -i -c -l 3 -p 'enter temp in celsius')
+	fah=$(bc <<< "scale=2; ($cel * 9/5) + 32")
+	result="$cel°C is equal to $fah°F"
+	notify-send "$result"
+}
+
+menu() {
+	cmd=$(printf "fahrenheit to celsius\\ncelsius to fahrenheit" | dmenu -i -c -l 10 -p "temperature conversion")
+	case "$cmd" in
+		*celsius) f_to_c ;;
+		*fahrenheit) c_to_f ;;
+		*) exit 0;;
+	esac
+}
+
+case "$1" in
+	*menu) menu ;;
+	*) exit;;
+esac
