@@ -1,0 +1,3 @@
+0 */3 * * * vdirsyncer sync
+
+0 0 * * * crontab -l > /home/kat/dotfiles/config/.crontab-laptop

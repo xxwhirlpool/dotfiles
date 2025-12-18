@@ -5,7 +5,15 @@
 # https://github.com/BreadOnPenguins/scripts/blob/master/screenshot_extra_features
 
 export DISPLAY=:0
-SHOTPATH="/media/kat/disk/Pictures/Screenshots"
+
+if [[ $(hostname) == "mariposa" ]]; then
+	SHOTPATH="/home/kat/Pictures/Screenshots"
+elif [[ $(hostname) == "kwangya" ]]; then
+	SHOTPATH="/media/kat/disk/Pictures/Screenshots"
+else
+	echo "fuck"
+fi
+
 COUNT=$(find $SHOTPATH -type f -printf x | wc -c | awk '{print $1+2}' | awk '{printf "%04d\n", $0}')
 FILE="$SHOTPATH/$COUNT.png"
 
