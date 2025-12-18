@@ -1,0 +1,16 @@
+# this file does nothing
+# it's just for my own reference
+# u can't script keybindings in LXQt :(
+
+ctrl+alt+0 == ~/.local/bin/recordscreen
+ctrl+alt+9 == ~/.local/bin/dict
+ctrl+alt+e == ~/.local/bin/shmoji dmenu
+ctrl+alt+p == ~/.local/bin/passmenu
+
+ctrl+win+t == ~/.local/bin/tempmenu menu
+
+ctrl+prntscrn == ~/.local/bin/screenshotpick(-laptop)
+
+ctrl+shift+alt+e == ~/.local/bin/kaomoji menu
+
+printscrn == ~/.local/bin/screenshot(-laptop)

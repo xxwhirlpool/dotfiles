@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+
+calc() {
+	input=$(echo "" | dmenu -i -c -l 3 -p "calculator")
+	calc=$(qalc "$input" | sed 's/^.*\(=\|≈\) //')
+	notify-send "$calc" -t 3000
+}
+
+calc
