@@ -2,12 +2,12 @@
 
 kr() {
 	fnpick=$(gum input --placeholder "file name")
-	unzip -O CP932 $fnpick
+	unzip -O CP932 "$fnpick"
 }
 
 jp() {
 	fnpick=$(gum input --placeholder "file name")
-	unzip -O CP932 $fnpick
+	unzip -O CP932 "$fnpick"
 }
 
 choice() {
