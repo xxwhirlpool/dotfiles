@@ -6,11 +6,13 @@ ctrl+alt+0 == ~/.local/bin/recordscreen
 ctrl+alt+9 == ~/.local/bin/dict
 ctrl+alt+e == ~/.local/bin/shmoji dmenu
 ctrl+alt+p == ~/.local/bin/passmenu
+ctrl+alt+[ == ~/.local/bin/pick
 
 ctrl+win+t == ~/.local/bin/tempmenu menu
+ctrl+win+
 
-ctrl+prntscrn == ~/.local/bin/screenshotpick(-laptop)
+ctrl+prntscrn == ~/.local/bin/screenshotpick
 
 ctrl+shift+alt+e == ~/.local/bin/kaomoji menu
 
-printscrn == ~/.local/bin/screenshot(-laptop)
+printscrn == ~/.local/bin/screenshot

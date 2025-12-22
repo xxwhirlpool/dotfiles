@@ -123,7 +123,6 @@ fi
 # general
 alias nano=micro
 alias sudo="sudo TERMINFO=\"$TERMINFO\" "
-alias pick='pastel pick'
 alias fd='fdfind'
 alias neofetch="hyfetch"
 alias fastfetch="hyfetch"
@@ -150,6 +149,9 @@ alias sun="daylight --short --timezone='America/New_York' | lolcat"
 # git
 alias gitall="git remote | xargs -L1 git push --all"
 alias gyolo="git add . && git commit -m 'yolo'"
+alias gitd="git diff --staged"
+alias gdiff="gitd"
+alias gits="git status"
 alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-astro/src/utils && node git-changelog.js"
 
 # vpn split tunnel aliases based on a small script @ ~/.local/bin/mvpn
@@ -214,7 +216,7 @@ cdmess() {
 # insane sysadmin website woman adventures
 portfree() {
 	while
-		port=$(shuf -n 1 -i 49152-65535)
+		port=$(shuf -n 1 -i 1024-65535)
 		netstat -atun | grep -q "$port"
 	do
 		continue

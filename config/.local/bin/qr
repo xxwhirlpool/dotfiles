@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+	echo "Usage: qr [string]"
+	exit 1
+fi
+
+TMPFILE="/tmp/$(openssl rand -hex 8)_qr.png"
+STRQR="$1"
+
+echo "$STRQR" | qrencode -s 10 -o "$TMPFILE" && kitty +kitten icat "$TMPFILE"
