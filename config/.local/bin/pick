@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-pick=$(xcolor | xclip -sel clipboard)
-choice=$(xclip -sel clipboard -o)
+pick=$(xcolor)
 
-notify-send "color picker" "$choice was copied to clipboard"
+notify-send "color picker" "$pick was copied to clipboard" && echo -n "$pick" | xclip -sel clipboard
