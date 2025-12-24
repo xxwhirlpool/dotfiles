@@ -6,4 +6,4 @@ HTML="./md2html.html"
 
 CSS="./md2html.css"
 
-pandoc --standalone "$FILE.md" --template=$HTML --no-highlight -o "$FILE.html"
+pandoc --standalone "$FILE.md" --template=$HTML --no-highlight --wrap=none -o "$FILE.html"
