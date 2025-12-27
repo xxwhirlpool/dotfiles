@@ -33,3 +33,4 @@ config/.config/micro/plug/
 config/.local/bin/pylsp
 config/.local/bin/kaomoji.sh
 config/.local/bin/quote
+config/.local/bin/quoterandom
