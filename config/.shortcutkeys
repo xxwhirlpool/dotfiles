@@ -9,6 +9,7 @@ ctrl+alt+p == ~/.local/bin/passmenu
 ctrl+alt+[ == ~/.local/bin/pick
 
 ctrl+win+t == ~/.local/bin/tempmenu menu
+ctrl+win+= == ~/.local/bin/mathcalc
 
 ctrl+prntscrn == ~/.local/bin/screenshotpick
 

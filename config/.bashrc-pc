@@ -123,7 +123,7 @@ fi
 # general
 alias nano=micro
 alias sudo="sudo TERMINFO=\"$TERMINFO\" "
-alias fd='fdfind'
+alias fd="fdfind"
 alias neofetch="hyfetch"
 alias fastfetch="hyfetch"
 alias bat="batcat"
@@ -134,6 +134,9 @@ alias icat="kitty +kitten icat"
 alias ps="ps auxww"
 alias dd="ask dd"
 alias copy="xclip -sel clipboard"
+alias freeze="freeze -c user $1"
+alias glow="glow -p $1"
+alias qrcode="qrencode -t ansiutf8 $1"
 
 # lazy ass way for me to get my idol mp3s from youtube
 # usage: ytmp3 url
