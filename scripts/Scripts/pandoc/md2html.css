@@ -83,7 +83,12 @@ a:hover {
 
 img {
 	max-width: 100%;
+	height: auto;
 	display: block;
+	vertical-align: middle;
+
+	/* for alt text */
+	font-style: italic;
 }
 
 svg {
@@ -326,4 +331,17 @@ blockquote {
 
 .e-content :is(h2 + *, h3 + *, h4 + *) {
 	--flow-space: 1rem
+}
+
+details {
+	margin-block: 1rem 0;
+}
+
+summary {
+	cursor: pointer;
+}
+
+summary::marker {
+	content: "\2765  " / "heart";
+	color: var(--accent-color);
 }
