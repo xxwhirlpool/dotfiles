@@ -2,4 +2,10 @@
 
 PICPATH="/home/kat/Pictures/Camera/webcam"
 
+# turn on webcam for a bit so the brightness isn't fucked
+echo "starting camera, wait 5s"
+timeout 5s v4l2-ctl --silent -d /dev/video0 -d0 --stream-mmap
+
+# take the pic
+echo "taking the pic!"
 ffmpeg -f video4linux2 -i /dev/video0 -vframes 5 -video_size 1920x1080 "$PICPATH/webcam_pic_$(today time)_%3d.jpeg" -hide_banner -loglevel error
