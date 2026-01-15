@@ -12,5 +12,8 @@
 	gpgsign = true
 [core]
 	pager = "batcat --paging=always"
+	autocrlf = true
 [rerere]
 	enabled = true
+[pull]
+	ff = only
