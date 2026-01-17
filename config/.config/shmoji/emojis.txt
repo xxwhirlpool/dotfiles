@@ -1900,7 +1900,7 @@
 🤳🏽 selfie: medium skin tone
 🤳🏾 selfie: medium-dark skin tone
 🤳🏿 selfie: dark skin tone
-💪 flexed biceps
+💪 flexed biceps muscle arm
 💪🏻 flexed biceps: light skin tone
 💪🏼 flexed biceps: medium-light skin tone
 💪🏽 flexed biceps: medium skin tone
@@ -3570,3 +3570,4 @@
 ™ trademark tm
 🫩 wtf
 💽 minidisc
+🫶 heart hands
