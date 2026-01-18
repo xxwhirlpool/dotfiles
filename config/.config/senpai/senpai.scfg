@@ -3,3 +3,7 @@ nickname "kat"
 password-cmd pass "config/senpai"
 on-highlight-beep true
 on-highlight-path "/home/kat/.config/senpai/highlight"
+colors {
+	nicks extended
+	nicks self purple
+}
