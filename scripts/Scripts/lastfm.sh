@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# get last.fm API key
-if [ -f ~/.privatevars ]; then                                                                               
-  . ~/.privatevars                                                                                         
-fi
-
+apikey=$(pass api/lastfm)
 user="springpool"
-URL="https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=$user&api_key=$LASTFM_APIKEY&format=json&limit=1"
+
+URL="https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=$user&api_key=$apikey&format=json&limit=1"
 
 artist=$(curl -s ${URL} | jq -r '.recenttracks.track[0].artist."#text"')
 album=$(curl -s ${URL} | jq -r '.recenttracks.track[0].album."#text"')

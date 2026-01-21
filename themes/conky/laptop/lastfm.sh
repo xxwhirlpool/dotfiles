@@ -1,6 +1,9 @@
 #!/bin/bash
 
-URL="https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${API_KEY}&format=json&limit=1"
+USER="springpool"
+API_KEY=$(pass api/lastfm)
+
+URL="https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=$USER&api_key=$API_KEY&format=json&limit=1"
 
 artist=$(curl -s ${URL} | jq -r '.recenttracks.track[0].artist."#text"')
 track=$(curl -s ${URL} | jq -r '.recenttracks.track[0].name')
