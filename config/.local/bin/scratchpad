@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#
+# open a temp file as a scratchpad
+
+NOCOLOR="\033[0m"
+GREEN="\033[38;5;121m"
+
+file="$(mktemp --suffix _scratchpad)"
+
+/usr/bin/micro "$file"
+
+echo -e "${GREEN}FILEPATH:${NOCOLOR}\n"
+realpath "$file" | lolcat -p 1.5
