@@ -1,0 +1,8 @@
+é latin small letter e with acute (U+00E9) [rosé]
+É latin capital letter E with acute (U+00C9) [ROSÉ]
+ñ latin small letter n with tilde (U+00F1) [mañana]
+Ñ latin capital letter N with tilde (U+00D1) [MAÑANA]
+— em dash (U+2014)
+♡ white heart suit (U+2661)
+♥ black heart suit (U+2665)
+❥ rotated heavy black heart bullet (U+2765)
