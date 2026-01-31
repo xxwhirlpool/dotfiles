@@ -144,9 +144,9 @@ alias ffmpeg="ffmpeg -hide_banner"
 alias ytmp3="yt-dlp -f ba -x --audio-format mp3"
  
 # weather stuff
-alias wttr="curl https://wttr.in/New+York?F0ASu"
+alias wttr="curl https://wttr.in/nyc?F0ASu"
 alias weather=wttr
-alias wttrlg="curl https://wttr.in/New+York?F1uq"
+alias wttrlg="curl https://wttr.in/nyc?F1uq"
 alias weatherlg=wttrlg
 alias sun="daylight --short --timezone='America/New_York' | lolcat"
 

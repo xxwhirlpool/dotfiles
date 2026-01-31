@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+splitvpn() {
+	for i in $(pgrep librewolf); do mullvad split-tunnel add $i; done
+	for i in $(pgrep Discord); do mullvad split-tunnel add $i; done
+	for i in $(pgrep obsidian); do mullvad split-tunnel add $i; done
+	mullvad split-tunnel add $(pgrep strawberry)
+	mullvad split-tunnel add $(pgrep senpai)
+}
+
+if [[ $(mullvad status | head -n1) == "Connected" ]]; then
+	splitvpn > /dev/null
+else
+	mullvad connect && splitvpn
+fi

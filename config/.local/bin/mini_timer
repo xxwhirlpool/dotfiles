@@ -11,6 +11,5 @@ if [[ ! "$1" =~ "m" ]]; then
 else
 	time="$1"
 	echo -e "$time: 🌈✩₊˚.⋆⋆⁺₊✧🦋"  | lolcat -p 0.2
-	timer "$time"
-	notif
+	timer "$time" && notif || exit 1
 fi
