@@ -1,15 +1,35 @@
 #!/usr/bin/env bash
 
+arrayprg=(
+	"librewolf"
+	"Discord"
+	"obsidian"
+	"strawberry"
+	"senpai"
+)
+
+cmdrun() {
+	for cmdspl in "${arrayprg[@]}"; do
+		pgrep "$cmdspl"
+	done
+}
+
+cmdnotrun() {
+	for cmdspl in "${arrayprg[@]}"; do
+		if [[ $(pgrep "$cmdspl") == "" ]]; then
+			echo "$cmdspl not running; not excluded"
+		fi
+	done
+}
+
 splitvpn() {
-	for i in $(pgrep librewolf); do mullvad split-tunnel add $i; done
-	for i in $(pgrep Discord); do mullvad split-tunnel add $i; done
-	for i in $(pgrep obsidian); do mullvad split-tunnel add $i; done
-	mullvad split-tunnel add $(pgrep strawberry)
-	mullvad split-tunnel add $(pgrep senpai)
+	for i in $(cmdrun); do mullvad split-tunnel add $i; done > /dev/null
+	cmdnotrun
 }
 
 if [[ $(mullvad status | head -n1) == "Connected" ]]; then
-	splitvpn > /dev/null
+	splitvpn
 else
+	echo "connecting to VPN"
 	mullvad connect && splitvpn
 fi

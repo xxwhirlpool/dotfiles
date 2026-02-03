@@ -138,6 +138,7 @@ alias freeze="freeze -c user $1"
 alias glow="glow -p $1"
 alias qrcode="qrencode -t ansiutf8 $1"
 alias ffmpeg="ffmpeg -hide_banner"
+alias open="xdg-open &> /dev/null"
 
 # lazy ass way for me to get my idol mp3s from youtube
 # usage: ytmp3 url
