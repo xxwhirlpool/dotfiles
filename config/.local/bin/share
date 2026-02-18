@@ -7,7 +7,7 @@ if [ $# -eq 0 ]; then
 	exit 1
 fi
 
-FN_TEMP=$(uuidgen)_$(basename "$1")
+FN_TEMP=$(uuidgen)_$(basename "${1// /_}")
 
 rsync -avzqp --chmod=664 "$1" mac:/var/www/stash/pics/dump/"$FN_TEMP" || exit 1
 
