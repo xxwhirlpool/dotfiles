@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#
+# lazy ass way to update discord
+
+DL_FOLDER="/home/kat/Downloads/Installers"
+DISCORD_DL_URL="https://discord.com/api/download/stable?platform=linux&format=deb"
+DEB_FILE="new_discord_$(today time).deb"
+DEB_FOL="$DL_FOLDER/$DEB_FILE"
+
+wget -O "$DEB_FOL" "$DISCORD_DL_URL"
+sudo dpkg -i "$DEB_FOL"
+rm "$DEB_FOL"
