@@ -1,11 +1,11 @@
 #!/bin/bash
 
 cbr2cbz() {
-	for f in *.cbr; do unar -d "$f"; done
+	for f in *.cbr; do unar -d "$f" || break; done
 }
 
 dir2cbz() {
-	for i in */; do zip -r "${i%/}.cbz" "$i"; done
+	for i in */; do zip -r "${i%/}.cbz" "$i" || break; done
 }
 
 choice() {

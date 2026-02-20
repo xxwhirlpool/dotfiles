@@ -1,15 +1,15 @@
 #!/bin/bash
 
 avi2mkv() {
-	for f in *.avi; do ffmpeg -fflags +genpts -i "$f" -c:v copy -c:a copy -c:s copy "${f%.*} AVI2MKV.mkv"; done
+	for f in *.avi; do ffmpeg -fflags +genpts -i "$f" -c:v copy -c:a copy -c:s copy "${f%.*} AVI2MKV.mkv" || break; done
 }
 
 any2hevc() {
-	for f in *.mkv; do ffmpeg -hwaccel cuda -hwaccel_output_format cuda -i "$f" -c:v hevc_nvenc -qmin 24 -qmax 24 -vtag hvc1 -profile main -preset slow -rc vbr_hq -c:a copy -c:s copy -map 0 "${f%.*} HEVC.mkv"; done
+	for f in *.mkv; do ffmpeg -hwaccel cuda -hwaccel_output_format cuda -i "$f" -c:v hevc_nvenc -qmin 24 -qmax 24 -vtag hvc1 -profile main -preset slow -rc vbr_hq -c:a copy -c:s copy -map 0 "${f%.*} HEVC.mkv" || break; done
 }
 
 vid2frames() {
-	for f in *.mp4; do ffmpeg -i "$f" '%04d.png'; done
+	for f in *.mp4; do ffmpeg -i "$f" '%04d.png' || break; done
 }
 
 choice() {
