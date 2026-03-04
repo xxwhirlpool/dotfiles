@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if ! test -x "$(command -v exiftool)"; then
+	echo "missing required dependency: exiftool"
+	exit 1
+fi
+
+if [ "$1" == "" ]; then
+	echo "please specify an image path"
+	exit 1
+else
+	exiftool -all:all= -tagsfromfile @ -exif:Orientation "$1"
+fi
