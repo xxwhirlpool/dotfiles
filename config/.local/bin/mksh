@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+	echo "Usage: mksh [--bin] [FILENAME]"
+	echo "       --bin puts it in PATH"
+	echo "       otherwise default to pwd"
+	exit 1
+fi
+
+if [[ "$1" == "--bin" ]]; then
+	echo "#!/usr/bin/env bash" > "$2"
+	chmod u+x "$2"
+	mv "$2" "/home/kat/dotfiles/config/.local/bin"
+	micro "$2"
+elif [[ "$!" != "--bin" ]]; then
+	echo "#!/usr/bin/env bash" > "$1"
+	chmod u+x "$1"
+	micro "$1"
+fi
