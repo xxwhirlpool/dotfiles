@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+URL="$1"
+
+if [ $# -eq 0 ]; then
+	echo "Usage: ytbest [URL]"
+	exit 1
+fi
+
+# format:
+# best audio + best video, excluding AI upscales
+yt-dlp -f "ba/best[format_id!*=-sr]+bv*[format_id!*=-sr]" "$URL"
