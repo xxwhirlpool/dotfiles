@@ -1,3 +1,4 @@
+#!/bin/bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -122,7 +123,6 @@ fi
 
 # general
 alias nano=micro
-alias sudo="sudo TERMINFO=\"$TERMINFO\" "
 alias fd="fdfind"
 alias neofetch="hyfetch"
 alias fastfetch="hyfetch"
@@ -133,10 +133,9 @@ alias rced="micro ~/.bashrc && source ~/.bashrc"
 alias icat="kitty +kitten icat"
 alias ps="ps auxww"
 alias dd="ask dd"
-alias copy="xclip -sel clipboard"
-alias freeze="freeze -c user $1"
-alias glow="glow -p $1"
-alias qrcode="qrencode -t ansiutf8 $1"
+alias freeze="freeze -c user"
+alias glow="glow -p"
+alias qrcode="qrencode -t ansiutf8"
 alias ffmpeg="ffmpeg -hide_banner"
 alias open="xdg-open &> /dev/null"
 
@@ -193,10 +192,6 @@ export FZF_DEFAULT_OPTS=" \
 export PATH="$PATH:/home/kat/dotfiles/config/.local/bin"
 export PATH=$PATH:/usr/local/go/bin
 
-if [ -f ~/.privatevars ]; then                                                                               
-  . ~/.privatevars                                                                                         
-fi
-
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -214,7 +209,7 @@ cdmess() {
 	# https://blog.larah.me/mess-directory/
     today_tmpdir="${TMPDIR-/tmp}/${USER}_mess/$(date +%F)"
     mkdir -p "$today_tmpdir"
-    cd "$(mktemp -d -p "${today_tmpdir}" XXXX)"
+    cd "$(mktemp -d -p "${today_tmpdir}" XXXX)" || exit 1
 }
  
 # get a random free port. this is useful for my
@@ -240,7 +235,7 @@ whatip() {
 # password generator. takes input for password length by number
 passgen() {
 	PASSLENGTH=$(gum input --placeholder "type a number")
-	date +%s | sha256sum | base64 | head -c $PASSLENGTH ; echo
+	date +%s | sha256sum | base64 | head -c "$PASSLENGTH"; echo
 }
 
 # display random ASCII art from
@@ -250,8 +245,8 @@ playart() {
 	ARTDIR="/home/kat/Documents/Code/Git/-mine/dotfiles/config/.local/share/arttime/textart"
 	ARTSHUF=$(find "$ARTDIR" -type f | shuf -n1)
 
-	for art in "$ARTSHUF"; do
-		arttime --nolearn -a ${art} --ac 5
+	for art in $ARTSHUF; do
+		arttime --nolearn -a "${art}" --ac 5
 	done
 }
 
@@ -265,7 +260,7 @@ notif() {
 
 # make & cd into a folder
 mkcd() {
-  mkdir -p "$@" && cd "$_";
+  mkdir -p "$@" && cd "$_" || exit 1;
 }
 
 ######################################
