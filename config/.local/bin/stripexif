@@ -5,8 +5,8 @@ if ! test -x "$(command -v exiftool)"; then
 	exit 1
 fi
 
-if [ "$1" == "" ]; then
-	echo "please specify an image path"
+if [ $# -eq 0 ]; then
+	echo "Usage: stripexif [FILENAME]"
 	exit 1
 else
 	exiftool -all:all= -tagsfromfile @ -exif:Orientation "$1"

@@ -7,12 +7,14 @@ if [ $# -eq 0 ]; then
 	exit 1
 fi
 
+LCLBIN_PATH="/home/kat/dotfiles/config/.local/bin"
+
 if [[ "$1" == "--bin" ]]; then
 	echo "#!/usr/bin/env bash" > "$2"
 	chmod u+x "$2"
-	mv "$2" "/home/kat/dotfiles/config/.local/bin"
-	micro "$2"
-elif [[ "$!" != "--bin" ]]; then
+	mv "$2" "$LCLBIN_PATH"
+	micro "$LCLBIN_PATH/$2"
+elif [[ "$1" != "--bin" ]]; then
 	echo "#!/usr/bin/env bash" > "$1"
 	chmod u+x "$1"
 	micro "$1"

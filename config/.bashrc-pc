@@ -138,10 +138,6 @@ alias glow="glow -p"
 alias qrcode="qrencode -t ansiutf8"
 alias ffmpeg="ffmpeg -hide_banner"
 alias open="xdg-open &> /dev/null"
-
-# lazy ass way for me to get my idol mp3s from youtube
-# usage: ytmp3 url
-alias ytmp3="yt-dlp -f ba -x --audio-format mp3"
  
 # weather stuff
 alias wttr="curl https://wttr.in/nyc?F0ASu"

@@ -14,4 +14,5 @@ if [ $# -eq 0 ]; then
 	exit 1
 fi
 
-yt-dlp -f "ba+bv*[height<=1080p]" -o "$FILE_OUT_NAME" "$URL" --merge-output-format mp4
+# best audio + best video under 1080p (excl. AI upscale) && incl. file extension in output
+yt-dlp -f "ba+bv*[height<=1080p][format_id!*=-sr]" -o "$FILE_OUT_NAME.%(ext)s" "$URL" --merge-output-format mp4
