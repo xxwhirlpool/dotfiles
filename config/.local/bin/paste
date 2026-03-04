@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#
+# inspired by evan hahn:
+# https://github.com/EvanHahn/dotfiles/blob/main/home/bin/bin/pasta
+
+xclip -sel clipboard -o

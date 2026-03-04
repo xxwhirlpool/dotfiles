@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+# inspired by evan hahn:
+# https://github.com/EvanHahn/dotfiles/blob/main/home/bin/bin/copy
+
+# perl one-liner gets rid of newlines
+perl -pe "chomp if eof" | xclip -sel clipboard
