@@ -12,12 +12,17 @@ vid2frames() {
 	for f in *.mp4; do ffmpeg -i "$f" '%04d.png' || break; done
 }
 
+vidsubs() {
+	for f in *.mkv; do mkvmerge -o "${f%.*} SUB.mkv" "$f" --language 0:eng "${f%.*}.srt"; done
+}
+
 choice() {
-	choose=$(gum choose "avi2mkv" "any2hevc" "vid2frames")
+	choose=$(gum choose "avi2mkv" "any2hevc" "vid2frames" "vidsubs")
 	case "$choose" in
 		*avi2mkv) avi2mkv ;;
 		*any2hevc) any2hevc ;;
 		*vid2frames) vid2frames ;;
+		*vidsubs) vidsubs ;;
 		*) exit;;
 	esac
 }
