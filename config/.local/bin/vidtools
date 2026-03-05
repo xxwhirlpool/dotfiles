@@ -13,7 +13,7 @@ vid2frames() {
 }
 
 vidsubs() {
-	for f in *.mkv; do mkvmerge -o "${f%.*} SUB.mkv" "$f" --language 0:eng "${f%.*}.srt"; done
+	for f in *.mkv; do mkvmerge -o "${f%.*} SUB.mkv" "$f" --language 0:eng "${f%.*}.srt" || break; done
 }
 
 choice() {

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#
+# blatantly copied from evan hahn:
+# https://github.com/EvanHahn/dotfiles/blob/main/home/bin/bin/catbin
+
+if [[ $# -eq 0 ]]; then
+	echo "Usage: catbin [FILENAME]"
+	exit 1
+fi
+
+if [[ ! "$(command -v batcat)" ]]; then
+	cat_cmd="cat"
+else
+	cat_cmd="batcat"
+fi
+
+"$cat_cmd" "$(command -v "$1")"
