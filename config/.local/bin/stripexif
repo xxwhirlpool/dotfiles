@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-if ! test -x "$(command -v exiftool)"; then
+if [[ ! "$(command -v exiftool)" ]]; then
 	echo "missing required dependency: exiftool"
 	exit 1
 fi
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
 	echo "Usage: stripexif [FILENAME]"
 	exit 1
 else

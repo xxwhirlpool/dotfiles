@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# borrowed from some AI slop:
+# https://gist.github.com/sanskar10100/fa2eb78bcf431cec28dde509dd797288
+
+device_name=$(pactl list cards | grep -B 20 "device.form_factor = \"headset\"" | grep "Name" | awk '{print $2}')
+
+goodaudio() {
+	pactl set-card-profile "$device_name" a2dp-sink-sbc_xq
+	echo "switched to SBC-XQ"
+}
+
+micaudio() {
+	pactl set-card-profile "$device_name" headset-head-unit-msbc
+	echo "switched to mSBC"
+}
+
+choice() {
+	choose=$(gum choose "listen" "mic")
+	case "$choose" in
+		*listen) goodaudio ;;
+		*mic) micaudio ;;
+		*) exit 1;;
+	esac
+}
+
+choice
