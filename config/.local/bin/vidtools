@@ -16,6 +16,12 @@ vidsubs() {
 	for f in *.mkv; do mkvmerge -o "${f%.*} SUB.mkv" "$f" --language 0:eng "${f%.*}.srt" || break; done
 }
 
+vidhash() {
+	# borrowed from my buddy neckspike:
+	# https://pastebin.com/mg3CVDiU
+	for f in *.mkv; do hash=$(crc32 "$f") ext="${f##*.}" newname="${f%.*} [$hash]".$ext && gum confirm "are you sure you want to rename?" && mv "$f" "$newname" || echo "printing names instead" && echo "$newname"; done
+}
+
 choice() {
 	choose=$(gum choose "avi2mkv" "any2hevc" "vid2frames" "vidsubs")
 	case "$choose" in
