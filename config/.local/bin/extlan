@@ -1,12 +1,12 @@
 #!/bin/bash
 
 kr() {
-	fnpick=$(gum input --placeholder "file name")
+	fnpick=$(gum file)
 	unzip -O CP932 "$fnpick"
 }
 
 jp() {
-	fnpick=$(gum input --placeholder "file name")
+	fnpick=$(gum file)
 	unzip -O CP932 "$fnpick"
 }
 

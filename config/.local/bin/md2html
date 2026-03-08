@@ -30,7 +30,7 @@ fromstdin() {
 
 fromfile() {
 	# declare some vars
-	MDFILE=$(gum filter)
+	MDFILE=$(gum file)
 	HTMLFILE="${MDFILE%.*}.html"
 	HTMLFILE_FINAL="${HTMLFILE%.*}_final.html"
 	# the conversion!
