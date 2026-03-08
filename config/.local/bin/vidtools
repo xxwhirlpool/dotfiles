@@ -19,7 +19,13 @@ vidsubs() {
 vidhash() {
 	# borrowed from my buddy neckspike:
 	# https://pastebin.com/mg3CVDiU
-	for f in *.mkv; do hash=$(crc32 "$f") ext="${f##*.}" newname="${f%.*} [$hash]".$ext && gum confirm "are you sure you want to rename?" && mv "$f" "$newname" || echo "printing names instead" && echo "$newname"; done
+	for f in *.mkv; do
+		hash=$(crc32 "$f")
+		ext="${f##*.}"
+		newname="${f%.*} [$hash]".$ext
+
+		gum confirm "are you sure you want to rename?" --default=yes --timeout=3s && mv "$f" "$newname" && echo -e "new name:\n$newname"|| echo -e "printing names instead:\n$newname"
+	done
 }
 
 choice() {
