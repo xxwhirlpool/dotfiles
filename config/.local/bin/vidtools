@@ -24,7 +24,7 @@ vidhash() {
 		ext="${f##*.}"
 		newname="${f%.*} [$hash]".$ext
 
-		gum confirm "are you sure you want to rename?" --default=yes --timeout=2s && mv "$f" "$newname" && echo -e "new name:\n$newname"|| echo -e "printing names instead:\n$newname"
+		gum confirm "are you sure you want to rename?" --default=yes --timeout=2s && mv "$f" "$newname" && echo -e "new name:\n$newname" || echo -e "printing names instead:\n$newname"
 	done
 }
 

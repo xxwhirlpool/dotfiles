@@ -9,12 +9,12 @@ fi
 
 LCLBIN_PATH="/home/kat/dotfiles/config/.local/bin"
 
-if [[ "$1" == "--bin" ]]; then
+if [[ "$1" == "-b" ]]; then
 	echo "#!/usr/bin/env bash" > "$2"
 	chmod u+x "$2"
 	mv "$2" "$LCLBIN_PATH"
 	micro "$LCLBIN_PATH/$2"
-elif [[ "$1" != "--bin" ]]; then
+elif [[ "$1" != "-b" ]]; then
 	echo "#!/usr/bin/env bash" > "$1"
 	chmod u+x "$1"
 	micro "$1"

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+micro "$(command -v "$1")"
