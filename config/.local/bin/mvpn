@@ -2,4 +2,4 @@
 #
 # launch any program split-tunneled from mullvad VPN
 
-nohup mullvad-exclude $1 > /dev/null || echo "failed to launch $1" 2>&1 &
+nohup mullvad-exclude "$1" > /dev/null || echo "failed to launch $1" 2>&1 &

@@ -23,7 +23,7 @@ work() {
 	notif
 }
 
-break() {
+takebreak() {
 	val="break"
 	echo -e "⏱️ $val ‧₊˚🌈✩ ₊˚🫧⊹♡" | lolcat -p 0.2
 	timer "20m"
@@ -43,7 +43,7 @@ list() {
 	case "$pick" in
 		*quick) quick;;
 		*work) work;;
-		*break) break;;
+		*takebreak) takebreak;;
 		*custom) custom;;
 		*) exit;;
 	esac

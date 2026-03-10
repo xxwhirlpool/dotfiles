@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-battery=$(upower -i $(upower -e | grep 'BAT') | awk '/percentage/ {print $NF}' | sed 's/%//g')
+battery=$(upower -i "$(upower -e | grep 'BAT')" | awk '/percentage/ {print $NF}' | sed 's/%//g')
 batteryint=$((battery))
 
 if (( "$batteryint" < "20")); then

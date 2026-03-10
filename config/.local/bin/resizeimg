@@ -4,8 +4,8 @@ WORKDIR=$(pwd)
 
 TMPDIR="/home/kat/Pictures/Camera/tmp-resize"
 
-cd ${WORKDIR}
+cd "$WORKDIR" || exit 1
 
-for f in *.jpg; do mv $f ${TMPDIR}; done
+for f in *.jpg; do mv "$f" "$TMPDIR"; done
 
-cd ${TMPDIR} && magick -size 3000x4000 *.jpg -resize 40% "../${f%.*}-resized.jpg" && rm -rf *.jpg
+cd "$TMPDIR" && magick -size 3000x4000 ./*glob*.jpg -resize 40% "../${f%.*}-resized.jpg" && rm -rf ./*glob*.jpg
