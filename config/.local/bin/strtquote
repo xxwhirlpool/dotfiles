@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
-stdinpaste() {
-	gum write --header="paste smart quote shit here" | sed 's/[“”]/"/g; s/[‘’]/'"'"'/g' | batcat --paging=never
+default() {
+    sed 's/[“”]/"/g; s/[‘’]/'"'"'/g' | tee >(xclip -selection clipboard)
 }
 
-stdinpaste
+stdinpaste() {
+	gum write --header="paste smart quote shit here" | sed 's/[“”]/"/g; s/[‘’]/'"'"'/g' | batcat --paging=never | tee >(xclip -selection clipboard)
+}
+
+case "$1" in
+    "") default ;;
+    "-i") stdinpaste ;;
+esac
