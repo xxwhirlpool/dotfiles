@@ -152,6 +152,7 @@ alias gyolo="git add . && git commit -m 'yolo'"
 alias gitd="git diff --staged"
 alias gdiff="gitd"
 alias gits="git status"
+alias gita="git add ."
 alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-astro/src/utils && node git-changelog.js"
 
 # vpn split tunnel aliases based on a small script @ ~/.local/bin/mvpn

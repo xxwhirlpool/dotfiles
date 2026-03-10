@@ -6,4 +6,5 @@ on-highlight-path "/home/kat/.config/senpai/highlight"
 colors {
 	nicks self purple
 	unread purple
+	prompt green
 }

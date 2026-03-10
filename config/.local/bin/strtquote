@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+stdinpaste() {
+	gum write --header="paste smart quote shit here" | sed 's/[“”]/"/g; s/[‘’]/'"'"'/g' | batcat --paging=never
+}
+
+stdinpaste

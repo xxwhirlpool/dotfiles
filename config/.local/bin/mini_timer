@@ -1,7 +1,7 @@
 #!/bin/bash
 
 notif() {
-	notify-send "'$time' timer done!"
+	notify-send "$time timer done!"
 	aplay -q /usr/share/sounds/sound-icons/start
 	spd-say -t female3 -r +25 "timer done!"
 }
