@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # launch any program split-tunneled from mullvad VPN
 

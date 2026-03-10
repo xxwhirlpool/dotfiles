@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 frtn=$(fortune ~/.local/fortune/reminders)
 

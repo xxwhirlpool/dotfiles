@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # inspired by https://codeberg.org/hyperreal/bin/src/branch/main/amimullvad
 #
 # requires curl & charmbracelet/gum

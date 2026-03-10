@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 f_to_c() {
 	fah="$(gum input --placeholder 'enter temp in fahrenheit')"

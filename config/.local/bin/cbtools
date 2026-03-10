@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 cbr2cbz() {
 	for f in *.cbr; do unar -d "$f" || break; done
