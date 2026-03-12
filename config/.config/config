@@ -1,0 +1,2 @@
+--output '%(title)s.%(ext)s'
+--restrict-filenames
