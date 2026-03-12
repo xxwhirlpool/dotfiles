@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 unwraptxt() {
-	TXTFILE="/tmp/$(openssl rand -hex 5).txt"
+	TXTFILE=$(mktemp --suffix .txt)
 	TXTFILE_FIN="${TXTFILE%.*}_final.txt"
 	gum write --header="paste wrapped text below" > "$TXTFILE"
 	perl -00 -lpe 's/\n/ /g' < "$TXTFILE" > "$TXTFILE_FIN"
@@ -11,7 +11,7 @@ unwraptxt() {
 }
 
 wraptxt() {
-	WRTXTFILE="/tmp/$(openssl rand -hex 5).txt"
+	WRTXTFILE=$(mktemp --suffix .txt)
 	WRTXTFILE_FIN="${WRTXTFILE%.*}_final.txt"
 	gum write --header="paste text below" > "$WRTXTFILE"
 	FOLDNUM=$(gum input --placeholder "number of characters to wrap to")
@@ -22,7 +22,7 @@ wraptxt() {
 }
 
 wdcount() {
-	WCTXTFL="/tmp/$(openssl rand -hex 5).txt"
+	WCTXTFL=$(mktemp --suffix .txt)
 	gum write --header="paste text below" > "$WCTXTFL"
 	WCNUM=$(wc -w "$WCTXTFL" | awk '{print $1}')
 	echo -e "$(gum style --foreground=#f4b8e4 --border none 'total word count'): $WCNUM"

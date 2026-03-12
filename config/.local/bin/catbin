@@ -11,6 +11,7 @@ fi
 if [[ ! "$(command -v batcat)" ]]; then
 	cat_cmd="cat"
 else
+	export BAT_PAGER=""
 	cat_cmd="batcat"
 fi
 

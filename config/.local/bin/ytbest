@@ -8,5 +8,5 @@ if [ $# -eq 0 ]; then
 fi
 
 # format:
-# best audio + best video, excluding AI upscales
-yt-dlp -f "ba/best[format_id!*=-sr]+bv*[format_id!*=-sr]" "$URL"
+# best audio + best video
+yt-dlp -f "ba+bv" "$URL"

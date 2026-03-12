@@ -6,7 +6,7 @@
 #   - `lowerd -i`
 
 default() {
-	tr '[:upper:]' '[:lower:]' | tee >(xclip -selection clipboard)
+	tr '[:upper:]' '[:lower:]' | perl -pe "chomp if eof" | tee >(xclip -selection clipboard)
 }
 
 takearg() {
@@ -14,7 +14,7 @@ takearg() {
 }
 
 stdinpaste() {
-	gum write --header="paste text here" | tr '[:upper:]' '[:lower:]' | batcat --paging=never | tee >(xclip -selection clipboard)
+	gum write --header="paste text here" | tr '[:upper:]' '[:lower:]' | perl -pe "chomp if eof" | batcat --paging=never | tee >(xclip -selection clipboard)
 }
 
 case "$1" in

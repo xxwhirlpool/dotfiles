@@ -11,7 +11,7 @@
 # functions
 fromstdin() {
 	# declare some vars
-	MDFILE="/tmp/$(openssl rand -hex 5).md"
+	MDFILE=$(mktemp --suffix .md)
 	HTMLFILE="${MDFILE%.*}.html"
 	HTMLFILE_FINAL="${HTMLFILE%.*}_final.html"
 	# prompt user to paste markdown formatted text, then write it to a temp file

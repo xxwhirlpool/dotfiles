@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
-micro "$(command -v "$1")"
+cmd="$1"
+
+if [[ ! $(command -v "$cmd") ]]; then
+	echo "command does not exist"
+	exit 1
+fi
+
+micro "$(command -v "$cmd")"
