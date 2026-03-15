@@ -6,6 +6,7 @@ arrayprg=(
 	"obsidian"
 	"strawberry"
 	"senpai"
+	"SoulseekQt-2018"
 )
 
 cmdrun() {
@@ -23,7 +24,7 @@ cmdnotrun() {
 }
 
 splitvpn() {
-	for i in $(cmdrun); do mullvad split-tunnel add $i; done > /dev/null
+	for i in $(cmdrun); do mullvad split-tunnel add "$i"; done > /dev/null
 	cmdnotrun
 }
 
