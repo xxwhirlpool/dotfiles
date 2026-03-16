@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# view files with merge conflict markers
+
+if [[ ! "$(command -v batcat)" ]]; then
+	less_cmd="cat"
+else
+	less_cmd="batcat"
+fi
+
+git diff --staged --check | grep -i conflict | "$less_cmd"
