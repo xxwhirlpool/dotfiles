@@ -226,7 +226,7 @@ playart() {
 # after long commands
 notif() {
 	notify-send "done!"
-	paplay /usr/share/sounds/sound-icons/start
+	paplay /home/kat/dotfiles/misc/sounds/twinkle
 	spd-say -t female3 -r +25 "done!"
 }
 
