@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # current date in ISO format
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
 	echo -e "$(date '+%Y-%m-%d')"
 fi
 
 # if you also want time then supply `time` arg:
 # today time
-if [ "$1" == "time" ]; then
+if [[ "$1" == "time" ]]; then
 	echo -e "$(date '+%Y-%m-%d__%I_%M%p')"
 fi

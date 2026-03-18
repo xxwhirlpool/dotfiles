@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
 	echo "Usage: mksh [-b] [FILENAME]"
 	echo "       --bin puts it in PATH"
 	echo "       otherwise default to pwd"

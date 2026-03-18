@@ -20,5 +20,5 @@ password=$(printf '%s\n' "${password_files[@]}" | dmenu -i -c -l 10 "$@")
 if [[ $typeit -eq 0 ]]; then
 	pass show -c "$password" 2>/dev/null
 else
-	pass show "$password" | { IFS= read -r pass; printf %s "$pass"; } | $xdotool
+	pass show "$password" | { IFS= read -r pass; printf %s "$pass"; }
 fi

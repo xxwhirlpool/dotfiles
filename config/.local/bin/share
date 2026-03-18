@@ -2,13 +2,13 @@
 #
 # quickly share files
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
 	echo "Usage: share [FILENAME]"
 	exit 1
 fi
 
-FN_TEMP=$(uuidgen)_$(basename "${1// /_}")
+upload_filename=$(uuidgen)_$(basename "${1// /_}")
 
-rsync -avzqp --chmod=664 "$1" athena:/var/www/stash/pics/dump/"$FN_TEMP" || exit 1
+rsync -avzqp --chmod=664 "$1" athena:/var/www/stash/pics/dump/"$upload_filename" || exit 1
 
-echo "https://stash.4-walls.net/pics/dump/$FN_TEMP" | lolcat
+echo "https://stash.4-walls.net/pics/dump/$upload_filename" | lolcat

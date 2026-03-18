@@ -6,7 +6,7 @@
 
 word=$(echo " " | dmenu -i -c -l 10 -p "dictionary!")
 
-if [ -n "$word" ]; then
+if [[ -n "$word" ]]; then
 	response=$(curl -s --connect-timeout 5 --max-time 10 "https://api.dictionaryapi.dev/api/v2/entries/en_US/$word")
 	notif=$(echo "$response" | jq -r '[.[].meanings[] | {pos: .partOfSpeech, def: .definitions[].definition}] | .[:3].[] | "\n\(.pos). \(.def)"')
 

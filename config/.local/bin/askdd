@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 warning() {
-	if [[ "$*" =~ $(df . | awk {'print $1'} | tail -n1) ]]; then
+	if [[ "$*" =~ $(df . | awk "{print $1}" | tail -n1) ]]; then
 		if ! gum confirm "WARNING: you are executing this command on your current drive! be careful!" --default="false" --timeout="15s"; then
 			echo "nope"
 			exit 1
@@ -9,4 +9,4 @@ warning() {
 	fi
 }
 
-warning $@
+warning "$@"

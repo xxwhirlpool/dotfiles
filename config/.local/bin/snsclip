@@ -9,7 +9,7 @@
 URL="$1"
 FILE_OUT_NAME="$2"
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 || $# -ne 2 ]]; then
 	echo "Usage: snsclip [URL] [FILENAME]"
 	exit 1
 fi

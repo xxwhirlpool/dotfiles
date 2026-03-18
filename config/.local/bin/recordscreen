@@ -22,7 +22,7 @@ end() {
 
 cmd=$(printf "start\nend\n" | dmenu -i -c -l 2 -p "screen rec")
 
-if [ -z "$cmd" ]; then
+if [[ -z "$cmd" ]]; then
 	exit 0
 fi
 

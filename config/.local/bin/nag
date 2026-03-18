@@ -1,16 +1,28 @@
 #!/usr/bin/env bash
 
-if [ $# -eq 0 ]; then
+if [[ $# -eq 0 ]]; then
 	echo "Usage: nag [MINUTES]"
 	exit 1
 fi
 
-DURATION=$(( "$1" * 60 ))
-DURATION_M=$(( "$DURATION"/60%60 ))
+NUM="$1"
 
+if [[ ! $NUM =~ ^[0-9]+$ ]]; then
+	echo "duration cannot be a decimal"
+	exit 1
+fi
+
+DURATION=$(( "$NUM" * 60 ))
+DURATION_M=$(( "$DURATION"/60%60 ))
 MSG="it's been $DURATION_M minutes"
 
-notify-send "you'll get a reminder every $DURATION_M minutes"
+notif() {
+	notify-send "$MSG" && sleep 1 && spd-say -t female3 "$MSG"
+}
 
-sleep "$DURATION"
-notify-send "$MSG" && sleep 1 && spd-say -t female3 "$MSG"
+logic() {
+	notify-send "you'll get a reminder every $DURATION_M minutes"
+	sleep "$DURATION" && notif
+}
+
+logic
