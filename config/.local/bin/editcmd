@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
 cmd="$1"
+editfile=$(command -v "$cmd")
 
-if [[ ! $(command -v "$cmd") ]]; then
-	echo "command does not exist"
-	exit 1
-fi
-
-micro "$(command -v "$cmd")"
+[[ -f "$editfile" ]] && micro "$editfile" || echo "$1 does not exist"

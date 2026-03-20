@@ -3,7 +3,7 @@
 # view files with merge conflict markers
 
 if [[ ! "$(command -v batcat)" ]]; then
-	less_cmd="cat"
+	less_cmd="less"
 else
 	less_cmd="batcat"
 fi

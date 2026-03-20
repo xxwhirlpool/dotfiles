@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-stat -c '%a - %n' "$1"
+if [[ $# -eq 0 ]]; then
+	echo "Usage: perms [FILENAME]"
+	exit 1
+fi
+
+stat -c "%a - %n" "$1"

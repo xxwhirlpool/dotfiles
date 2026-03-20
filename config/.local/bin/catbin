@@ -15,4 +15,6 @@ else
 	cat_cmd="batcat"
 fi
 
-"$cat_cmd" "$(command -v "$1")"
+catfile=$(command -v "$1")
+
+[[ -f "$catfile" ]] && "$cat_cmd" "$catfile" || echo "$1 does not exist"

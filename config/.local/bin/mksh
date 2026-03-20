@@ -2,20 +2,24 @@
 
 if [[ $# -eq 0 ]]; then
 	echo "Usage: mksh [-b] [FILENAME]"
-	echo "       --bin puts it in PATH"
-	echo "       otherwise default to pwd"
+	echo "       -b puts it in PATH"
+	echo "       else default to pwd"
 	exit 1
 fi
 
-LCLBIN_PATH="/home/kat/dotfiles/config/.local/bin"
+cmd="$1"
+localpath="/home/kat/dotfiles/config/.local/bin"
 
-if [[ "$1" == "-b" ]]; then
-	echo "#!/usr/bin/env bash" > "$2"
-	chmod u+x "$2"
-	mv "$2" "$LCLBIN_PATH"
-	micro "$LCLBIN_PATH/$2"
-elif [[ "$1" != "-b" ]]; then
-	echo "#!/usr/bin/env bash" > "$1"
-	chmod u+x "$1"
-	micro "$1"
-fi
+default() {
+	echo -e "#!/usr/bin/env bash\n" > "$cmd"
+	chmod u+x "$cmd"
+}
+
+openfile() {
+	mv "$cmd" "$localpath" && micro "$localpath/$cmd"
+}
+
+case "$1" in
+	"-b") cmd="$2"; default "$@" && openfile "$@";;
+	*) default "$@" && micro "$cmd";;
+esac
