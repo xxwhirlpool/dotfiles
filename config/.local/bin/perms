@@ -5,4 +5,6 @@ if [[ $# -eq 0 ]]; then
 	exit 1
 fi
 
-stat -c "%a - %n" "$1"
+permfile="$1"
+
+stat -c "%a - %n" "$permfile"

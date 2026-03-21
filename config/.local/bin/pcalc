@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 ]]; then
+	echo "Usage: pcalc [PROBLEM]"
+	exit 1
+fi
+
+# printf cmd will escape spaces & add quotes
+# so 1+2 and 1 + 2 will have the same result
+# (i think)
+problem=$(printf "%q" "$@")
+
+# if $problem contains spaces, trim it down
+[[ "$problem" =~ [[:space:]] ]]; problem2="${problem//[[:space:]]/}"
+
+# if $problem contains an "x", change to "*"
+# sometimes i type "x" for multiplication
+# perl by default does something else with "x"
+[[ "$problem" =~ x ]]; problem2="${problem2//x/*}"
+
+# fixes some weird thing where a backslash
+# would fuck with the math
+[[ "$problem" =~ \/ ]]; problem2="${problem2//\\}"
+
+# -l adds a newline
+# -e executes $problem
+perl -le "print $problem2"
