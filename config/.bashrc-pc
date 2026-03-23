@@ -109,7 +109,9 @@ alias freeze="freeze -c user"
 alias glow="glow -p"
 alias qrcode="qrencode -t ansiutf8"
 alias ffmpeg="ffmpeg -hide_banner"
+alias open="xdg-open"
 alias c="clear"
+alias unfuckwifi="sudo systemctl restart NetworkManager"
  
 # weather stuff
 alias wttr="curl https://wttr.in/nyc?F0ASu"

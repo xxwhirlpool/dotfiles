@@ -6,7 +6,7 @@ avi2mkv() {
 
 any2hevc() {
 	shopt -s nullglob
-	for f in *.{mkv,mp4}; do ffmpeg -hwaccel cuda -hwaccel_output_format cuda -i "$f" -c:v hevc_nvenc -qmin 24 -qmax 24 -vtag hvc1 -profile main -preset slow -rc vbr_hq -c:a copy -c:s copy -map 0 "${f%.*} HEVC.mkv" || break; done
+	for f in *.{mkv,mp4,ts}; do ffmpeg -hwaccel cuda -hwaccel_output_format cuda -i "$f" -c:v hevc_nvenc -qmin 24 -qmax 24 -vtag hvc1 -profile main -preset slow -rc vbr_hq -c:a copy -c:s copy -map 0 "${f%.*} HEVC.mkv" || break; done
 }
 
 vid2frames() {

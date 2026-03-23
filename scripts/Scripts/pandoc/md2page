@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-FILE=$(gum input --placeholder "without an extension")
-
-HTML="./md2html.html"
-
-CSS="./md2html.css"
-
-pandoc --standalone "$FILE.md" --template=$HTML --no-highlight --wrap=none -o "$FILE.html"

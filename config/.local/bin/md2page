@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+FILE=$(gum file)
+HTML="$HOME/Scripts/pandoc/md2html.html"
+
+if [[ -f "$FILE" ]]; then
+	pandoc --standalone "$FILE" --template="$HTML" --no-highlight --wrap=none -o "${FILE%.*}.html"
+else
+	exit 1
+fi
