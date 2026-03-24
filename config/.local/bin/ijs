@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ $(command -v deno ) ]]; then
+	deno repl
+elif [[ $(command -v node) ]]; then
+	node
+else
+	echo "no JS runtime found :("
+	exit 1
+fi
