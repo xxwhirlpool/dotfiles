@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+filepick=$(gum file)
+
+logic() {
+	if [[ -f "$filepick" ]]; then
+		while read -r "ln"; do
+			if [[ ! "$ln" == "" ]]; then
+				echo "> $ln"
+			else
+				echo ""
+			fi
+
+		done < "$filepick"
+	else
+		echo "Usage: mdquote [SELECT FILE]"
+		exit 1
+	fi
+}
+
+logic | perl -pe "chomp if eof" | tee >(xclip -selection clipboard)
