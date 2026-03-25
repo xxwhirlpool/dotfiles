@@ -6,7 +6,7 @@
 #   - `upperd -i`
 
 default() {
-	tr '[:lower:]' '[:upper:]' | tr -d "\n" | tee >(xclip -selection clipboard)
+	tr '[:lower:]' '[:upper:]' | tr -d "\n" | tee >(xclip -selection clipboard) && echo -e "\n"
 }
 
 takearg() {
@@ -14,11 +14,11 @@ takearg() {
 }
 
 stdinpaste() {
-	gum write --header="paste text here" | tr '[:lower:]' '[:upper:]' | tr -d "\n" | batcat --paging=never | tee >(xclip -selection clipboard)
+	gum write --header="paste text here" | tr '[:lower:]' '[:upper:]' | tr -d "\n" | batcat --paging=never | tee >(xclip -selection clipboard) && echo -e "\n"
 }
 
 case "$1" in
 	"") default ;;
-	"-i") stdinpaste && echo -e "\n" ;;
-	*) takearg "$@" && echo -e "\n" ;;
+	"-i") stdinpaste ;;
+	*) takearg "$@" ;;
 esac
