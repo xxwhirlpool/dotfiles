@@ -20,5 +20,5 @@ stdinpaste() {
 case "$1" in
 	"") default ;;
 	"-i") stdinpaste && echo -e "\n" ;;
-	*) takearg "$@" ;;
+	*) takearg "$@" && echo -e "\n" ;;
 esac
