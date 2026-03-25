@@ -1,19 +1,20 @@
 #!/usr/bin/env bash
 
-filepick=$(gum file)
+tempfile=$(mktemp --suffix .md)
 
 logic() {
-	if [[ -f "$filepick" ]]; then
+	gum write --header "paste text here" > "$tempfile"
+	if [[ -f "$tempfile" ]]; then
 		while read -r "ln"; do
 			if [[ ! "$ln" == "" ]]; then
 				echo "> $ln"
 			else
 				echo ""
 			fi
-
-		done < "$filepick"
+		done < "$tempfile"
+		rm "$tempfile"
 	else
-		echo "Usage: mdquote [SELECT FILE]"
+		echo "Usage: mdquote [PASTE TEXT]"
 		exit 1
 	fi
 }
