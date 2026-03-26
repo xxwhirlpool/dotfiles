@@ -215,6 +215,17 @@ mkcd() {
   mkdir -p "$@" && cd "$_" || exit 1;
 }
 
+# shamelessly stolen from evan hahn:
+# https://evanhahn.com/scripts-i-wrote-that-i-use-all-the-time/#audio-and-video-and-pictures
+boop() {
+	local last="$?"
+	if [[ "$last" == "0" ]]; then
+		sfx chime
+	else
+		sfx bad
+	fi
+	eval "$(exit "$last")"
+}
 
 ######################################
 # misc

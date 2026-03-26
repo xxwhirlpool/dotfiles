@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+play_cmd="paplay"
+sfx_path="/home/kat/dotfiles/misc/sounds"
+
+tunes=(
+	"bad" # 1
+	"chime" # 2
+	"ding" # 3
+	"tada" # 4
+	"twinkle" # 5
+)
+
+for ((i=0, v=1; i < "${#tunes[@]}"; i++, v++ )); do
+	declare "sfx$v"="$sfx_path/${tunes[$i]}"
+done
+
+case "$1" in
+	"bad") "$play_cmd" "$sfx1";;
+	"chime") "$play_cmd" "$sfx2";;
+	"ding") "$play_cmd" "$sfx3";;
+	"tada") "$play_cmd" "$sfx4";;
+	"twinkle") "$play_cmd" "$sfx5";;
+esac
