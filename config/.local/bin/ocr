@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 0 || ! -f "$1" ]]; then
+	echo "Usage: ocr [IMAGE]"
+	exit 1
+fi
+
+if [[ ! $(command -v tesseract) ]]; then
+	echo "missing required dep: tesseract"
+	exit 1
+fi
+
+img="$1"
+
+tesseract --dpi 254 "$img" stdout
