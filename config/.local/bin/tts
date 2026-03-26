@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+readtxt=$(gum write --header "text to be read out loud")
+
+echo "$readtxt" | festival --tts
