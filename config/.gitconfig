@@ -8,6 +8,7 @@
 	format = ssh
 [commit]
 	gpgsign = true
+	verbose = true
 [tag]
 	gpgsign = true
 [core]
@@ -15,5 +16,15 @@
 	autocrlf = input
 [rerere]
 	enabled = true
+	autoUpdate = true
 [pull]
 	ff = only
+[push]
+	autoSetupRemote = true
+[maintenance]
+	auto = true
+	strategy = incremental
+[alias]
+    graph = log --all --graph --decorate --oneline
+[help]
+	autocorrect = prompt
