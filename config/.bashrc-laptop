@@ -236,3 +236,7 @@ eval "$(starship init bash)"
 eval "$(fzf --bash)"
 eval "$(batman --export-env)"
 . "/home/kat/.deno/env"
+
+. "$HOME/.local/share/../bin/env"
+eval "$(/home/kat/.cargo/bin/rv shell init bash)"
+eval "$(/home/kat/.cargo/bin/rv shell completions bash)"

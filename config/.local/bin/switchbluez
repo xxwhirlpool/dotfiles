@@ -6,12 +6,12 @@
 device_name=$(pactl list cards | grep -B 20 "device.form_factor = \"headset\"" | grep "Name" | awk '{print $2}')
 
 goodaudio() {
-	pactl set-card-profile "$device_name" a2dp-sink-sbc_xq
+	pactl set-card-profile "$device_name" a2dp-sink-sbc_xq || echo "failed to switch to SBC-XQ" && exit 1
 	echo "switched to SBC-XQ"
 }
 
 micaudio() {
-	pactl set-card-profile "$device_name" headset-head-unit-msbc
+	pactl set-card-profile "$device_name" headset-head-unit-msbc || echo "failed to switch to mSBC" && exit 1
 	echo "switched to mSBC"
 }
 

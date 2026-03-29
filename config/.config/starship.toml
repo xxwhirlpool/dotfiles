@@ -6,6 +6,12 @@ palette = "catppuccin_frappe"
 
 format = '$all$character$username$hostname$character$directory '
 
+# `rv` currently sets a permanent $RUBY_VERSION variable
+# so my shell always shows the ruby ver no matter the pwd
+# this just gets rid of the whole thing. whatever man
+[ruby]
+format = ""
+
 [character]
 success_symbol = '[❥](bold pink)'
 
