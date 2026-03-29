@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+help_msg() {
+	echo "Usage: keyback [OPTIONS]"
+	echo "Options: --pgp | --ssh | --sync"
+}
+
+if [[ $(hostname) == "mariposa" ]]; then # laptop
+	input_dir=".mariposa_key_backup"
+elif [[ $(hostname) == "kwangya" ]]; then # PC
+	input_dir=".kwangya_key_backup"
+fi
+
+target_dir="$HOME/$input_dir"
+
+make_target_dir() {
+	[[ ! -d "$target_dir" ]]; mkdir "$target_dir" || echo "directory already exists, continuing..."
+}
+
+backup_pgp_all() {
+	make_target_dir
+	gpg --export-secret-keys --armor --output "$target_dir"/gpg_all.asc
+}
+
+backup_ssh_all() {
+	make_target_dir
+	tar cvzf "$target_dir"/ssh_all.tar.gz "$HOME"/.ssh
+}
+
+sync_backups() {
+	rsync -avzp "$target_dir" athena:/home/kat/backups/keys || echo "sync failed" && exit 1
+}
+
+case "$1" in
+	"") help_msg;;
+	"--pgp") backup_pgp_all && sync_backups;;
+	"--ssh") backup_ssh_all && sync_backups;;
+	"--sync") sync_backups;;
+esac
