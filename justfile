@@ -8,5 +8,4 @@ pull:
   stow -v -t ~ "scripts" --adopt
 
 site:
-  git pull bytes main
   ./dots_gotm_site.sh
