@@ -1,9 +1,9 @@
 # my dotfiles
 
-[the dots](https://dots.girlonthemoon.xyz/)
-
 ![lesbian badge](https://pride-badges.pony.workers.dev/static/v1?label=lesbian&labelColor=%23555&stripeWidth=6&stripeColors=D52D00%2CEF7627%2CFF9A56%2CFFFFFF%2CD162A4%2CB55690%2CA30262)
 ![trans rights](https://pride-badges.pony.workers.dev/static/v1?label=trans%20rights&stripeWidth=6&stripeColors=5BCEFA,F5A9B8,FFFFFF,F5A9B8,5BCEFA)
+
+[the dots](https://dots.girlonthemoon.xyz/)
 
 ## info
 
