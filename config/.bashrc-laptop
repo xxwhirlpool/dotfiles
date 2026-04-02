@@ -101,6 +101,7 @@ alias c="clear"
 alias updupgr="sudo apt update && sudo apt upgrade"
 alias freeze="freeze -c user"
 alias glow="glow -p"
+alias unfuckwifi="sudo systemctl restart NetworkManager"
 
 # some cd bookmarks
 alias dotf="cd /home/kat/dotfiles"
@@ -159,6 +160,15 @@ export FZF_DEFAULT_OPTS=" \
 --color=fg:#C6D0F5,header:#E78284,info:#CA9EE6,pointer:#F2D5CF \
 --color=marker:#BABBF1,fg+:#C6D0F5,prompt:#CA9EE6,hl+:#E78284 \
 --color=border:#414559,label:#C6D0F5"
+
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'batcat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'"
 
 export LEDGER_FILE=~/.config/hledger/katmoney.journal
 

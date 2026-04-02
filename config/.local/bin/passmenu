@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-shopt -s nullglob globstar
+shopt -s nullglob globstar extglob
 
 typeit=0
-if [[ $1 == "--type" ]]; then
+if [[ "$1" == "--type" ]]; then
 	typeit=1
 	shift
 fi
@@ -15,10 +15,16 @@ password_files=( "${password_files[@]%.gpg}" )
 
 password=$(printf '%s\n' "${password_files[@]}" | dmenu -i -c -l 10 "$@")
 
-[[ -n $password ]] || exit
+[[ -n "$password" ]] || exit
 
-if [[ $typeit -eq 0 ]]; then
-	pass show -c "$password" 2>/dev/null
+if [[ "$typeit" -eq 0 ]]; then
+	# if you pick something in the "2fa" folder, generate a code
+	# else it's a normal password, copy it to clipboard
+	if [[ "${password_files[*]}" =~ 2fa && "$password" =~ 2fa ]]; then
+		pass otp "$password" | perl -pe "chomp if eof" | xclip -sel clipboard
+	else
+		pass show -c "$password" 2>/dev/null
+	fi
 else
 	pass show "$password" | { IFS= read -r pass; printf %s "$pass"; }
 fi
