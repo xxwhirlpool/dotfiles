@@ -15,7 +15,7 @@ vpnoff_tson() {
 
 choose=$(gum choose "tson_vpnoff" "tsoff_vpnon")
 case "$choose" in
-    "tson_vpnoff") vpnon_tsoff ;;
-    "tsoff_vpnon") vpnoff_tson ;;
+    "tson_vpnoff") vpnoff_tson ;;
+    "tsoff_vpnon") vpnon_tsoff ;;
     *) exit;;
 esac
