@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#
+# having some weird issues with split tunneling VPN + tailscale
+# this'll have to do for now :/
+
+vpnon_tsoff() {
+	mullvad connect
+	tailscale down
+}
+
+vpnoff_tson() {
+	mullvad disconnect
+	tailscale up
+}
+
+choose=$(gum choose "tson_vpnoff" "tsoff_vpnon")
+case "$choose" in
+    "tson_vpnoff") vpnon_tsoff ;;
+    "tsoff_vpnon") vpnoff_tson ;;
+    *) exit;;
+esac
