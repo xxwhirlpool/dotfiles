@@ -1,7 +1,4 @@
 #!/bin/bash
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
 ######################################
 # default stuff i'm scared to change
@@ -69,15 +66,7 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-
     alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# Alias definitions.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
 fi
 
 # enable programmable completion features
@@ -93,8 +82,7 @@ fi
 # aliases
 ######################################
 
-# general
-alias nano=micro
+# general/misc
 alias fd="fdfind"
 alias neofetch="hyfetch"
 alias fastfetch="hyfetch"
@@ -112,7 +100,9 @@ alias ffmpeg="ffmpeg -hide_banner"
 alias open="xdg-open"
 alias c="clear"
 alias unfuckwifi="sudo systemctl restart NetworkManager"
- 
+alias updupgr="sudo apt update && sudo apt upgrade"
+alias winek="wineserver -k"
+
 # weather stuff
 alias wttr="curl https://wttr.in/nyc?F0ASu"
 alias weather=wttr
@@ -132,7 +122,6 @@ alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-ast
 # dev
 alias irb="rv run irb"
 alias ipy="python3 -i"
-alias iphp="php -a"
 
 # vpn split tunnel aliases based on a small script @ ~/.local/bin/mvpn
 alias mftp="mvpn filezilla"
@@ -240,6 +229,13 @@ notif() {
 # make & cd into a folder
 mkcd() {
   mkdir -p "$@" && cd "$_" || exit 1;
+}
+
+# man by default, fall back to `help`
+# for shell functions
+# https://lobste.rs/s/fkr3ha/some_terminal_frustrations#c_70wike
+man() {
+	/usr/bin/man "$@" || help "$@"
 }
 
 ######################################
