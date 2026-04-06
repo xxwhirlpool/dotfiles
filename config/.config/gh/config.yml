@@ -1,9 +1,9 @@
 version: 1
-git_protocol: https
-editor:
+git_protocol: ssh
+editor: micro
 prompt: enabled
 prefer_editor_prompt: disabled
-pager:
+pager: batcat
 aliases:
     co: pr checkout
 http_unix_socket:
