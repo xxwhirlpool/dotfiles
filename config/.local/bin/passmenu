@@ -22,8 +22,10 @@ if [[ "$typeit" -eq 0 ]]; then
 	# else it's a normal password, copy it to clipboard
 	if [[ "${password_files[*]}" =~ 2fa && "$password" =~ 2fa ]]; then
 		pass otp "$password" | perl -pe "chomp if eof" | xclip -sel clipboard
+		notify-send "passmenu" "2fa code copied to clipboard"
 	else
 		pass show -c "$password" 2>/dev/null
+		notify-send "passmenu" "password copied to clipboard"
 	fi
 else
 	pass show "$password" | { IFS= read -r pass; printf %s "$pass"; }

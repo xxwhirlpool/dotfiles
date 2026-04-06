@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+#
+# inspired by evan hahn:
+# https://codeberg.org/EvanHahn/dotfiles/src/commit/f7a9d94ae2254cb7e5f67e6e5bdb74b6467f6dec/home/bin/bin/serveit
+
+usage_help() {
+	echo "Usage: serveit [-p] [-r | -y]"
+	echo "Options: -p (port, optional) | -r (ruby) | -y (python)"
+}
+
+if [[ $# -eq 0 ]]; then
+	usage_help
+fi
+
+port_default="6969"
+
+py_server() {
+	[[ "$(command -v python3)" ]]; python3 -m http.server "${port:-$port_default}" || echo "could not run python server"
+}
+
+rb_server() {
+	[[ "$(command -v ruby)" ]]; ruby -run -e httpd . -p "${port:-$port_default}" || echo "could not run ruby server"
+}
+
+while getopts "p:ryh" opt; do
+	case "$opt" in
+		p) port="$OPTARG" ;;
+		y) py_server ;;
+		r) rb_server ;;
+		h) usage_help ;;
+		*) echo "something went wrong" ;;
+	esac
+done
