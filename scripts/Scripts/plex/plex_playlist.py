@@ -10,7 +10,6 @@
 # this is such script kiddie shit idk python
 
 from plexapi.server import PlexServer
-from plexapi.playlist import Playlist
 from os import sys
 
 SERVER_URL = "http://192.168.1.219:32400"
@@ -18,12 +17,10 @@ TOKEN = sys.argv[1]
 
 plex = PlexServer(SERVER_URL, TOKEN)
 
-print("title, album, artist" + "\n")
-
 for list in plex.playlists(playlistType="audio"):
     listTitle = list.title
     items = list.items()
-    pl_file = open(listTitle, "w")
+    pl_file = open("playlists/" + listTitle + ".txt", "w")
     for i in items:
         title = i.title
         artist = i.originalTitle
