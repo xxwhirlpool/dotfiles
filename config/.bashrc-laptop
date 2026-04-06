@@ -238,6 +238,13 @@ boop() {
 	eval "$(exit "$last")"
 }
 
+# man by default, fall back to `help`
+# for shell functions
+# https://lobste.rs/s/fkr3ha/some_terminal_frustrations#c_70wike
+man() {
+	/usr/bin/man "$@" || help "$@" | less
+}
+
 ######################################
 # misc
 ######################################

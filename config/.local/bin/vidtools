@@ -26,6 +26,8 @@ vidhash() {
 		ext="${f##*.}"
 		newname="${f%.*} [$hash]".$ext
 
+		[[ "$hash" -eq 0 ]]; echo "couldn't generate CRC32 hash" && exit 1
+
 		gum confirm "are you sure you want to rename?" --default=yes --timeout=2s && mv "$f" "$newname" && echo -e "new name: $newname" || echo -e "no files renamed: $newname"
 	done
 }
