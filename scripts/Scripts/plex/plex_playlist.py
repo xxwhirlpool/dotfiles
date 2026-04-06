@@ -6,7 +6,7 @@
 # ]
 # ///
 
-# USAGE: plex_playlist.py [TOKEN IN QUOTES]
+# USAGE: plex_playlist.py [TOKEN]
 # this is such script kiddie shit idk python
 
 from plexapi.server import PlexServer
@@ -27,5 +27,7 @@ for list in plex.playlists(playlistType="audio"):
         albumArtist = i.grandparentTitle
         if artist == None:
             artist = albumArtist + " - "
+        else:
+            artist = i.originalTitle + " - "
         pl_file.write(artist + title + "\n")
     pl_file.close()
