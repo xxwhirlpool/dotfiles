@@ -34,6 +34,5 @@ config/.local/bin/pylsp
 config/.local/bin/kaomoji.sh
 config/.local/bin/quote
 config/.local/bin/quoterandom
-config/.config/plexclip/config.toml
 config/.local/bin/discord_timest
 scripts/Scripts/plex/playlists/*

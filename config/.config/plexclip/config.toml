@@ -1,0 +1,13 @@
+[auth]
+token_cmd = { cmd = "pass show api/plex" }
+
+[[servers]]
+name = "katflix"
+url = "http://192.168.1.219:32400"
+default = true
+
+[defaults]
+format = "mp4"
+resolution = "1280x720"
+bitrate = 8000  # kbps
+quality = 100    # 0-100

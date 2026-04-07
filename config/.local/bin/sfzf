@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+# https://kaeruct.github.io/posts/2024/10/10/ssh-config-hostnames/
+
+server=$(grep -E '^Host ' ~/.ssh/config | awk '{print $2}' | sort -n | fzf)
+
+[[ -n "$server" ]]; ssh "$server" || exit 1

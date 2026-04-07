@@ -1,3 +1,3 @@
-# /etc/ files
+# `/etc` files
 
-for files that go in `/etc/`
+for files that go in `/etc`
