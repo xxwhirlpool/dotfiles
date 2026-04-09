@@ -1,3 +1,15 @@
+set completion-ignore-case on
+
+# Treat hyphens and underscores as equivalent
+set completion-map-case on
+
+# display possible completions using different colors
+# to indicate their file types
+set colored-stats on
+
+# stuff from wizardzines:
+# https://wizardzines.com/comics/filename-tips-in-the-shell/
 set show-all-if-ambiguous on
 set menu-complete-display-prefix on
 TAB: menu-complete
+"\e[Z":menu-complete-backward
