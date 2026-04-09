@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+#
+# mixtapes from musicForProgramming.net
+# https://musicforprogramming.net
+
+# this is not all of the mixes cuz i'm lazy
+
+declare -A mixtapes=(
+    ["1"]="https://datashat.net/music_for_programming_1-datassette.mp3"
+    ["2"]="https://datashat.net/music_for_programming_2-sunjammer.mp3"
+    ["3"]="https://datashat.net/music_for_programming_3-datassette.mp3"
+    ["4"]="https://datashat.net/music_for_programming_4-com_truise.mp3"
+    ["5"]="https://datashat.net/music_for_programming_5-abe_mangger.mp3"
+    ["6"]="https://datashat.net/music_for_programming_6-gods_of_the_new_age.mp3"
+    ["7"]="https://datashat.net/music_for_programming_7-tahlhoff_garten_and_untitled.mp3"
+    ["8"]="https://datashat.net/music_for_programming_8-connectedness_locus.mp3"
+    ["9"]="https://datashat.net/music_for_programming_9-datassette.mp3"
+    ["10"]="https://datashat.net/music_for_programming_10-unity_gain_temple.mp3"
+    ["11"]="https://datashat.net/music_for_programming_11-miles_tilmann.mp3"
+    ["12"]="https://datashat.net/music_for_programming_12-forgotten_light.mp3"
+    ["13"]="https://datashat.net/music_for_programming_13-matt_whitehead.mp3"
+    ["14"]="https://datashat.net/music_for_programming_14-tahlhoff_garten_and_untitled.mp3"
+    ["15"]="https://datashat.net/music_for_programming_15-dan_adeyemi.mp3"
+    ["16"]="https://datashat.net/music_for_programming_16-silent_stelios.mp3"
+    ["17"]="https://datashat.net/music_for_programming_17-graphplan.mp3"
+    ["18"]="https://datashat.net/music_for_programming_18-konx_om_pax.mp3"
+    ["19"]="https://datashat.net/music_for_programming_19-hivemind.mp3"
+    ["20"]="https://datashat.net/music_for_programming_20-uberdog.mp3"
+)
+
+# little header text graphic to show before playback
+
+gum_echo() {
+    top=$(gum style --bold --foreground "#a6d189" --border none --width 50 --margin "1 0" --align center "musicForProgramming();")
+    bottom=$(gum style --foreground "#f4b8e4" --border none --width 50 --margin "1 0" --align center "$@")
+
+    joingum=$(gum join --vertical --align center "$top" "$bottom")
+    all=$(gum style --border-foreground "#99d1db" --border double --width 50 --padding "0 0" --align center "$joingum")
+
+    gum join --vertical "$all"
+}
+
+# run the script
+
+choice() {
+    choose=$(gum choose  --header "mixtapes" {1..20} --height 20)
+    case "$choose" in
+        1) gum_echo "datasette" && mpv "${mixtapes['1']}";;
+        2) gum_echo "sunjammer" && mpv "${mixtapes['2']}";;
+        3) gum_echo "datassette" && mpv "${mixtapes['3']}";;
+        4) gum_echo "com truise" && mpv "${mixtapes['4']}";;
+        5) gum_echo "abe mangger" && mpv "${mixtapes['5']}";;
+        6) gum_echo "gods of the new age" && mpv "${mixtapes['6']}";;
+        7) gum_echo "tahlhoff garten + untitled" && mpv "${mixtapes['7']}";;
+        8) gum_echo "connectedness locus" && mpv "${mixtapes['8']}";;
+        9) gum_echo "datassette" && mpv "${mixtapes['9']}";;
+        10) gum_echo "unity gain temple" && mpv "${mixtapes['10']}";;
+        11) gum_echo "miles tilmann" && mpv "${mixtapes['11']}";;
+        12) gum_echo "forgotten light" && mpv "${mixtapes['12']}";;
+        13) gum_echo "matt whitehead" && mpv "${mixtapes['13']}";;
+        14) gum_echo "tahlhoff garten + untitled" && mpv "${mixtapes['14']}";;
+        15) gum_echo "dan adeyemi" && mpv "${mixtapes['15']}";;
+        16) gum_echo "silent stelios" && mpv "${mixtapes['16']}";;
+        17) gum_echo "graphplan" && mpv "${mixtapes['17']}";;
+        18) gum_echo "konx om par" && mpv "${mixtapes['18']}";;
+        19) gum_echo "hivemind" && mpv "${mixtapes['19']}";;
+        20) gum_echo "uberdog" && mpv "${mixtapes['20']}";;
+    esac
+}
+
+choice
