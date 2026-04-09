@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+personal="obsidian://open?vault=personal" # personal
+writing="obsidian://open?vault=writing" # writing
+tech="obsidian://open?vault=tech" # tech
+
+menu() {
+	cmd=$(printf "personal\\nwriting\\ntech" | dmenu -i -c -l 10 -p "obsidian vaults")
+	case "$cmd" in
+		personal) xdg-open "$personal";;
+		writing) xdg-open "$writing";;
+		tech) xdg-open "$tech";;
+	esac
+}
+
+menu
