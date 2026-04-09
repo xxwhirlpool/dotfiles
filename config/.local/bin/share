@@ -2,13 +2,21 @@
 #
 # quickly share files
 
-if [[ $# -eq 0 ]]; then
+if [[ "$#" -eq 0 ]]; then
 	echo "Usage: share [FILENAME]"
 	exit 1
 fi
+
+lolcat_echo() {
+	if [[ "$(command -v lolcat)" ]]; then
+		echo "https://stash.4-walls.net/pics/dump/$upload_filename" | lolcat
+	elif [[ ! "$(command -v lolcat)" ]]; then
+		echo "https://stash.4-walls.net/pics/dump/$upload_filename"
+	fi
+}
 
 upload_filename=$(uuidgen)_$(basename "${1// /_}")
 
 rsync -avzqp --chmod=664 "$1" athena:/var/www/stash/pics/dump/"$upload_filename" || exit 1
 
-echo "https://stash.4-walls.net/pics/dump/$upload_filename" | lolcat
+lolcat_echo

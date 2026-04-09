@@ -15,23 +15,33 @@ declare -A stations=(
 	["vintageobscura"]="https://radio.vintageobscura.net/stream"
 )
 
+# little header text graphic to show before playback
+
 gum_echo() {
-	echo "$@" | gum style --foreground 212 --border-foreground 212 --border double --width 50 --margin "1 2" --padding "2 4" --align center
+	top=$(gum style --bold --foreground "#a6d189" --border none --width 20 --margin "1 0" --align center "♥ NOW PLAYING ♥")
+	bottom=$(gum style --foreground "#f4b8e4" --border none --width 20 --margin "1 0" --align center "$@")
+
+	joingum=$(gum join --vertical --align center "$top" "$bottom")
+	all=$(gum style --border-foreground "#99d1db" --border double --width 50 --padding "0 0" --align center "$joingum")
+
+	gum join --vertical "$all"
 }
 
+# run the script
+
 choice() {
-	choose=$(gum choose "kexp" "nts1" "nts2" "dadradio" "indiebeat-pop" "indiebeat-rock" "indiebeat-jazz" "vintageobscura")
+	choose=$(gum choose  --header "radio stations" "kexp" "nts1" "nts2" "dadradio" "indiebeat-pop" "indiebeat-rock" "indiebeat-jazz" "vintageobscura")
 	case "$choose" in
-		kexp) gum_echo "playing KEXP" && mpv "${stations['KEXP']}";;
-		nts1) gum_echo "playing NTS1" && mpv "${stations['NTS1']}";;
-		nts2) gum_echo "playing NTS2" && mpv "${stations['NTS2']}";;
-		dadradio) gum_echo "playing dadradio" && mpv "${stations['dadradio']}";;
-		indiebeat-pop) gum_echo "playing indiebeat - pop" && mpv "${stations['indiebeat-pop']}";;
-		indiebeat-rock) gum_echo "playing indiebeat - rock" && mpv "${stations['indiebeat-rock']}";;
-		indiebeat-jazz) gum_echo "playing indiebeat - jazz" && mpv "${stations['indiebeat-jazz']}";;
-		indiebeat-electronic) gum_echo "playing indiebeat - electronic" && mpv "${stations['indiebeat-electronic']}";;
-		indiebeat-bonkwave) gum_echo "playing indiebeat -  bonkwave" && mpv "${stations['indiebeat-bonkwave']}";;
-		vintageobscura) gum_echo "playing vintage obscura" && mpv "${stations['vintageobscura']}";;
+		kexp) gum_echo "KEXP" && mpv "${stations['KEXP']}";;
+		nts1) gum_echo "NTS1" && mpv "${stations['NTS1']}";;
+		nts2) gum_echo "NTS2" && mpv "${stations['NTS2']}";;
+		dadradio) gum_echo "dadradio" && mpv "${stations['dadradio']}";;
+		indiebeat-pop) gum_echo "indiebeat - pop" && mpv "${stations['indiebeat-pop']}";;
+		indiebeat-rock) gum_echo "indiebeat - rock" && mpv "${stations['indiebeat-rock']}";;
+		indiebeat-jazz) gum_echo "indiebeat - jazz" && mpv "${stations['indiebeat-jazz']}";;
+		indiebeat-electronic) gum_echo "indiebeat - electronic" && mpv "${stations['indiebeat-electronic']}";;
+		indiebeat-bonkwave) gum_echo "indiebeat -  bonkwave" && mpv "${stations['indiebeat-bonkwave']}";;
+		vintageobscura) gum_echo "vintage obscura" && mpv "${stations['vintageobscura']}";;
 	esac
 }
 
