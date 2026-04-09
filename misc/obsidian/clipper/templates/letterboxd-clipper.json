@@ -1,0 +1,53 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Letterboxd",
+	"behavior": "create",
+	"noteContentFormat": "{{description}}",
+	"properties": [
+		{
+			"name": "genre",
+			"value": "{{schema:genre|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "director",
+			"value": "{{schema:director[*].name|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "cast",
+			"value": "{{schema:actors[*].name|slice:0,5|join}}",
+			"type": "multitext"
+		},
+		{
+			"name": "cover",
+			"value": "{{schema:image}}",
+			"type": "text"
+		},
+		{
+			"name": "plot",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "created",
+			"value": "{{date}}",
+			"type": "date"
+		},
+		{
+			"name": "year",
+			"value": "{{schema:releasedEvent[*].startDate|date:\\\"YYYY\\\"}}",
+			"type": "number"
+		},
+		{
+			"name": "tags",
+			"value": "clippings-movies",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://letterboxd.com/film/"
+	],
+	"noteNameFormat": "{{schema:@Movie:name}} ({{schema:releasedEvent[*].startDate|date:\"YYYY\"}})",
+	"path": "clippings/movies"
+}
