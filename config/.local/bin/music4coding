@@ -40,11 +40,18 @@ gum_echo() {
     gum join --vertical "$all"
 }
 
+random_mix() {
+	length="${#mixtapes[@]}"
+	random_index=$(( SRANDOM % length ))
+	mpv "${mixtapes[$random_index]}"
+}
+
 # run the script
 
 choice() {
-    choose=$(gum choose  --header "mixtapes" {1..20} --height 20)
+    choose=$(gum choose  --header "mixtapes" "random" {1..20} --height 20)
     case "$choose" in
+		random) gum_echo "random!" && random_mix;;
         1) gum_echo "datasette" && mpv "${mixtapes['1']}";;
         2) gum_echo "sunjammer" && mpv "${mixtapes['2']}";;
         3) gum_echo "datassette" && mpv "${mixtapes['3']}";;
