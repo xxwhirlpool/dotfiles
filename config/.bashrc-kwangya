@@ -117,6 +117,7 @@ alias gitd="git diff --staged"
 alias gdiff="gitd"
 alias gits="git status"
 alias gita="git add ."
+alias gitlc="git diff HEAD~"
 alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-astro/src/utils && node git-changelog.js && cd ../../"
 
 # dev
