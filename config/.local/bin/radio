@@ -12,6 +12,7 @@ declare -A stations=(
 	["indiebeat-electronic"]="https://azura.theindiebeat.fm/listen/the_indie_beat_radio_-_electronic/radio.mp3"
 	["indiebeat-bonkwave"]="https://azura.theindiebeat.fm/listen/not_what_i_call_radio_bonk_wave/radio.mp3"
 	["dadradio"]="http://stacey-campbell.com:8001/dadradio.mp3"
+	["vintageobscura"]="https://radio.vintageobscura.net/stream"
 )
 
 gum_echo() {
@@ -19,7 +20,7 @@ gum_echo() {
 }
 
 choice() {
-	choose=$(gum choose "kexp" "nts1" "nts2" "dadradio" "indiebeat-pop" "indiebeat-rock" "indiebeat-jazz")
+	choose=$(gum choose "kexp" "nts1" "nts2" "dadradio" "indiebeat-pop" "indiebeat-rock" "indiebeat-jazz" "vintageobscura")
 	case "$choose" in
 		kexp) gum_echo "playing KEXP" && mpv "${stations['KEXP']}";;
 		nts1) gum_echo "playing NTS1" && mpv "${stations['NTS1']}";;
@@ -30,6 +31,7 @@ choice() {
 		indiebeat-jazz) gum_echo "playing indiebeat - jazz" && mpv "${stations['indiebeat-jazz']}";;
 		indiebeat-electronic) gum_echo "playing indiebeat - electronic" && mpv "${stations['indiebeat-electronic']}";;
 		indiebeat-bonkwave) gum_echo "playing indiebeat -  bonkwave" && mpv "${stations['indiebeat-bonkwave']}";;
+		vintageobscura) gum_echo "playing vintage obscura" && mpv "${stations['vintageobscura']}";;
 	esac
 }
 
