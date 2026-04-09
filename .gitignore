@@ -36,4 +36,5 @@ config/.local/bin/quote
 config/.local/bin/quoterandom
 config/.local/bin/discord_timest
 scripts/Scripts/plex/playlists/*
-config/.local/bin/radio
+config/.config/mpd.conf
+config/.config/rmpc/config.ron

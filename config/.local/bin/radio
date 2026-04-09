@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# stream URLs
+
+declare -A stations=(
+	["KEXP"]="https://raw.githubusercontent.com/mikepierce/internet-radio-streams/refs/heads/main/KEXP-Seattle.m3u"
+	["NTS1"]="https://stream-relay-geo.ntslive.net/stream"
+	["NTS2"]="https://stream-relay-geo.ntslive.net/stream2"
+	["indiebeat-pop"]="https://azura.theindiebeat.fm/listen/the_indie_beat_radio_pop/radio.mp3"
+	["indiebeat-rock"]="https://azura.theindiebeat.fm/listen/the_indie_beat_radio_-_rock/radio.mp3"
+	["indiebeat-jazz"]="https://azura.theindiebeat.fm/listen/the_indie_beat_radio_-_jazz/radio.mp3"
+	["indiebeat-electronic"]="https://azura.theindiebeat.fm/listen/the_indie_beat_radio_-_electronic/radio.mp3"
+	["indiebeat-bonkwave"]="https://azura.theindiebeat.fm/listen/not_what_i_call_radio_bonk_wave/radio.mp3"
+	["dadradio"]="http://stacey-campbell.com:8001/dadradio.mp3"
+)
+
+gum_echo() {
+	echo "$@" | gum style --foreground 212 --border-foreground 212 --border double --width 50 --margin "1 2" --padding "2 4" --align center
+}
+
+choice() {
+	choose=$(gum choose "kexp" "nts1" "nts2" "dadradio" "indiebeat-pop" "indiebeat-rock" "indiebeat-jazz")
+	case "$choose" in
+		kexp) gum_echo "playing KEXP" && mpv "${stations['KEXP']}";;
+		nts1) gum_echo "playing NTS1" && mpv "${stations['NTS1']}";;
+		nts2) gum_echo "playing NTS2" && mpv "${stations['NTS2']}";;
+		dadradio) gum_echo "playing dadradio" && mpv "${stations['dadradio']}";;
+		indiebeat-pop) gum_echo "playing indiebeat - pop" && mpv "${stations['indiebeat-pop']}";;
+		indiebeat-rock) gum_echo "playing indiebeat - rock" && mpv "${stations['indiebeat-rock']}";;
+		indiebeat-jazz) gum_echo "playing indiebeat - jazz" && mpv "${stations['indiebeat-jazz']}";;
+		indiebeat-electronic) gum_echo "playing indiebeat - electronic" && mpv "${stations['indiebeat-electronic']}";;
+		indiebeat-bonkwave) gum_echo "playing indiebeat -  bonkwave" && mpv "${stations['indiebeat-bonkwave']}";;
+	esac
+}
+
+choice
