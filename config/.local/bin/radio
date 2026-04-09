@@ -13,13 +13,16 @@ declare -A stations=(
 	["indiebeat-bonkwave"]="https://azura.theindiebeat.fm/listen/not_what_i_call_radio_bonk_wave/radio.mp3"
 	["dadradio"]="http://stacey-campbell.com:8001/dadradio.mp3"
 	["vintageobscura"]="https://radio.vintageobscura.net/stream"
+	["hbr1-tranceponder"]="https://www.hbr1.com/playlist/trance.ogg.m3u" # full-on/psychedelic
+	["hbr1-tronic"]="https://www.hbr1.com/playlist/tronic.ogg.m3u" # minimal/tech
+	["hbr1-dream"]="https://www.hbr1.com/playlist/ambient.ogg.m3u" # chillout
 )
 
 # little header text graphic to show before playback
 
 gum_echo() {
-	top=$(gum style --bold --foreground "#a6d189" --border none --width 20 --margin "1 0" --align center "♥ NOW PLAYING ♥")
-	bottom=$(gum style --foreground "#f4b8e4" --border none --width 20 --margin "1 0" --align center "$@")
+	top=$(gum style --bold --foreground "#a6d189" --border none --width 50 --margin "1 0" --align center "♥ NOW PLAYING ♥")
+	bottom=$(gum style --foreground "#f4b8e4" --border none --width 50 --margin "1 0" --align center "$@")
 
 	joingum=$(gum join --vertical --align center "$top" "$bottom")
 	all=$(gum style --border-foreground "#99d1db" --border double --width 50 --padding "0 0" --align center "$joingum")
@@ -30,7 +33,7 @@ gum_echo() {
 # run the script
 
 choice() {
-	choose=$(gum choose  --header "radio stations" "kexp" "nts1" "nts2" "dadradio" "indiebeat-pop" "indiebeat-rock" "indiebeat-jazz" "vintageobscura")
+	choose=$(gum choose --height 20 --header "radio stations" "kexp" "nts1" "nts2" "dadradio" "indiebeat-pop" "indiebeat-rock" "indiebeat-jazz" "vintageobscura" "hbr1-tranceponder" "hbr1-tronic" "hbr1-dream")
 	case "$choose" in
 		kexp) gum_echo "KEXP" && mpv "${stations['KEXP']}";;
 		nts1) gum_echo "NTS1" && mpv "${stations['NTS1']}";;
@@ -42,6 +45,9 @@ choice() {
 		indiebeat-electronic) gum_echo "indiebeat - electronic" && mpv "${stations['indiebeat-electronic']}";;
 		indiebeat-bonkwave) gum_echo "indiebeat -  bonkwave" && mpv "${stations['indiebeat-bonkwave']}";;
 		vintageobscura) gum_echo "vintage obscura" && mpv "${stations['vintageobscura']}";;
+		hbr1-tranceponder) gum_echo "HBR1 I.D.M. tranceponder" && mpv "${stations['hbr1-tranceponder']}";;
+		hbr1-tronic) gum_echo "HBR1 tronic lounge" && mpv "${stations['hbr1-tronic']}";;
+		hbr1-dream) gum_echo "HBR1 dream factory" && mpv "${stations['hbr1-dream']}"
 	esac
 }
 
