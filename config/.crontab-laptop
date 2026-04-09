@@ -1,9 +1,0 @@
-MAILTO=""
-
-0 */3 * * * vdirsyncer sync > /dev/null 2>&1
-
-0 */3 * * * cd /home/kat/.password-store && git pull > /dev/null 2>&1
-
-0 0 * * * crontab -l > /home/kat/dotfiles/config/.crontab-laptop
-
-0 0 * * * cat /home/kat/.bashrc > /home/kat/dotfiles/config/.bashrc-laptop
