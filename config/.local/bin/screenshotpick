@@ -10,6 +10,8 @@ if [[ $(hostname) == "mariposa" ]]; then
 	SHOTPATH="/home/kat/Pictures/Screenshots"
 elif [[ $(hostname) == "kwangya" ]]; then
 	SHOTPATH="/media/kat/disk/Pictures/Screenshots"
+elif [[ $(hostname) == "tokki" ]]; then
+	SHOTPATH="/home/kat/Pictures/Screenshots"
 else
 	echo "fuck"
 fi
