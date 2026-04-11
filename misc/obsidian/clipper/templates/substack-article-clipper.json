@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Substack Article",
+	"behavior": "create",
+	"noteContentFormat": "{{selectorHtml:.body.markup|markdown}}",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{meta:name:author}}",
+			"type": "multitext"
+		},
+		{
+			"name": "date",
+			"value": "{{schema:datePublished|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "multitext"
+		},
+		{
+			"name": "description",
+			"value": "{{description}}",
+			"type": "text"
+		},
+		{
+			"name": "featuredImage",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings-articles",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"substack.com/p/"
+	],
+	"noteNameFormat": "{{title|safe_name}}",
+	"path": "clippings/articles"
+}
