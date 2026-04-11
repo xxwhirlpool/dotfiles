@@ -4,6 +4,6 @@ MAILTO=""
 
 0 */3 * * * cd /home/kat/.password-store && git pull > /dev/null 2>&1
 
-0 0 * * * crontab -l > /home/kat/dotfiles/config/.crontab-pc
+0 0 * * * crontab -l > /home/kat/dotfiles/config/.crontab-kwangya
 
-0 0 * * * cat /home/kat/.bashrc > /home/kat/dotfiles/config/.bashrc-pc
+0 0 * * * cat /home/kat/.bashrc > /home/kat/dotfiles/config/.bashrc-kwangya
