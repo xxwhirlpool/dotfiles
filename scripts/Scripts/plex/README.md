@@ -27,3 +27,15 @@ plex_playlist.py [TOKEN]
 ```bash
 plex_playlist_cover.py [TOKEN]
 ```
+
+## plex_playlist_m3u.py
+
+- exports to `~/Scripts/plex/playlists_m3u`
+- each filename is the name of the playlist + `.m3u`
+- song file paths are absolute paths from the server they're hosted on
+
+### usage
+
+```bash
+plex_playlist_m3u.py [TOKEN]
+```
