@@ -6,8 +6,7 @@
 # ]
 # ///
 
-# USAGE: plex_playlist.py [TOKEN]
-# this is such script kiddie shit idk python
+# USAGE: tracklist.py [TOKEN]
 
 from plexapi.server import PlexServer
 from os import sys

@@ -6,7 +6,7 @@
 # ]
 # ///
 
-# USAGE: plex_playlist_cover.py [TOKEN]
+# USAGE: cover.py [TOKEN]
 #
 # download all CURRENTLY SELECTED playlist posters/covers
 # posters are named after the playlists

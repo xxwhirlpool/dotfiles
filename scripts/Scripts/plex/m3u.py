@@ -6,7 +6,7 @@
 # ]
 # ///
 
-# USAGE: plex_playlist_m3u.py [TOKEN]
+# USAGE: m3u.py [TOKEN]
 #
 # download all playlists as M3U files
 

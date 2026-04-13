@@ -2,7 +2,7 @@
 
 tracking my plex library & stuff
 
-## plex_playlists.py
+## tracklist.py
 
 - exports playlist tracklists to `~/Scripts/plex/playlists`
 - each filename is the title of the playlist + `.txt`
@@ -13,10 +13,10 @@ tracking my plex library & stuff
 ### usage
 
 ```bash
-plex_playlist.py [TOKEN]
+tracklist.py [TOKEN]
 ```
 
-## plex_playlists_cover.py
+## cover.py
 
 - exports to `~/Scripts/plex/posters`
 - each filename is the name of the playlist + `.png`
@@ -25,10 +25,10 @@ plex_playlist.py [TOKEN]
 ### usage
 
 ```bash
-plex_playlist_cover.py [TOKEN]
+cover.py [TOKEN]
 ```
 
-## plex_playlist_m3u.py
+## m3u.py
 
 - exports to `~/Scripts/plex/playlists_m3u`
 - each filename is the name of the playlist + `.m3u`
@@ -37,5 +37,5 @@ plex_playlist_cover.py [TOKEN]
 ### usage
 
 ```bash
-plex_playlist_m3u.py [TOKEN]
+m3u.py [TOKEN]
 ```
