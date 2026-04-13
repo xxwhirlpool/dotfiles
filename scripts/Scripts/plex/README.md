@@ -39,3 +39,14 @@ cover.py [TOKEN]
 ```bash
 m3u.py [TOKEN]
 ```
+
+## token_plex.py
+
+- get the plex token
+- makes the other scripts easier lol
+
+### usage
+
+```bash
+token.py # follow prompts
+```
