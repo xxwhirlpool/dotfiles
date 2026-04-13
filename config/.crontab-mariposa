@@ -7,3 +7,5 @@ MAILTO=""
 0 0 * * * crontab -l > /home/kat/dotfiles/config/.crontab-mariposa
 
 0 0 * * * cat /home/kat/.bashrc > /home/kat/dotfiles/config/.bashrc-mariposa
+
+0 0 * * * cd /home/kat/Documents/irc_logs && /home/kat/Documents/irc_logs/irc_4walls_histback.sh > /dev/null 2>&1
