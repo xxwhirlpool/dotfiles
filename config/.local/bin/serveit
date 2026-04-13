@@ -4,8 +4,8 @@
 # https://codeberg.org/EvanHahn/dotfiles/src/commit/f7a9d94ae2254cb7e5f67e6e5bdb74b6467f6dec/home/bin/bin/serveit
 
 usage_help() {
-	echo "Usage: serveit [-p] [-r | -y]"
-	echo "Options: -p (port, optional) | -r (ruby) | -y (python)"
+	echo "Usage: serveit [-p] [-r | -y | -c]"
+	echo "Options: -p (port, optional) | -r (ruby) | -y (python) | -c (python CGI)"
 }
 
 if [[ $# -eq 0 ]]; then
@@ -18,14 +18,19 @@ py_server() {
 	[[ "$(command -v python3)" ]]; python3 -m http.server "${port:-$port_default}" || echo "could not run python server"
 }
 
+pycgi_server() {
+	[[ "$(command -v python3)" ]]; python3 -m http.server --bind localhost --cgi "${port:-$port_default}" || echo "could not run python CGI server"
+}
+
 rb_server() {
 	[[ "$(command -v ruby)" ]]; ruby -run -e httpd . -p "${port:-$port_default}" || echo "could not run ruby server"
 }
 
-while getopts "p:ryh" opt; do
+while getopts "p:rych" opt; do
 	case "$opt" in
 		p) port="$OPTARG" ;;
 		y) py_server ;;
+		c) pycgi_server ;;
 		r) rb_server ;;
 		h) usage_help ;;
 		*) echo "something went wrong" ;;
