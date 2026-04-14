@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+tempfile="/tmp/$(date '+%Y-%m-%d__%I_%M%p').png"
+
+xclip -sel clip -target image/png -o > "$tempfile"
+
+echo "$tempfile" | perl -pe "chomp if eof" | xclip -sel clipboard
+
+kitten icat "$tempfile"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xclip -sel clip -target image/png -o
+
