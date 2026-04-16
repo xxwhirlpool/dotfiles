@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
 URL="$1"
+vidname="$2"
 
-if [[ $# -eq 0 ]]; then
+if [[ "$#" -eq 0 || "$#" -ne 2 ]]; then
 	echo "Usage: ytbest [URL]"
 	exit 1
 fi
 
 # format:
 # best audio + best video
-yt-dlp -f "ba+bv" "$URL"
+yt-dlp -f "ba+bv" "$URL" -o "$vidname"
