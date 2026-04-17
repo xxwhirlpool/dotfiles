@@ -235,7 +235,7 @@ boop() {
 	else
 		sfx bad
 	fi
-	eval "$(exit "$last")"
+	exit "$last"
 }
 
 # man by default, fall back to `help`
@@ -243,6 +243,14 @@ boop() {
 # https://lobste.rs/s/fkr3ha/some_terminal_frustrations#c_70wike
 man() {
 	/usr/bin/man "$@" || help "$@" | less
+}
+
+# https://askubuntu.com/questions/196890/how-to-find-the-bitrate-of-an-mp3-file-via-command-line
+bitrate() {
+	gum style --foreground "#f4b8e4" "file: " | tr -d "\n"
+	basename "$1"
+	gum style --foreground "#f4b8e4" "bitrate: " | tr -d "\n"
+	echo "$(file "$1" | sed 's/.*, \(.*\)kbps.*/\1/' | tr -d " " )" kbps
 }
 
 ######################################

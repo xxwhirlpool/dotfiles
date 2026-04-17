@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Comictagger
+GenericName=
+Comment=
+Exec=comictagger
+Type=Application
+Categories=AudioVideo;Player;Audio;Qt;
+Icon=/home/kat/dotfiles/misc/desktop/icons/comictagger.png
+Terminal=false
