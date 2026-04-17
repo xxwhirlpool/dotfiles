@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+# don't take args
+if [[ "$#" -gt 0 ]]; then
+	echo "Usage: ical_add [FOLLOW PROMPTS]"
+	exit 1
+fi
+
+# basic functions
+die() {
+    echo "canceled" && exit 1
+}
+
+ginput() {
+	gum input --placeholder "$@"
+}
+
+# define calendar file
+calfile="/home/kat/Documents/Git/-mine/ladyflash/public/feeds/cal/Music_Releases.ics"
+
+# remove vcalend for now
+sed -i '/END:VCALENDAR/d' "$calfile"
+
+# read/take input and store in variables
+summary=$(ginput "Artist Type 'NAME'") || die
+dtstart=$(ginput "format: 20260417") || die
+dtend=$(ginput "format: 20260418") || die
+dtstamp=$(date -d "$(ginput "format: 20260417")" +'%Y%m%dT%H%M%SZ') || die
+uuid=$(uuidgen | tr "[:lower:]" "[:upper:]") || die
+categories=$(ginput "K-Pop,Pop") || die
+
+# idk if this does anything but
+# it's here just in case lol
+if [[ -z "$summary" || -z "$dtstart" || -z "$dtend" || -z "$dtstamp" || -z "$uuid" || -z "$categories" ]]; then
+    die
+fi
+
+# add everything to the calendar
+cat << EOF | perl -pe "chomp if eof" >> "$calfile"
+BEGIN:VEVENT
+SUMMARY:$summary
+DTSTART;VALUE=DATE:$dtstart
+DTEND;VALUE=DATE:$dtend
+DTSTAMP:$dtstamp
+UID:$uuid
+SEQUENCE:0
+CATEGORIES:$categories
+END:VEVENT
+EOF
+
+# add back in the vcalend
+echo -e "\nEND:VCALENDAR" >> "$calfile"
