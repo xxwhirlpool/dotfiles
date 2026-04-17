@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+die() {
+	echo "canceled" && exit 1
+}
+
+rollslug=$(gum input --placeholder "enter slug") || die
+rollurl=$(gum input --placeholder "enter url") || die
+rollname=$(gum input --placeholder "enter name") || die
+rolltype=$(gum input --placeholder "enter type") || die
+
+if [[ -z "$rollslug" || -z "$rollurl" || -z "$rollname" || -z "$rolltype" ]]; then
+	die
+fi
+
+cat << EOF >> /home/kat/Documents/Git/-mine/eunoia-astro/src/content/blogroll/blogs.yml
+- slug: $rollslug
+  url: "$rollurl"
+  name: "$rollname"
+  type: $rolltype
+EOF
