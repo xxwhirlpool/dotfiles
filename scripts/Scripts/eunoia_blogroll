@@ -13,7 +13,7 @@ if [[ -z "$rollslug" || -z "$rollurl" || -z "$rollname" || -z "$rolltype" ]]; th
 	die
 fi
 
-cat << EOF >> /home/kat/Documents/Git/-mine/eunoia-astro/src/content/blogroll/blogs.yml
+cat << EOF >> /home/kat/Projects/-mine/eunoia-astro/src/content/blogroll/blogs.yml
 - slug: $rollslug
   url: "$rollurl"
   name: "$rollname"

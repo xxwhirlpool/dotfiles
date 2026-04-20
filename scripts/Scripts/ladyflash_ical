@@ -16,7 +16,7 @@ ginput() {
 }
 
 # define calendar file
-calfile="/home/kat/Documents/Git/-mine/ladyflash/public/feeds/cal/Music_Releases.ics"
+calfile="/home/kat/Projects/-mine/ladyflash/public/feeds/cal/Music_Releases.ics"
 
 # remove vcalend for now
 sed -i '/END:VCALENDAR/d' "$calfile"

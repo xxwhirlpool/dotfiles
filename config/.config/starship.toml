@@ -4,7 +4,7 @@ add_newline = false
 
 palette = "catppuccin_frappe"
 
-format = '$all$character$username$hostname$character$directory '
+format = '${env_var.ZMX_SESSION}$all$character$username$hostname$character$directory '
 
 # `rv` currently sets a permanent $RUBY_VERSION variable
 # so my shell always shows the ruby ver no matter the pwd
@@ -28,6 +28,12 @@ style = "bold green"
 
 [[battery.display]]
 threshold = 0
+
+[env_var.ZMX_SESSION]
+symbol = " "
+format = "[$symbol$env_value]($style) "
+description = "zmx session name"
+style = "bold magenta"
 
 [palettes.catppuccin_frappe]
 rosewater = "#f2d5cf"

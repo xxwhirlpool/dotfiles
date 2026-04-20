@@ -102,10 +102,13 @@ alias updupgr="sudo apt update && sudo apt upgrade"
 alias freeze="freeze -c user"
 alias glow="glow -p"
 alias unfuckwifi="sudo systemctl restart NetworkManager"
+alias uptime="uptime -p"
+alias irc="senpai"
+alias xmpp="profanity"
 
 # some cd bookmarks
 alias dotf="cd /home/kat/dotfiles"
-alias gmine="cd /home/kat/Documents/Git/-mine"
+alias gmine="cd /home/kat/Projects/-mine"
 
 # weather stuff
 alias wttr="curl https://wttr.in/nyc?F0ASu"
@@ -122,7 +125,7 @@ alias gitlc="git diff HEAD~"
 alias gdiff="gitd"
 alias gits="git status"
 alias gita="git add ."
-alias pusheu="git push bytes main && cd /home/kat/Documents/Git/-mine/eunoia-astro/src/utils && node git-changelog.js && cd ../../"
+alias pusheu="git push bytes main && cd /home/kat/Projects/-mine/eunoia-astro/src/utils && node git-changelog.js && cd ../../"
 
 # dev
 alias irb="rv run irb"

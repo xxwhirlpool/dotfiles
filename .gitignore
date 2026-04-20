@@ -44,3 +44,6 @@ config/.local/bin/env
 config/.local/bin/env.fish
 config/.local/bin/uv
 config/.local/bin/uvx
+
+.directory
+scripts/Scripts/.directory
