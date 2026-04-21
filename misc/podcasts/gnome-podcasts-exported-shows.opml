@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<opml version="2.0">
+  <head>
+    <title>GNOME Podcasts Subscriptions</title>
+  </head>
+  <body>
+    <outline text="2.5 Admins" title="2.5 Admins" type="rss" xmlUrl="https://2.5admins.com/feed/podcast" htmlUrl="https://2.5admins.com/" />
+    <outline text="Citation Needed" title="Citation Needed" type="rss" xmlUrl="https://rss.libsyn.com/shows/99179/destinations/518557.xml" htmlUrl="http://citationpod.com/" />
+    <outline text="Dead Code" title="Dead Code" type="rss" xmlUrl="https://feeds.acast.com/public/shows/dead-code" htmlUrl="https://shows.acast.com/dead-code" />
+    <outline text="Hemispheric Views" title="Hemispheric Views" type="rss" xmlUrl="https://feeds.fireside.fm/hemisphericviews/rss" htmlUrl="https://listen.hemisphericviews.com/" />
+    <outline text="Ruminate" title="Ruminate" type="rss" xmlUrl="https://ruminatepodcast.com/feed.xml" htmlUrl="https://ruminatepodcast.com/" />
+    <outline text="The Flattest Edge" title="The Flattest Edge" type="rss" xmlUrl="https://media.rss.com/the-flattest-edge/feed.xml" htmlUrl="https://rss.com/podcasts/the-flattest-edge" />
+    <outline text="The Pen Addict" title="The Pen Addict" type="rss" xmlUrl="https://www.relay.fm/penaddict/feed" htmlUrl="https://www.relay.fm/penaddict" />
+    <outline text="The Runthrough" title="The Runthrough" type="rss" xmlUrl="https://media.rss.com/figure-skating-runthrough/feed.xml" htmlUrl="https://rss.com/podcasts/figure-skating-runthrough" />
+  </body>
+</opml>
