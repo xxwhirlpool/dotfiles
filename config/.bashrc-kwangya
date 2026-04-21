@@ -100,6 +100,9 @@ alias ffmpeg="ffmpeg -hide_banner"
 alias open="xdg-open"
 alias c="clear"
 alias unfuckwifi="sudo systemctl restart NetworkManager"
+alias uptime="uptime -p"
+alias irc="senpai"
+alias xmpp="profanity"
 alias updupgr="sudo apt update && sudo apt upgrade"
 alias winek="wineserver -k"
 
@@ -229,6 +232,18 @@ notif() {
 	spd-say -t female3 -r +25 "done!"
 }
 
+# shamelessly stolen from evan hahn:
+# https://evanhahn.com/scripts-i-wrote-that-i-use-all-the-time/#audio-and-video-and-pictures
+boop() {
+	local last="$?"
+	if [[ "$last" == "0" ]]; then
+		sfx chime
+	else
+		sfx bad
+	fi
+	exit "$last"
+}
+
 # make & cd into a folder
 mkcd() {
   mkdir -p "$@" && cd "$_" || exit 1;
@@ -238,7 +253,15 @@ mkcd() {
 # for shell functions
 # https://lobste.rs/s/fkr3ha/some_terminal_frustrations#c_70wike
 man() {
-	/usr/bin/man "$@" || help "$@"
+	/usr/bin/man "$@" || help "$@" | less
+}
+
+# https://askubuntu.com/questions/196890/how-to-find-the-bitrate-of-an-mp3-file-via-command-line
+bitrate() {
+	gum style --foreground "#f4b8e4" "file: " | tr -d "\n"
+	basename "$1"
+	gum style --foreground "#f4b8e4" "bitrate: " | tr -d "\n"
+	echo "$(file "$1" | sed 's/.*, \(.*\)kbps.*/\1/' | tr -d " " )" kbps
 }
 
 ######################################
