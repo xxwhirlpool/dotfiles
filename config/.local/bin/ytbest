@@ -4,7 +4,7 @@ URL="$1"
 vidname="$2"
 
 if [[ "$#" -eq 0 || "$#" -ne 2 ]]; then
-	echo "Usage: ytbest [URL]"
+	echo "Usage: ytbest [URL] [FILENAME]"
 	exit 1
 fi
 

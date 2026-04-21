@@ -16,16 +16,16 @@ ginput() {
 }
 
 # define calendar file
-calfile="/home/kat/Projects/-mine/ladyflash/public/feeds/cal/Music_Releases.ics"
+calfile="/home/kat/Projects/mine/ladyflash/public/feeds/cal/Music_Releases.ics"
 
 # remove vcalend for now
 sed -i '/END:VCALENDAR/d' "$calfile"
 
 # read/take input and store in variables
 summary=$(ginput "Artist Type 'NAME'") || die
-dtstart=$(ginput "format: 20260417") || die
-dtend=$(ginput "format: 20260418") || die
-dtstamp=$(date -d "$(ginput "format: 20260417")" +'%Y%m%dT%H%M%SZ') || die
+dtstart=$(ginput "the release date, format: 20260417") || die
+dtend=$(date -d "$dtstart+1 day" +%Y%m%d) || die
+dtstamp=$(date -d "$dtstart" +'%Y%m%dT%H%M%SZ') || die
 uuid=$(uuidgen | tr "[:lower:]" "[:upper:]") || die
 categories=$(ginput "K-Pop,Pop") || die
 

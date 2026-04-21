@@ -166,6 +166,8 @@ export NVM_DIR="$HOME/.config/nvm"
 
 . "/home/kat/.deno/env"
 
+export GOPATH="/home/kat/.godir"
+
 ######################################
 # functions
 ######################################
