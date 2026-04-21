@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+menu() {
+    cmd=$(printf "ftp\\nterminal" | dmenu -i -c -l 10 -p "split tunnel windows")
+    case "$cmd" in
+        ftp) mvpn filezilla;;
+        terminal) mvpn kitty;;
+    esac
+}
+
+menu

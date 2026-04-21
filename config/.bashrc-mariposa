@@ -267,3 +267,7 @@ eval "$(batman --export-env)"
 
 eval "$(/home/kat/.cargo/bin/rv shell init bash)"
 eval "$(/home/kat/.cargo/bin/rv shell completions bash)"
+
+if command -v zmx &> /dev/null; then
+  eval "$(zmx completions bash)"
+fi
