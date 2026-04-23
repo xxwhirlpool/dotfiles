@@ -108,7 +108,7 @@ alias xmpp="profanity"
 
 # some cd bookmarks
 alias dotf="cd /home/kat/dotfiles"
-alias gmine="cd /home/kat/Projects/-mine"
+alias gmine="cd /home/kat/Projects/mine"
 
 # weather stuff
 alias wttr="curl https://wttr.in/nyc?F0ASu"
@@ -125,7 +125,7 @@ alias gitlc="git diff HEAD~"
 alias gdiff="gitd"
 alias gits="git status"
 alias gita="git add ."
-alias pusheu="git push bytes main && cd /home/kat/Projects/-mine/eunoia-astro/src/utils && node git-changelog.js && cd ../../"
+alias pusheu="git push bytes main && cd /home/kat/Projects/mine/eunoia-astro/src/utils && node git-changelog.js && cd ../../"
 
 # dev
 alias irb="rv run irb"
