@@ -271,3 +271,7 @@ bitrate() {
 eval "$(starship init bash)"
 eval "$(fzf --bash)"
 eval "$(batman --export-env)"
+
+if command -v zmx &> /dev/null; then
+  eval "$(zmx completions bash)"
+fi
