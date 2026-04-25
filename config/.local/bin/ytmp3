@@ -2,9 +2,12 @@
 #
 # lazy ass way to get my idol MP3s
 
-if [[ $# -eq 0 ]]; then
+url="$1"
+vidname="$2"
+
+if [[ "$#" -eq 0 || "$#" -ne 2 ]]; then
 	echo "Usage: ytmp3 [URL]"
 	exit 1
 fi
 
-yt-dlp -f ba -x --audio-format mp3 -o "%(title)s.%(ext)s" "$1"
+yt-dlp -f ba -x --audio-format mp3 -o "$vidname.%(ext)s" "$url"

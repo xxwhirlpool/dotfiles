@@ -47,3 +47,5 @@ config/.local/bin/uvx
 
 .directory
 scripts/Scripts/.directory
+scripts/Scripts/icons
+scripts/Scripts/gallery.html
