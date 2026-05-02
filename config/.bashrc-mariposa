@@ -188,7 +188,7 @@ portfree() {
 	do
 		continue
 	done
-	echo "$port"
+	echo -n "$port"
 }
 
 # print internal & external IPs

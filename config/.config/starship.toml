@@ -27,7 +27,12 @@ format = '[$user](bold lavender)[@](bold green)'
 style = "bold green"
 
 [[battery.display]]
-threshold = 0
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
 
 [env_var.ZMX_SESSION]
 symbol = " "
