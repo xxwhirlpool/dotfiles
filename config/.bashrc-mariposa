@@ -109,6 +109,7 @@ alias xmpp="profanity"
 # some cd bookmarks
 alias dotf="cd /home/kat/dotfiles"
 alias gmine="cd /home/kat/Projects/mine"
+alias scr="cd /home/kat/Scripts"
 
 # weather stuff
 alias wttr="curl https://wttr.in/nyc?F0ASu"

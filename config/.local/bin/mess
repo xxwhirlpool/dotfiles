@@ -2,12 +2,13 @@
 #
 # open a temp file as a scratchpad
 
-NOCOLOR="\033[0m"
-GREEN="\033[38;5;121m"
-
 file="$(mktemp --suffix _scratchpad)"
+
+gum_echo() {
+	gum style --foreground 212 "$@"
+}
 
 micro "$file"
 
-echo -e "${GREEN}FILEPATH:${NOCOLOR}\n"
+gum_echo "FILEPATH:"
 realpath "$file" | lolcat -p 1.5

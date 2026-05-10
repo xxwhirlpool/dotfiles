@@ -49,3 +49,5 @@ config/.local/bin/uvx
 scripts/Scripts/.directory
 scripts/Scripts/icons
 scripts/Scripts/gallery.html
+config/.local/bin/khal_reminder
+config/.config/khal/config_reminder

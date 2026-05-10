@@ -1,15 +1,40 @@
 #!/usr/bin/env bash
 
+# check for deps (messily)
+if [[ ! "$(command -v timer)" ]]; then
+	echo "missing required dependency: timer"
+	echo "github.com/caarlos0/timer"
+	exit 1
+elif [[ ! "$(command -v gum)" ]]; then
+	echo "missing required dependency: gum"
+	echo "github.com/charmbracelet/gum"
+	exit 1
+fi
+
+# vars
+time="$1"
+
+# notif
 notif() {
-	notify-send "$time timer done!"
+	notify-send "timer done!"
 	paplay ~/dotfiles/misc/sounds/chime
 	spd-say -t female3 -r +25 "timer done!"
 }
 
-if [[ ! "$1" =~ "m" ]]; then
+# make styling easier
+gum_border() {
+	gum style --foreground "#a6d189" --border-foreground "#99d1db" --border double --width 50 --padding "0 0" --align center "$@"
+}
+
+gum_echo() {
+	gum style --foreground "#f4b8e4" --width 50 --padding "0 0" --align center "🌈✩₊˚.⋆⋆⁺₊✧ $* ✩₊˚.⋆⋆⁺₊✧🦋" && echo -e "\n"
+}
+
+# do everything
+if [[ ! "$time" =~ "m" ]]; then
 	echo "add a time or a time unit (m for minutes)"
 else
-	time="$1"
-	echo -e "$time: 🌈✩₊˚.⋆⋆⁺₊✧🦋"  | lolcat -p 0.2
-	timer "$time" && notif || exit 1
+	gum_border "♥ mini timer ♥"
+	gum_echo "$time"
+	timer -n "mini timer" "$time" && notif || exit 1
 fi
