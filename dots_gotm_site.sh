@@ -4,6 +4,11 @@ dots_home="/home/kat/dotfiles"
 orange_var="ef9f76"
 pink_var="f08eca"
 
+if [[ ! "$(command -v pgit)" ]]; then
+	echo "missing required dependency: pgit"
+	exit 1
+fi
+
 build_site() {
 	# build
 	pgit --revs main --repo "/home/kat/dotfiles" --label dots --out ./public --theme catppuccin-frappe

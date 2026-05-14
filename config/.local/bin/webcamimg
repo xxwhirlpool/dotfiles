@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# check if it's running anywhere else but laptop
+if [[ "$(hostname)" != "mariposa" ]]; then
+	echo "only works on your laptop, dumbass"
+	exit 1
+fi
+
 PICPATH="/home/kat/Pictures/Camera/webcam"
 
 # turn on webcam for a bit so the brightness isn't fucked
