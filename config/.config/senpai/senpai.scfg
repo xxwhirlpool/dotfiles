@@ -8,3 +8,4 @@ colors {
 	unread purple
 	prompt green
 }
+spell-check true

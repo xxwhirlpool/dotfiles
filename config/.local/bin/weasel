@@ -6,13 +6,13 @@
 # https://matt.might.net/articles/shell-scripts-for-passive-voice-weasel-words-duplicates/
 
 # vars
-weasel_word_dir="$HOME/.config/wordfiles"
-weasel_word_file="$weasel_word_dir/weasel"
+weasel_worddir="$HOME/.config/wordfiles"
+weasel_wordfile="$weasel_worddir/weasel"
 
 # basic functions
 usage_help() {
-	echo "Usage: weasel [FILE]"
-	exit 1
+	echo "Usage: weasel [OPTIONS]"
+	echo "Options: -f | -h"
 }
 
 gum_echo() {
@@ -26,17 +26,30 @@ die() {
 
 # check if word file exists
 wordfile_check() {
-	[[ -f "$weasel_word_file" ]] || die "weasel word file does not exist"
+	[[ -f "$weasel_wordfile" ]] || die "weasel word file does not exist"
 }
 
 # cat the word file into a var
-words=$(wordfile_check && cat "$weasel_word_file")
+words=$(wordfile_check && cat "$weasel_wordfile")
 
-# print help if no args
-if [[ "$#" -eq 0 ]]; then
-	usage_help
-fi
+# do the thing; two options
+# "": stdinpaste
+# -f: read from file
+readfile() {
+	inputfile=$(gum file) || die "no file supplied"
+	gum_echo "weasel words found:"
+	grep -E -n -i --color "\\b(am|are|were|being|is|been|was|be)\ \\b[ ]*(\w+ed|($words))\\b" "$inputfile"
+}
 
-# do the thing
-gum_echo "weasel words found:"
-grep -E -i -n --color "\\b($words)\\b" "$*"
+stdinpaste() {
+	inputtext=$(gum write --header "paste text here") || die "no text supplied"
+	gum_echo "weasel words found:"
+	echo "$inputtext" | grep -E -n -i --color "\\b(am|are|were|being|is|been|was|be)\ \\b[ ]*(\w+ed|($words))\\b"
+}
+
+# run script
+case "$1" in
+	"") stdinpaste;;
+	"-f") readfile;;
+	"-h") usage_help;;
+esac
