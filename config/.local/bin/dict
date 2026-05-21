@@ -4,11 +4,37 @@
 #
 # https://github.com/BreadOnPenguins/scripts/blob/master/define_word
 
-word=$(echo " " | dmenu -i -c -l 10 -p "dictionary!")
+dict() {
+	word=$(echo " " | dmenu -i -c -l 10 -p "dictionary!")
 
-if [[ -n "$word" ]]; then
-	response=$(curl -s --connect-timeout 5 --max-time 10 "https://api.dictionaryapi.dev/api/v2/entries/en_US/$word")
-	notif=$(echo "$response" | jq -r '[.[].meanings[] | {pos: .partOfSpeech, def: .definitions[].definition}] | .[:3].[] | "\n\(.pos). \(.def)"')
+	if [[ -n "$word" ]]; then
+		response=$(curl -s --connect-timeout 5 --max-time 10 "https://api.dictionaryapi.dev/api/v2/entries/en_US/$word")
+		notif=$(echo "$response" | jq -r '[.[].meanings[] | {pos: .partOfSpeech, def: .definitions[].definition}] | .[:3].[] | "\n\(.pos). \(.def)"')
+		notify-send -t 30000 "$word" "$notif"
+	fi
+}
 
-	notify-send -t 40000 "$word" "$notif"
-fi
+synonyms() {
+	word=$(echo " " | dmenu -i -c -l 10 -p "get synonyms")
+
+	if [[ -n "$word" ]]; then
+	    response=$(curl -s --connect-timeout 5 --max-time 10 "https://api.dictionaryapi.dev/api/v2/entries/en_US/$word")
+	    notif=$(echo "$response" | jq -r '.[].meanings[].synonyms.[]')
+
+		if [[ "$notif" -eq 0 ]]; then
+			notify-send -t 30000 "$word" "no synonyms found"
+		else
+			notify-send -t 30000 "$word" "$notif"
+		fi
+	fi
+}
+
+menu() {
+    cmd=$(printf "dictionary\\nsynonyms" | dmenu -i -c -l 10 -p "words!")
+    case "$cmd" in
+        dictionary) dict;;
+        synonyms) synonyms;;
+    esac
+}
+
+menu

@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 menu() {
-    cmd=$(printf "ftp\\nterminal" | dmenu -i -c -l 10 -p "split tunnel windows")
+    cmd=$(printf "ftp\\nterminal\\nslsk" | dmenu -i -c -l 10 -p "split tunnel windows")
     case "$cmd" in
         ftp) mvpn filezilla;;
         terminal) mvpn kitty;;
+        slsk) mvpn "/home/kat/Downloads/Programs/slsk.sh";;
     esac
 }
 
