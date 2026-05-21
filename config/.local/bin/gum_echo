@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# `echo` but it's in a fun color
+
+gum style --foreground 212 "$@"

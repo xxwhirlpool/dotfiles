@@ -4,10 +4,6 @@
 
 file="$(mktemp --suffix _scratchpad)"
 
-gum_echo() {
-	gum style --foreground 212 "$@"
-}
-
 micro "$file"
 
 gum_echo "FILEPATH:"

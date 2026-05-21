@@ -30,7 +30,7 @@ declare -A mixtapes=(
 
 # little header text graphic to show before playback
 
-gum_echo() {
+gum_echo_custom() {
     top=$(gum style --bold --foreground "#a6d189" --border none --width 50 --margin "1 0" --align center "musicForProgramming();")
     bottom=$(gum style --foreground "#f4b8e4" --border none --width 50 --margin "1 0" --align center "$@")
 
@@ -51,27 +51,27 @@ random_mix() {
 choice() {
     choose=$(gum choose  --header "mixtapes" "random" {1..20} --height 20)
     case "$choose" in
-		random) gum_echo "random!" && random_mix;;
-        1) gum_echo "datasette" && mpv "${mixtapes['1']}";;
-        2) gum_echo "sunjammer" && mpv "${mixtapes['2']}";;
-        3) gum_echo "datassette" && mpv "${mixtapes['3']}";;
-        4) gum_echo "com truise" && mpv "${mixtapes['4']}";;
-        5) gum_echo "abe mangger" && mpv "${mixtapes['5']}";;
-        6) gum_echo "gods of the new age" && mpv "${mixtapes['6']}";;
-        7) gum_echo "tahlhoff garten + untitled" && mpv "${mixtapes['7']}";;
-        8) gum_echo "connectedness locus" && mpv "${mixtapes['8']}";;
-        9) gum_echo "datassette" && mpv "${mixtapes['9']}";;
-        10) gum_echo "unity gain temple" && mpv "${mixtapes['10']}";;
-        11) gum_echo "miles tilmann" && mpv "${mixtapes['11']}";;
-        12) gum_echo "forgotten light" && mpv "${mixtapes['12']}";;
-        13) gum_echo "matt whitehead" && mpv "${mixtapes['13']}";;
-        14) gum_echo "tahlhoff garten + untitled" && mpv "${mixtapes['14']}";;
-        15) gum_echo "dan adeyemi" && mpv "${mixtapes['15']}";;
-        16) gum_echo "silent stelios" && mpv "${mixtapes['16']}";;
-        17) gum_echo "graphplan" && mpv "${mixtapes['17']}";;
-        18) gum_echo "konx om par" && mpv "${mixtapes['18']}";;
-        19) gum_echo "hivemind" && mpv "${mixtapes['19']}";;
-        20) gum_echo "uberdog" && mpv "${mixtapes['20']}";;
+		random) gum_echo_custom "random!" && random_mix;;
+        1) gum_echo_custom "datasette" && mpv "${mixtapes['1']}";;
+        2) gum_echo_custom "sunjammer" && mpv "${mixtapes['2']}";;
+        3) gum_echo_custom "datassette" && mpv "${mixtapes['3']}";;
+        4) gum_echo_custom "com truise" && mpv "${mixtapes['4']}";;
+        5) gum_echo_custom "abe mangger" && mpv "${mixtapes['5']}";;
+        6) gum_echo_custom "gods of the new age" && mpv "${mixtapes['6']}";;
+        7) gum_echo_custom "tahlhoff garten + untitled" && mpv "${mixtapes['7']}";;
+        8) gum_echo_custom "connectedness locus" && mpv "${mixtapes['8']}";;
+        9) gum_echo_custom "datassette" && mpv "${mixtapes['9']}";;
+        10) gum_echo_custom "unity gain temple" && mpv "${mixtapes['10']}";;
+        11) gum_echo_custom "miles tilmann" && mpv "${mixtapes['11']}";;
+        12) gum_echo_custom "forgotten light" && mpv "${mixtapes['12']}";;
+        13) gum_echo_custom "matt whitehead" && mpv "${mixtapes['13']}";;
+        14) gum_echo_custom "tahlhoff garten + untitled" && mpv "${mixtapes['14']}";;
+        15) gum_echo_custom "dan adeyemi" && mpv "${mixtapes['15']}";;
+        16) gum_echo_custom "silent stelios" && mpv "${mixtapes['16']}";;
+        17) gum_echo_custom "graphplan" && mpv "${mixtapes['17']}";;
+        18) gum_echo_custom "konx om par" && mpv "${mixtapes['18']}";;
+        19) gum_echo_custom "hivemind" && mpv "${mixtapes['19']}";;
+        20) gum_echo_custom "uberdog" && mpv "${mixtapes['20']}";;
     esac
 }
 

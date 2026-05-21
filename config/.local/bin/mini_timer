@@ -26,7 +26,7 @@ gum_border() {
 	gum style --foreground "#a6d189" --border-foreground "#99d1db" --border double --width 50 --padding "0 0" --align center "$@"
 }
 
-gum_echo() {
+gum_echo_custom() {
 	gum style --foreground "#f4b8e4" --width 50 --padding "0 0" --align center "🌈✩₊˚.⋆⋆⁺₊✧ $* ✩₊˚.⋆⋆⁺₊✧🦋" && echo -e "\n"
 }
 
@@ -35,6 +35,6 @@ if [[ ! "$time" =~ "m" ]]; then
 	echo "add a time or a time unit (m for minutes)"
 else
 	gum_border "♥ mini timer ♥"
-	gum_echo "$time"
+	gum_echo_custom "$time"
 	timer -n "mini timer" "$time" && notif || exit 1
 fi

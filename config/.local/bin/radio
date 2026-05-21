@@ -20,7 +20,7 @@ declare -A stations=(
 
 # little header text graphic to show before playback
 
-gum_echo() {
+gum_echo_custom() {
 	top=$(gum style --bold --foreground "#a6d189" --border none --width 50 --margin "1 0" --align center "♥ NOW PLAYING ♥")
 	bottom=$(gum style --foreground "#f4b8e4" --border none --width 50 --margin "1 0" --align center "$@")
 
@@ -35,19 +35,19 @@ gum_echo() {
 choice() {
 	choose=$(gum choose --height 20 --header "radio stations" "kexp" "nts1" "nts2" "dadradio" "indiebeat-pop" "indiebeat-rock" "indiebeat-jazz" "vintageobscura" "hbr1-tranceponder" "hbr1-tronic" "hbr1-dream")
 	case "$choose" in
-		kexp) gum_echo "KEXP" && mpv "${stations['KEXP']}";;
-		nts1) gum_echo "NTS1" && mpv "${stations['NTS1']}";;
-		nts2) gum_echo "NTS2" && mpv "${stations['NTS2']}";;
-		dadradio) gum_echo "dadradio" && mpv "${stations['dadradio']}";;
-		indiebeat-pop) gum_echo "indiebeat - pop" && mpv "${stations['indiebeat-pop']}";;
-		indiebeat-rock) gum_echo "indiebeat - rock" && mpv "${stations['indiebeat-rock']}";;
-		indiebeat-jazz) gum_echo "indiebeat - jazz" && mpv "${stations['indiebeat-jazz']}";;
-		indiebeat-electronic) gum_echo "indiebeat - electronic" && mpv "${stations['indiebeat-electronic']}";;
-		indiebeat-bonkwave) gum_echo "indiebeat -  bonkwave" && mpv "${stations['indiebeat-bonkwave']}";;
-		vintageobscura) gum_echo "vintage obscura" && mpv "${stations['vintageobscura']}";;
-		hbr1-tranceponder) gum_echo "HBR1 I.D.M. tranceponder" && mpv "${stations['hbr1-tranceponder']}";;
-		hbr1-tronic) gum_echo "HBR1 tronic lounge" && mpv "${stations['hbr1-tronic']}";;
-		hbr1-dream) gum_echo "HBR1 dream factory" && mpv "${stations['hbr1-dream']}"
+		kexp) gum_echo_custom "KEXP" && mpv "${stations['KEXP']}";;
+		nts1) gum_echo_custom "NTS1" && mpv "${stations['NTS1']}";;
+		nts2) gum_echo_custom "NTS2" && mpv "${stations['NTS2']}";;
+		dadradio) gum_echo_custom "dadradio" && mpv "${stations['dadradio']}";;
+		indiebeat-pop) gum_echo_custom "indiebeat - pop" && mpv "${stations['indiebeat-pop']}";;
+		indiebeat-rock) gum_echo_custom "indiebeat - rock" && mpv "${stations['indiebeat-rock']}";;
+		indiebeat-jazz) gum_echo_custom "indiebeat - jazz" && mpv "${stations['indiebeat-jazz']}";;
+		indiebeat-electronic) gum_echo_custom "indiebeat - electronic" && mpv "${stations['indiebeat-electronic']}";;
+		indiebeat-bonkwave) gum_echo_custom "indiebeat -  bonkwave" && mpv "${stations['indiebeat-bonkwave']}";;
+		vintageobscura) gum_echo_custom "vintage obscura" && mpv "${stations['vintageobscura']}";;
+		hbr1-tranceponder) gum_echo_custom "HBR1 I.D.M. tranceponder" && mpv "${stations['hbr1-tranceponder']}";;
+		hbr1-tronic) gum_echo_custom "HBR1 tronic lounge" && mpv "${stations['hbr1-tronic']}";;
+		hbr1-dream) gum_echo_custom "HBR1 dream factory" && mpv "${stations['hbr1-dream']}"
 	esac
 }
 

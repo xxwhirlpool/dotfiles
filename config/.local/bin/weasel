@@ -15,10 +15,6 @@ usage_help() {
 	echo "Options: -f | -h"
 }
 
-gum_echo() {
-	gum style --foreground "#f4b8e4" "$@"
-}
-
 die() {
     printf "%s\n" "$1"
     exit 1
