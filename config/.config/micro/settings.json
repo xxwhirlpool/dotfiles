@@ -2,7 +2,7 @@
     "colorscheme": "catppuccin-frappe",
     "lsp.autocompleteDetails": true,
     "lsp.formatOnSave": false,
-    "lsp.server": "python=pyls,go=gopls,typescript=deno lsp,nix=nixd,ruby=rv run ruby-lsp",
+    "lsp.server": "python=pyls,go=gopls,typescript=deno lsp,nix=nixd,ruby=rv run ruby-lsp,perl=perlnavigator",
     "softwrap": true,
     "wordwrap": true
 }

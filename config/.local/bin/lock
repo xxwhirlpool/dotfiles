@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+lockimg="$HOME/dotfiles/themes/wallpapers/1920x1080/lock_1080.png"
+
+i3lock -i "$lockimg" --show-failed-attempts --beep
