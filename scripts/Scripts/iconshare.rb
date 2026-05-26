@@ -44,4 +44,4 @@ files = Dir[icondir].each do |icon|
 	htmlfile.write(imghtml)
 end
 
-htmlfile.write("</main")
+htmlfile.write("</main>")

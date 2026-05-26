@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>[% title %]</title>
+
+	<style>
+		html {
+			background: #eff1f5;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.wrapper {
+			background: #303446;
+			padding-block: 1rem;
+			padding-inline: 1rem;
+			max-width: 27em;
+		}
+
+		.wrapper img {
+			margin-block-end: 4px;
+			padding-inline: 2px;
+		}
+	</style>
+</head>
+
+<body>
+
+<main class="wrapper">
+	[% FOREACH icon IN icons %]
+		<img src="[% icon %]">
+	[% END %]
+</main>
+
+</body>
+
+</html>
