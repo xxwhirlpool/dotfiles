@@ -30,3 +30,11 @@
     graph = log --all --graph --decorate --oneline
 [help]
 	autocorrect = prompt
+[sendemail]
+	smtpserver = disroot.org
+	smtpuser = witnesslachesis@disroot.org
+	smtpencryption = tls
+	smtpserverport = 587
+[credential]
+	username = witnesslachesis
+	helper = "!f() { test \"$1\" = get && echo \"password=$(pass personal/witnesslachesis_disroot)\"; }; f"
