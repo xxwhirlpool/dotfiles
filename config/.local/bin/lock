@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
-lockimg="$HOME/dotfiles/themes/wallpapers/1920x1080/lock_1080.png"
+if [[ "$(hostname)" == "kwangya" ]]; then
+	lockimg="$HOME/dotfiles/themes/wallpapers/1920x1080/lock_1080.png"
+elif [[ "$(hostname)" = "mariposa" ]]; then
+	lockimg="$HOME/dotfiles/themes/wallpapers/1680x1050/lock_1050.png"
+fi
 
 i3lock -i "$lockimg" --show-failed-attempts --beep

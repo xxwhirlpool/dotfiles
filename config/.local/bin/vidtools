@@ -10,7 +10,8 @@ any2hevc() {
 }
 
 vid2frames() {
-	for f in *.mp4; do ffmpeg -i "$f" '%04d.png' || break; done
+	shopt -s nullglob
+	for f in *.{mkv,mp4,webm}; do ffmpeg -i "$f" -vf mpdecimate,setpts=N/FRAME_RATE/TB "%04d.png" || break; done
 }
 
 vidsubs() {
