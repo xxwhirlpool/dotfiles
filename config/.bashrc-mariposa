@@ -117,7 +117,7 @@ alias wttr="curl https://wttr.in/nyc?F0ASu"
 alias weather=wttr
 alias wttrlg="curl https://wttr.in/nyc?F1uq"
 alias weatherlg=wttrlg
-alias sun="daylight --short --timezone='America/New_York' | lolcat"
+alias sun="daylight --short --timezone='America/New_York'"
 
 # git
 alias gitall="git remote | xargs -L1 git push --all"
@@ -188,26 +188,14 @@ PERL_MM_OPT="INSTALL_BASE=/home/kat/perl5"; export PERL_MM_OPT;
 # functions
 ######################################
 
-# get a random free port. this is useful for my
-# insane sysadmin website woman adventures
-portfree() {
-	while
-		port=$(shuf -n 1 -i 1024-65535)
-		netstat -atun | grep -q "$port"
-	do
-		continue
-	done
-	echo -n "$port"
-}
-
 # print internal & external IPs
 whatip() {
 	# internal
-	echo -n "internal IP: " | lolcat -p 0.7
+	gum style --foreground 212 "internal IP: "
 	hostname -I | awk '{print $1}'
 
 	# external
-	echo -n "external IP: " | lolcat -p 0.7
+	gum style --foreground 212 "external IP: "
 	curl -4 icanhazip.com
 }
 

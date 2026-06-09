@@ -1,0 +1,52 @@
+---
+filetype: cook
+
+detect:
+    filename: "\\.cook$"
+    header: "^>>"
+
+rules:
+    # Ingredients
+    - identifier: "@[A-Za-zÀ-ÖØ-öø-ÿ0-9\\- ]+{[^}]*}|@[A-Za-zÀ-ÖØ-öø-ÿ0-9\\-]+"
+
+    # Cookware
+    - type: "#[A-Za-zÀ-ÖØ-öø-ÿ\\- ]+{[^}]*}|#[A-Za-zÀ-ÖØ-öø-ÿ\\-]+"
+
+    # Timers
+    - constant.number:
+        start: "~\\{"  # yamllint disable-line rule:indentation
+        end: "\\}"
+        rules:
+            - symbol.operator: "(%|~)"
+            - constant.number: "\\b\\d+\\b"
+            - constant.string: "[A-Za-zÀ-ÖØ-öø-ÿ]+"
+
+    # Metadata
+    - constant.string:
+        start: "^>>"  # yamllint disable-line rule:indentation
+        end: "$"
+        rules:
+            - todo: "(TODO|XXX|FIXME)"
+            - identifier: "[A-Za-zÀ-ÖØ-öø-ÿ]+: "
+            - symbol.operator: "(>>|: )"
+
+
+    # Conditionals and control flow
+    - symbol.operator: "(@|#|~|%|°)"
+
+    # Brackets
+    - symbol.brackets: "(\\{|\\})"
+    - symbol.brackets: "(\\(|\\))"
+    - symbol.brackets: "(\\[|\\])"
+
+    # Numbers and strings
+    - constant.number: "\\b([0-9]+|0x[0-9a-fA-F]*)\\b|'.'"
+
+    # Comments
+    - comment: "(\\[-.*-\\])"
+
+    - comment:
+        start: "-- "  # yamllint disable-line rule:indentation
+        end: "$"
+        rules:
+            - todo: "(TODO|XXX|FIXME):?"

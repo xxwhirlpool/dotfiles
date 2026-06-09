@@ -1,33 +1,15 @@
+set spool_file = ~/.mail/inbox
+set mbox_type = maildir
+
 # sources
 source $XDG_CONFIG_HOME/mutt/colors.muttrc
 source $XDG_CONFIG_HOME/mutt/settings.muttrc
 
-# user
-set from = "melodicake@disroot.org"
-set realname = "kat cain"
+# folder hooks
+folder-hook "melodicake_disroot" "source $XDG_CONFIG_HOME/mutt/melodicake_disroot.rc"
+folder-hook "witnesslachesis_disroot" "source $XDG_CONFIG_HOME/mutt/witnesslachesis_disroot.rc"
 
-# smtp stuff
-set imap_user = "melodicake@disroot.org"
-set smtp_url = "smtps://melodicake@disroot.org@disroot.org:465/"
-set smtp_authenticators = "login"
-set imap_pass = "`pass show personal/melodicake_disroot`"
-set smtp_pass = "`pass show personal/melodicake_disroot`"
-
-# tls
-set ssl_starttls = yes
-set ssl_force_tls = yes
-
-# mailboxes
-set folder = "imaps://disroot.org:993"
-set spoolfile = "+INBOX"
-set postponed = "+Drafts"
-set record = "+Sent"
-set trash = "+Trash"
-
-mailboxes =Archive =Drafts =Sent =Junk =Trash
-
-# where the stuff goes
-set header_cache = "$XDG_CACHE_HOME/mutt/headers"
-set message_cachedir = "$XDG_CACHE_HOME/mutt/bodies"
-set certificate_file = "$XDG_CACHE_HOME/mutt/certificates"
-unset record
+# accounts
+source $XDG_CONFIG_HOME/mutt/melodicake_disroot.rc
+macro index \Ca "<sync-mailbox><refresh><enter-command>source $XDG_CONFIG_HOME/mutt/melodicake_disroot.rc<enter><change-folder>!<enter>"
+macro index \Cb "<sync-mailbox><refresh><enter-command>source $XDG_CONFIG_HOME/mutt/witnesslachesis_disroot.rc<enter><change-folder>!<enter>"

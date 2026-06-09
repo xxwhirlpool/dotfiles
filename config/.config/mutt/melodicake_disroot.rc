@@ -1,0 +1,29 @@
+# user
+set from = "melodicake@disroot.org"
+set realname = "kat cain"
+
+# smtp stuff
+set imap_user = "melodicake@disroot.org"
+set smtp_url = "smtps://melodicake@disroot.org@disroot.org:465/"
+set smtp_authenticators = "login"
+set imap_pass = "`pass show personal/melodicake_disroot`"
+set smtp_pass = "`pass show personal/melodicake_disroot`"
+
+# tls
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+# mailboxes
+set folder = "imaps://melodicake@disroot.org@disroot.org:993"
+set spoolfile = "+INBOX"
+set postponed = "+Drafts"
+set record = "+Sent"
+set trash = "+Trash"
+
+mailboxes =Drafts =Sent =Junk =Trash
+
+# where the stuff goes
+set header_cache = "$XDG_CACHE_HOME/mutt/melodicake_disroot/headers"
+set message_cachedir = "$XDG_CACHE_HOME/mutt/melodicake_disroot/bodies"
+set certificate_file = "$XDG_CACHE_HOME/mutt/melodicake_disroot/certificates"
+unset record

@@ -1,4 +1,8 @@
 {
+	"Ctrl-g": "WordRight",
+	"Ctrl-j": "WordLeft",
+	"Alt-j": "StartOfLine",
+	"Alt-g": "EndOfLine",
     "Alt-/": "lua:comment.comment",
     "Alt-d": "command:definition",
     "Alt-f": "command:format",
