@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# this is the first step in archiving LJ/DW/etc icons
+# see here:
+# https://bubblegum.girlonthemoon.xyz/articles/downloading-photobucket-hosted-images-without-watermarks
+
+url="$1"
+
+if [[ "$#" -ne 1 ]]; then
+	echo "Usage: geticon [URL]"
+	exit 1
+fi
+
+gallery-dl -g "r:$url" > i.txt
