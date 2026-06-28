@@ -51,5 +51,7 @@ scripts/Scripts/icons
 scripts/Scripts/gallery.html
 scripts/Scripts/iconshare_pl/icons/*
 scripts/Scripts/iconshare_pl/out/*
+scripts/Scripts/urlref/links.txt
+
 config/.local/bin/khal_reminder
 config/.config/khal/config_reminder
