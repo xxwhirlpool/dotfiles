@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+#
+# get IRC logs from my network, back them up, & import
+# into personal DB for safekeeping
+
+# vars for file names/paths
+irchistpath="$HOME/.irc_history/logs"
+irchistbasepath="$HOME/.irc_history"
+irctargz="irc_history.tar.gz"
+
+# get logs only if `pass` is available to give soju pw
+# otherwise die
+if [[ "$(command -v pass)" ]]; then
+	pass show "social/soju" | chathistorysync kat@chat.4-walls.net "$irchistpath"
+else
+	echo "chat sync failed" && exit 1
+fi
+
+# add dates next to timestamps in logs without them
+perl "$irchistpath/dates2logs.pl"
+
+# zip up the logs
+tar -C "$irchistpath" -czvf "$irchistbasepath/$irctargz" .
+
+# copy the archive to server
+rsync -avzp "$irctargz" kat@athena:/home/kat/backups
+
+# SSH into athena machine & run import script
+# this updates the local LAN only DB
+ssh athena "cd catirc && ./import_logs.sh"
