@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# check battery status on my laptop, but cute
+
+# check if not running on laptop (mariposa hostname)
+if [[ "$(hostname)" != "mariposa" ]]; then
+	echo "only works on your laptop, dumbass"
+fi
+
+# styling stuff
+gum_border() {
+	# echo in here so i can use newlines in the msg (\n)
+	echo -e "$@" | gum style --foreground "#a6d189" --border-foreground "#99d1db" --border double --width 50 --padding "0 0" --align center
+}
+
+gum_echo_custom() {
+	# $* here to sub in the $charge_percent variable
+	gum style --foreground "#f4b8e4" --width 50 --padding "0 0" --align center "current: $*"
+}
+
+# get the battery percentage (minus the % sign ofc)
+charge_percent=$(upower -i "$(upower -e | grep 'BAT')" | awk '/percentage/ {print $NF}' | sed 's/%//g')
+
+# display it
+gum_border "[ █ █ █ █ █ █ █ █ █ █ █ ]" # cute battery text art i found online
+gum_echo_custom "$charge_percent%" # show the percentage (prefixed with "current:")
