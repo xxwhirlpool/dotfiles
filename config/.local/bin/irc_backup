@@ -17,13 +17,13 @@ else
 fi
 
 # add dates next to timestamps in logs without them
-perl "$irchistpath/dates2logs.pl"
+perl "$irchistbasepath/dates2logs.pl"
 
 # zip up the logs
 tar -C "$irchistpath" -czvf "$irchistbasepath/$irctargz" .
 
 # copy the archive to server
-rsync -avzp "$irctargz" kat@athena:/home/kat/backups
+rsync -avzp "$irchistbasepath/$irctargz" kat@athena:/home/kat/backups
 
 # SSH into athena machine & run import script
 # this updates the local LAN only DB

@@ -114,7 +114,7 @@ alias gmine="cd /home/kat/Projects/mine"
 alias scr="cd /home/kat/Scripts"
 
 # weather stuff
-alias wttr="curl https://wttr.in/nyc?F0ASu"
+alias wttr="curl https://wttr.in/nyc?F0Au"
 alias weather=wttr
 alias wttrlg="curl https://wttr.in/nyc?F1uq"
 alias weatherlg=wttrlg
