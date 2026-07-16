@@ -5,12 +5,18 @@
   </head>
   <body>
     <outline text="2.5 Admins" title="2.5 Admins" type="rss" xmlUrl="https://2.5admins.com/feed/podcast" htmlUrl="https://2.5admins.com/" />
+    <outline text="All Songs Considered" title="All Songs Considered" type="rss" xmlUrl="https://feeds.npr.org/g-s1-111189/podcast.xml" htmlUrl="https://www.npr.org/podcasts/g-s1-111189/all-songs-considered" />
     <outline text="Citation Needed" title="Citation Needed" type="rss" xmlUrl="https://rss.libsyn.com/shows/99179/destinations/518557.xml" htmlUrl="http://citationpod.com/" />
+    <outline text="Computer Says Maybe" title="Computer Says Maybe" type="rss" xmlUrl="https://feeds.transistor.fm/computer-says-maybe" htmlUrl="https://csm.transistor.fm/" />
     <outline text="Dead Code" title="Dead Code" type="rss" xmlUrl="https://feeds.acast.com/public/shows/dead-code" htmlUrl="https://shows.acast.com/dead-code" />
     <outline text="Hemispheric Views" title="Hemispheric Views" type="rss" xmlUrl="https://feeds.fireside.fm/hemisphericviews/rss" htmlUrl="https://listen.hemisphericviews.com/" />
+    <outline text="Life Kit" title="Life Kit" type="rss" xmlUrl="https://feeds.npr.org/510338/podcast.xml" htmlUrl="https://www.npr.org/podcasts/510338/all-guides" />
     <outline text="Ruminate" title="Ruminate" type="rss" xmlUrl="https://ruminatepodcast.com/feed.xml" htmlUrl="https://ruminatepodcast.com/" />
+    <outline text="The 404 Media Podcast" title="The 404 Media Podcast" type="rss" xmlUrl="https://feeds.acast.com/public/shows/64e387653cabbc001153a5a5?ref=404media.co" htmlUrl="https://shows.acast.com/the-404-media-podcast" />
     <outline text="The Flattest Edge" title="The Flattest Edge" type="rss" xmlUrl="https://media.rss.com/the-flattest-edge/feed.xml" htmlUrl="https://rss.com/podcasts/the-flattest-edge" />
-    <outline text="The Pen Addict" title="The Pen Addict" type="rss" xmlUrl="https://www.relay.fm/penaddict/feed" htmlUrl="https://www.relay.fm/penaddict" />
-    <outline text="The Runthrough" title="The Runthrough" type="rss" xmlUrl="https://media.rss.com/figure-skating-runthrough/feed.xml" htmlUrl="https://rss.com/podcasts/figure-skating-runthrough" />
+    <outline text="The Pen Addict" title="The Pen Addict" type="rss" xmlUrl="https://www.relay.fm/penaddict/feed" htmlUrl="https://relay.fm/penaddict" />
+    <outline text="The Rocker Skating Podcast" title="The Rocker Skating Podcast" type="rss" xmlUrl="https://anchor.fm/s/107a0f124/podcast/rss" htmlUrl="https://www.rockerskating.com/" />
+    <outline text="The Runthrough" title="The Runthrough" type="rss" xmlUrl="https://www.patreon.com/rss/TheRunthroughPodcast?auth=5bYJgxgUl_2JH8TROogprYj5WjuCRltZ&amp;show=1585934" htmlUrl="https://www.patreon.com/collection/1585934" />
+    <outline text="The Tonearm" title="The Tonearm" type="rss" xmlUrl="https://feeds.acast.com/public/shows/spot-lyte-on" htmlUrl="https://podcast.thetonearm.com/" />
   </body>
 </opml>
