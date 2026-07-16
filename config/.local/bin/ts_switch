@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#
+# switch between tailnets
+# doesn't check for profile access
+
+# get a list of tailnets
+# format is: id name\n
+ts_list() {
+	tailscale switch --list | awk 'NR>1 {$3=""; print $0}'
+}
+
+# get the ids only
+ts_ids=$(ts_list | awk '{print $0}')
+
+# turn ids into array
+readarray -t ts_array <<< "$ts_ids"
+
+# prompt user to pick from tailnet list
+# shows id + name, awk makes it pick id
+choose=$(gum choose "${ts_array[@]}" | awk '{print $1}')
+
+# do the switch
+tailscale switch "$choose"
