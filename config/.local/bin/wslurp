@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# unwrap text
+
+perl -00 -lpe 's/\n/ /g'
