@@ -134,6 +134,7 @@ alias mterm="mvpn kitty"
 # cd bookmarks
 alias dotf="cd /home/kat/dotfiles"
 alias gmine="cd /home/kat/Projects/mine"
+alias scr="cd /home/kat/Scripts"
 
 # servers
 alias fujo="kitty +kitten ssh fujo"

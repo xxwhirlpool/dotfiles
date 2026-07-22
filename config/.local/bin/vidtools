@@ -16,7 +16,11 @@ vid2frames() {
 
 vidsubs() {
 	shopt -s nullglob
-	for f in *.{mkv,mp4}; do mkvmerge -o "${f%.*} SUB.mkv" "$f" --language 0:eng "${f%.*}.srt" || break; done
+	for sub in *.{srt,ass}; do
+		subext="${sub##*.}"
+	done
+
+	for f in *.{mkv,mp4}; do mkvmerge -o "${f%.*} SUB.mkv" "$f" --language 0:eng "${f%.*}.$subext" || break; done
 }
 
 vidhash() {
