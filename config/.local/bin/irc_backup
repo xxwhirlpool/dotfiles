@@ -6,6 +6,7 @@
 # vars for file names/paths
 irchistpath="$HOME/.irc_history/logs"
 irchistbasepath="$HOME/.irc_history"
+scrpath="$HOME/Scripts/perl"
 irctargz="irc_history.tar.gz"
 
 # get logs only if `pass` is available to give soju pw
@@ -17,7 +18,7 @@ else
 fi
 
 # add dates next to timestamps in logs without them
-perl "$irchistbasepath/dates2logs.pl"
+perl "$scrpath/dates2logs.pl"
 
 # zip up the logs
 tar -C "$irchistpath" -czvf "$irchistbasepath/$irctargz" .
