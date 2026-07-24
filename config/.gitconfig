@@ -12,9 +12,9 @@
 [tag]
 	gpgsign = true
 [core]
+	excludesfile = ~/.gitignore_global
 	pager = "batcat --paging=always"
 	autocrlf = input
-	excludesFile = ~/.gitignore
 	editor = micro
 [rerere]
 	enabled = true
@@ -27,7 +27,12 @@
 	auto = true
 	strategy = incremental
 [alias]
-    graph = log --all --graph --decorate --oneline
+	s = status
+	a = add .
+	d = diff --staged
+	lc = diff HEAD~
+	yolo = !git add . && git commit -m 'yolo'
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [help]
 	autocorrect = prompt
 [sendemail]
@@ -38,3 +43,5 @@
 [credential]
 	username = witnesslachesis
 	helper = "!f() { test \"$1\" = get && echo \"password=$(pass personal/witnesslachesis_disroot)\"; }; f"
+[diff]
+	algorithm = histogram

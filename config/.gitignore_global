@@ -1,0 +1,7 @@
+*.diff
+
+.env
+.env.prod
+
+*.db
+*.sqlite
