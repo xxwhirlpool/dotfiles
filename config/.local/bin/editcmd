@@ -3,4 +3,4 @@
 cmd="$1"
 editfile=$(command -v "$cmd")
 
-[[ -f "$editfile" ]] && micro "$editfile" || echo "$1 does not exist"
+[[ -f "$editfile" ]] && "$EDITOR" "$editfile" || echo "$1 does not exist"

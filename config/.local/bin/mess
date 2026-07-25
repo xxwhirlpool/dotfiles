@@ -4,7 +4,7 @@
 
 file="$(mktemp --suffix _scratchpad)"
 
-micro "$file"
+"$EDITOR" "$file"
 
-gum_echo "FILEPATH:"
+gum_echo "FILEPATH: " | tr -d "\n"
 realpath "$file" | lolcat -p 1.5

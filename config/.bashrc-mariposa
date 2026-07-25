@@ -181,6 +181,9 @@ PERL_MM_OPT="INSTALL_BASE=/home/kat/.perl5"; export PERL_MM_OPT;
 # golang shit
 export GOPATH="$HOME/.go"
 
+# editor
+export EDITOR="/usr/bin/micro"
+
 ######################################
 # functions
 ######################################

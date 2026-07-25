@@ -16,10 +16,10 @@ default() {
 }
 
 openfile() {
-	mv "$cmd" "$localpath" && micro "$localpath/$cmd"
+	mv "$cmd" "$localpath" && "$EDITOR" "$localpath/$cmd"
 }
 
 case "$1" in
 	"-b") cmd="$2"; default "$@" && openfile "$@";;
-	*) default "$@" && micro "$cmd";;
+	*) default "$@" && "$EDITOR" "$cmd";;
 esac
