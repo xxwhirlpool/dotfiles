@@ -17,6 +17,6 @@ lolcat_echo() {
 
 upload_filename=$(uuidgen)_$(basename "${1// /_}")
 
-rsync -avzqp --chmod=664 "$1" athena:/var/www/stash/pics/dump/"$upload_filename" || exit 1
+rsync -avzqp --chmod=664 "$1" athena:/var/www/stash/dump/"$upload_filename" || exit 1
 
 lolcat_echo

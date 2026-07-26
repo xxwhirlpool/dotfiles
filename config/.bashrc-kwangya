@@ -108,9 +108,9 @@ alias winek="wineserver -k"
 
 # weather stuff
 alias wttr="curl https://wttr.in/nyc?F0ASu"
-alias weather=wttr
+alias weather="wttr"
 alias wttrlg="curl https://wttr.in/nyc?F1uq"
-alias weatherlg=wttrlg
+alias weatherlg="wttrlg"
 alias sun="daylight --short --timezone='America/New_York' | lolcat"
 
 # git
@@ -121,7 +121,6 @@ alias gdiff="gitd"
 alias gits="git status"
 alias gita="git add ."
 alias gitlc="git diff HEAD~"
-alias pusheu="git push bytes main && cd /home/kat/Projects/mine/eunoia-astro/src/utils && node git-changelog.js && cd ../../"
 
 # dev
 alias irb="rv run irb"
@@ -137,12 +136,7 @@ alias gmine="cd /home/kat/Projects/mine"
 alias scr="cd /home/kat/Scripts"
 
 # servers
-alias fujo="kitty +kitten ssh fujo"
-alias fujohost="kitty +kitten ssh fujohost"
-alias fujobuild="kitty +kitten ssh fujobuild"
-alias fujoat="kitty +kitten ssh fujoat"
-alias goldstar="kitty +kitten ssh goldstar"
-alias ncc="kitty +kitten ssh ncc1701"
+alias kssh="kitty +kitten ssh" # fujo, fujoat, goldstar, ncc1701
 
 ######################################
 # variables
@@ -229,7 +223,7 @@ playart() {
 # after long commands
 notif() {
 	notify-send "done!"
-	paplay /home/kat/dotfiles/misc/sounds/twinkle
+	sfx chime
 	spd-say -t female3 -r +25 "done!"
 }
 

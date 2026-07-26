@@ -20,11 +20,11 @@ if (not defined $icon_dir) {
 
 my @icons = read_dir($icon_dir, prefix => 1);
 
-mkdir("out");
+mkdir("out/icons");
 
-if ( -d "out" ) {
+if ( -d "out/icons" ) {
 	foreach my $icon (@icons) {
-		copy($icon, "out") or die "copy failed: $!";
+		copy($icon, "out/icons") or die "copy failed: $!";
 	}
 } else {
 	die("directory cannot be created: out, $!");
