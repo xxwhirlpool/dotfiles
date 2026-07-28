@@ -166,6 +166,8 @@ export NVM_DIR="$HOME/.config/nvm"
 
 export GOPATH="/home/kat/.godir"
 
+export GNUPGHOME="/home/kat/.config/gnupg"
+
 ######################################
 # functions
 ######################################
