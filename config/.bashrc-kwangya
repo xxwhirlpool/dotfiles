@@ -103,6 +103,7 @@ alias unfuckwifi="sudo systemctl restart NetworkManager"
 alias uptime="uptime -p"
 alias irc="senpai"
 alias xmpp="profanity"
+alias email="neomutt"
 alias updupgr="sudo apt update && sudo apt upgrade"
 alias winek="wineserver -k"
 
