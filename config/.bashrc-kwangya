@@ -106,6 +106,7 @@ alias xmpp="profanity"
 alias email="neomutt"
 alias updupgr="sudo apt update && sudo apt upgrade"
 alias winek="wineserver -k"
+alias docker="sudo docker"
 
 # weather stuff
 alias wttr="curl https://wttr.in/nyc?F0ASu"
@@ -168,6 +169,9 @@ export NVM_DIR="$HOME/.config/nvm"
 export GOPATH="/home/kat/.godir"
 
 export GNUPGHOME="/home/kat/.config/gnupg"
+
+export ADDRBOOK_PATH="$HOME/.local/addrbook"
+export PATH="$PATH:$HOME/.local/addrbook"
 
 ######################################
 # functions

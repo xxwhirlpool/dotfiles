@@ -9,5 +9,15 @@ default = true
 [defaults]
 format = "mp4"
 resolution = "1280x720"
-bitrate = 8000  # kbps
-quality = 100    # 0-100
+bitrate = 8000
+quality = 100
+filename_template = "{title}.{ext}"
+
+[transcode]
+temp_dir = "/tmp/plexclip"
+keep_temp = false
+
+[download]
+concurrent_segments = 3
+retry_count = 3
+bandwidth_limit = 0
