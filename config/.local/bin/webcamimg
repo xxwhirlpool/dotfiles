@@ -6,12 +6,21 @@ if [[ "$(hostname)" != "mariposa" ]]; then
 	exit 1
 fi
 
+# vars
 PICPATH="/home/kat/Pictures/Camera/webcam"
+# PIC="$PICPATH/webcam_pic_$(today time)_%3d.jpeg"
+PIC="$PICPATH/webcam_pic_$(today time)"
 
 # turn on webcam for a bit so the brightness isn't fucked
-echo "starting camera, wait 5s"
+echo -e "starting camera, wait 5s\n"
 timeout 5s v4l2-ctl --silent -d /dev/video0 -d0 --stream-mmap
 
 # take the pic
-echo "taking the pic!"
-ffmpeg -f video4linux2 -i /dev/video0 -vframes 5 -video_size 1920x1080 "$PICPATH/webcam_pic_$(today time)_%3d.jpeg" -hide_banner -loglevel error
+echo -e "taking the pics!\n"
+ffmpeg -f video4linux2 -i /dev/video0 -vframes 3 -video_size 1920x1080 "$PIC-%3d.jpeg" -hide_banner -loglevel error
+
+# print the paths to pics
+echo -e "here's your pics!\n"
+realpath "$PIC-001.jpeg"
+realpath "$PIC-002.jpeg"
+realpath "$PIC-003.jpeg"
