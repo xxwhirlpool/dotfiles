@@ -1,0 +1,47 @@
+### melodicake@disroot.org
+IMAPStore melodicake@disroot.org-remote
+Host disroot.org
+Port 993
+User melodicake@disroot.org
+PassCmd "pass personal/melodicake_disroot"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# local
+MaildirStore melodicake@disroot.org-local
+Subfolders Verbatim
+Path ~/.local/mail/melodicake@disroot.org/
+Inbox ~/.local/mail/melodicake@disroot.org/INBOX
+
+# sync
+Channel melodicake@disroot.org
+Expunge Both
+Far :melodicake@disroot.org-remote:
+Near :melodicake@disroot.org-local:
+Patterns *
+Create Both
+SyncState *
+
+### witnesslachesis@disroot.org
+IMAPStore witnesslachesis@disroot.org-remote
+Host disroot.org
+Port 993
+User witnesslachesis@disroot.org
+PassCmd "pass personal/witnesslachesis_disroot"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+# local
+MaildirStore witnesslachesis@disroot.org-local
+Subfolders Verbatim
+Path ~/.local/mail/witnesslachesis@disroot.org/
+Inbox ~/.local/mail/witnesslachesis@disroot.org/INBOX
+
+# sync
+Channel witnesslachesis@disroot.org
+Expunge Both
+Far :witnesslachesis@disroot.org-remote:
+Near :witnesslachesis@disroot.org-local:
+Patterns *
+Create Both
+SyncState *

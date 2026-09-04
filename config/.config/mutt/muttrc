@@ -13,3 +13,4 @@ folder-hook "witnesslachesis_disroot" "source $XDG_CONFIG_HOME/mutt/witnesslache
 source $XDG_CONFIG_HOME/mutt/melodicake_disroot.rc
 macro index \Ca "<sync-mailbox><refresh><enter-command>source $XDG_CONFIG_HOME/mutt/melodicake_disroot.rc<enter><change-folder>!<enter>"
 macro index \Cb "<sync-mailbox><refresh><enter-command>source $XDG_CONFIG_HOME/mutt/witnesslachesis_disroot.rc<enter><change-folder>!<enter>"
+macro index o "<shell-escape>mbsync -a<Enter>" "sync all mail with mbsync"

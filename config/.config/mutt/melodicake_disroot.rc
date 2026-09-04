@@ -14,7 +14,8 @@ set ssl_starttls = yes
 set ssl_force_tls = yes
 
 # mailboxes
-set folder = "imaps://melodicake@disroot.org@disroot.org:993"
+set folder = "~/.local/mail/melodicake@disroot.org"
+set mbox_type = Maildir
 set spoolfile = "+INBOX"
 set postponed = "+Drafts"
 set record = "+Sent"
