@@ -46,6 +46,15 @@ config/.local/bin/env
 config/.local/bin/env.fish
 config/.local/bin/uv
 config/.local/bin/uvx
+config/.local/bin/f2py
+config/.local/bin/ffmsindex
+config/.local/bin/markdown-it
+config/.local/bin/numpy-config
+config/.local/bin/pygmentize
+config/.local/bin/vapoursynth
+config/.local/bin/vspipe
+config/.local/bin/vsscale
+config/.local/bin/rolodex
 
 .directory
 scripts/Scripts/.directory
