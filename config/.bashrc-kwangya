@@ -173,6 +173,13 @@ export GNUPGHOME="/home/kat/.config/gnupg"
 export ADDRBOOK_PATH="$HOME/.local/addrbook"
 export PATH="$PATH:$HOME/.local/addrbook"
 
+export PATH="$PATH:$HOME/Scripts/perl"
+export PATH="$PATH:$HOME/Scripts/python"
+export PATH="$PATH:$HOME/Scripts/ruby"
+export PATH="$PATH:$HOME/Scripts/shell"
+
+export PATH="$PATH:$HOME/Projects/mine/urlref.pl"
+
 ######################################
 # functions
 ######################################
@@ -200,11 +207,11 @@ portfree() {
 # print internal & external IPs
 whatip() {
 	# internal
-	echo -n "internal IP: " | lolcat -p 0.7
+	echo -n "internal IP: "
 	hostname -I | awk '{print $1}'
 
 	# external
-	echo -n "external IP: " | lolcat -p 0.7
+	echo -n "external IP: "
 	curl -4 icanhazip.com
 }
  
