@@ -1,0 +1,16 @@
+# podcast list
+
+- [2.5 Admins](https://2.5admins.com)
+- [The 404 Media Podcast](https://www.404media.co/the-404-media-podcast/)
+- [Citation Needed](https://www.citationpod.com/)
+- [Computer Says Maybe](https://www.themaybe.org/podcast)
+- [Dead Code](https://shows.acast.com/dead-code)
+- [The Flattest Edge](https://rss.com/podcasts/the-flattest-edge/)
+- [The Hell Gate Podcast](https://hellgatenyc.com/tag/podcast/)
+- [Life Kit](https://www.npr.org/podcasts/510338/all-guides)
+- [Off Protocol](https://atproto.com/off-protocol)
+- [The Rocker Skating Podcast](https://www.rockerskating.com/podcast)
+- [Rubenerd Show](https://www.rubenerd.au/show/)
+- [Ruminate](https://ruminatepodcast.com/)
+- [The Runthrough](https://www.patreon.com/cw/TheRunthroughPodcast)
+- [Tech Won't Save Us](https://www.techwontsave.us/)
