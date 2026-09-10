@@ -11,7 +11,7 @@ weasel_wordfile="$weasel_worddir/weasel"
 
 # basic functions
 usage_help() {
-	echo "Usage: weasel [OPTIONS]"
+	echo "usage: $(basename "$0") [OPTIONS]"
 	echo "Options: -f | -h"
 }
 

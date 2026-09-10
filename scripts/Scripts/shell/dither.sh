@@ -6,7 +6,7 @@
 # https://dead.garden/blog/how-my-images-are-dithered.html
 
 if [[ "$#" -eq 0 ]]; then
-	echo "usage: dither.sh [FILENAME]"
+	echo "usage: $0 [FILENAME]"
 	exit 1
 fi
 

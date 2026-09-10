@@ -3,7 +3,7 @@
 # basic confirmation dialog
 
 if [[ $# -eq 0 ]]; then
-	echo "Usage: ask [COMMAND]"
+	echo "usage: $(basename "$0") [COMMAND]"
 	exit 1
 fi
 

@@ -6,7 +6,7 @@ url="$1"
 vidname="$2"
 
 if [[ "$#" -eq 0 || "$#" -ne 2 ]]; then
-	echo "Usage: ytmp3 [URL]"
+	echo "usage: $(basename "$0") [URL]"
 	exit 1
 fi
 

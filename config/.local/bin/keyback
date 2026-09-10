@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 help_msg() {
-	echo "Usage: keyback [OPTIONS]"
-	echo "Options: --pgp | --ssh | --sync"
+	echo "usage: $(basename "$0") [OPTIONS]"
+	echo "options: --pgp | --ssh | --sync"
 }
 
 if [[ $(hostname) == "mariposa" ]]; then # laptop

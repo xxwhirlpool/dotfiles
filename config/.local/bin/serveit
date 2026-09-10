@@ -4,7 +4,7 @@
 # https://codeberg.org/EvanHahn/dotfiles/src/commit/f7a9d94ae2254cb7e5f67e6e5bdb74b6467f6dec/home/bin/bin/serveit
 
 usage_help() {
-	echo "Usage: serveit [-p] [-r | -y | -c]"
+	echo "usage: $(basename "$0") [-p] [-r | -y | -c]"
 	echo "Options: -p (port, optional) | -r (ruby) | -y (python) | -c (python CGI)"
 }
 

@@ -3,7 +3,7 @@
 # quickly share files
 
 if [[ "$#" -eq 0 ]]; then
-	echo "Usage: share [FILENAME]"
+	echo "usage: $(basename "$0") [FILENAME]"
 	exit 1
 fi
 

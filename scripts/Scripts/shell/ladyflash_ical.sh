@@ -2,7 +2,7 @@
 
 # don't take args
 if [[ "$#" -gt 0 ]]; then
-	echo "Usage: ical_add [FOLLOW PROMPTS]"
+	echo "usage: $0 [FOLLOW PROMPTS]"
 	exit 1
 fi
 

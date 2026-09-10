@@ -11,8 +11,8 @@ passive_wordfile="$passive_worddir/passive"
 
 # basic functions
 usage_help() {
-	echo "Usage: passive [OPTIONS]"
-	echo "Options: -f | -h"
+	echo "usage: $(basename "$0") [OPTIONS]"
+	echo "options: -f | -h"
 }
 
 die() {

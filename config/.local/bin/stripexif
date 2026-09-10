@@ -6,7 +6,7 @@ if [[ ! "$(command -v exiftool)" ]]; then
 fi
 
 if [[ $# -eq 0 ]]; then
-	echo "Usage: stripexif [FILENAME]"
+	echo "usage: $(basename "$0") [FILENAME]"
 	exit 1
 fi
 

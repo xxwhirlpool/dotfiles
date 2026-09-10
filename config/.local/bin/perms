@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [[ $# -eq 0 ]]; then
-	echo "Usage: perms [FILENAME]"
+	echo "usage: $(basename "$0") [FILENAME]"
 	exit 1
 fi
 
