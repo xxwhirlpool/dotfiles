@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# pick addr based on arg
+# e.g. `syncmail melo`
+if [[ "$1" == "melo" ]]; then
+	addr="$HOME/.config/notmuch/.notmuch-config-melo"
+elif [[ "$1" == "lachesis" ]]; then
+	addr="$HOME/.config/notmuch/.notmuch-config-lachesis"
+elif [[ "$#" -eq 0 || "$1" != "melo" || "$1" != "lachesis" ]]; then
+	echo "no addr or wrong addr"
+	exit 1
+fi
+
+# use right config
+notmuchsync() {
+   notmuch --config="$addr" "$@"
+}
+
+# sync all mail
+mbsync -a
+
+# index mail
+notmuchsync new

@@ -10,7 +10,18 @@ folder-hook "melodicake_disroot" "source $XDG_CONFIG_HOME/mutt/melodicake_disroo
 folder-hook "witnesslachesis_disroot" "source $XDG_CONFIG_HOME/mutt/witnesslachesis_disroot.rc"
 
 # accounts
+# ctrl+a & ctrl+b
 source $XDG_CONFIG_HOME/mutt/melodicake_disroot.rc
 macro index \Ca "<sync-mailbox><refresh><enter-command>source $XDG_CONFIG_HOME/mutt/melodicake_disroot.rc<enter><change-folder>!<enter>"
 macro index \Cb "<sync-mailbox><refresh><enter-command>source $XDG_CONFIG_HOME/mutt/witnesslachesis_disroot.rc<enter><change-folder>!<enter>"
-macro index o "<shell-escape>mbsync -a<Enter>" "sync all mail with mbsync"
+
+# sync mail
+# o for melo
+# p for lachesis
+macro index o "<shell-escape>syncmail melo<Enter>" "sync & index all mail on melo"
+macro index p "<shell-escape>syncmail lachesis<Enter>" "sync & index all mail on lachesis"
+
+# urlscan
+# ctrl+u
+macro index,pager \cu "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cu "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"

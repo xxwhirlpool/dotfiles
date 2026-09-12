@@ -24,9 +24,10 @@ vidsubs() {
 }
 
 vidhash() {
+	shopt -s nullglob
 	# borrowed from my buddy neckspike:
 	# https://pastebin.com/mg3CVDiU
-	for f in *.mkv; do
+	for f in *.{mkv,mp4}; do
 		hash=$(crc32 "$f" | tr '[:lower:]' '[:upper:]')
 		ext="${f##*.}"
 		newname="${f%.*} [$hash]".$ext

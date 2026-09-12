@@ -1,0 +1,19 @@
+[database]
+path=/home/kat/.local/mail/witnesslachesis@disroot.org
+
+[user]
+name=kat cain
+primary_email=witnesslachesis@disroot.org
+
+[new]
+tags=unread;inbox;
+ignore=
+
+[search]
+exclude_tags=deleted;spam;
+
+[maildir]
+synchronize_flags=true
+
+[crypto]
+gpg_path=gpg

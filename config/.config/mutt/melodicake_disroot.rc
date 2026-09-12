@@ -21,6 +21,9 @@ set postponed = "+Drafts"
 set record = "+Sent"
 set trash = "+Trash"
 
+set nm_default_url = "notmuch:///home/kat/.local/mail/melodicake@disroot.org"
+set virtual_spool_file = yes
+
 mailboxes =Drafts =Sent =Junk =Trash
 
 # where the stuff goes
