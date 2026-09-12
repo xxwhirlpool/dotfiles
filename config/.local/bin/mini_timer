@@ -17,7 +17,7 @@ time="$1"
 # notif
 notif() {
 	notify-send "timer done!"
-	paplay ~/dotfiles/misc/sounds/chime
+	aplay -q ~/dotfiles/misc/sounds/chime
 	spd-say -t female3 -r +25 "timer done!"
 }
 

@@ -146,6 +146,8 @@ alias kssh="kitty +kitten ssh" # fujo, fujoat, goldstar, ncc1701
 
 export EDITOR=/usr/local/bin/micro
 export "MICRO_TRUECOLOR=1"
+
+export BROWSER=librewolf
  
 # catppuccin colors for fzf
 export FZF_DEFAULT_OPTS=" \

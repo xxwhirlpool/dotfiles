@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-play_cmd="paplay"
+play_cmd="aplay"
 sfx_path="/home/kat/dotfiles/misc/sounds"
 
 tunes=(
