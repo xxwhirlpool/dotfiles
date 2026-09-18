@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-play_cmd="aplay"
+play_cmd_args=(
+	"-q"
+)
+
+
 sfx_path="/home/kat/dotfiles/misc/sounds"
 
 tunes=(
@@ -16,9 +20,9 @@ for ((i=0, v=1; i < "${#tunes[@]}"; i++, v++ )); do
 done
 
 case "$1" in
-	"bad") "$play_cmd" "$sfx1";;
-	"chime") "$play_cmd" "$sfx2";;
-	"ding") "$play_cmd" "$sfx3";;
-	"tada") "$play_cmd" "$sfx4";;
-	"twinkle") "$play_cmd" "$sfx5";;
+	"bad") aplay "${play_cmd_args[*]}" "$sfx1";;
+	"chime") aplay "${play_cmd_args[*]}" "$sfx2";;
+	"ding") aplay "${play_cmd_args[*]}" "$sfx3";;
+	"tada") aplay "${play_cmd_args[*]}" "$sfx4";;
+	"twinkle") aplay "${play_cmd_args[*]}" "$sfx5";;
 esac

@@ -57,6 +57,8 @@ config/.local/bin/vspipe
 config/.local/bin/vsscale
 config/.local/bin/rolodex
 config/.local/bin/wego
+config/.local/bin/hyfetch.rs
+config/.local/bin/hyfetch.v1
 
 .directory
 scripts/Scripts/.directory
