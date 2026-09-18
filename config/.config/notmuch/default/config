@@ -1,9 +1,10 @@
 [database]
-path=/home/kat/.local/mail/witnesslachesis@disroot.org
+path=/home/kat/Mail
 
 [user]
 name=kat cain
-primary_email=witnesslachesis@disroot.org
+primary_email=melodicake@disroot.org
+other_email=witnesslachesis@disroot.org;
 
 [new]
 tags=unread;inbox;
@@ -17,3 +18,4 @@ synchronize_flags=true
 
 [crypto]
 gpg_path=gpg
+

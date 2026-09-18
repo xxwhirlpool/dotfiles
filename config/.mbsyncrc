@@ -10,8 +10,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 # local
 MaildirStore melodicake@disroot.org-local
 Subfolders Verbatim
-Path ~/.local/mail/melodicake@disroot.org/
-Inbox ~/.local/mail/melodicake@disroot.org/INBOX
+Path ~/Mail/melodicake@disroot.org/
+Inbox ~/Mail/melodicake@disroot.org/INBOX
 
 # sync
 Channel melodicake@disroot.org
@@ -34,8 +34,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 # local
 MaildirStore witnesslachesis@disroot.org-local
 Subfolders Verbatim
-Path ~/.local/mail/witnesslachesis@disroot.org/
-Inbox ~/.local/mail/witnesslachesis@disroot.org/INBOX
+Path ~/Mail/witnesslachesis@disroot.org/
+Inbox ~/Mail/witnesslachesis@disroot.org/INBOX
 
 # sync
 Channel witnesslachesis@disroot.org
