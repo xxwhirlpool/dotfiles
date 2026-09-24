@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# blatantly stolen from knowler on github:
+# https://github.com/knowler/dotfiles/blob/9e3a8925c7b4a4e621f4dab02d1cba989ad7cad0/.local/bin/loot
+
+stash=$(git stash list | fzf --delimiter=: --with-nth=3.. --preview "git $* show --color=always {1}" | cut -d: -f1)
+
+if [[ -n "$stash" ]]; then
+  git stash pop "$stash"
+fi
