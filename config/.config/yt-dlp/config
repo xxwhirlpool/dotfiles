@@ -1,2 +1,13 @@
 --output '%(title)s.%(ext)s'
 --restrict-filenames
+
+--merge-output-format mkv
+--remux-video mkv
+
+--embed-subs
+--embed-thumbnail
+--embed-metadata
+--embed-chapters
+--embed-info-json
+
+--sub-langs en.*,-live_chat,-rechat
