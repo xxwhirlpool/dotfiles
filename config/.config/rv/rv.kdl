@@ -1,0 +1,4 @@
+rv {
+  install-path "/home/kat/.rbgems"
+  update-mode "warning"
+}
