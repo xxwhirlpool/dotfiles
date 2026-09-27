@@ -1,0 +1,10 @@
+theme = "Catppuccin Mocha"
+
+[servers.4walls]
+nickname = "kat"
+server = "chat.4-walls.net"
+port = 6698
+
+[servers.4walls.sasl.plain]
+username = "kat"
+password_command = "pass social/soju"
