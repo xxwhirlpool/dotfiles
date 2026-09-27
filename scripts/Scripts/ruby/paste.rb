@@ -2,8 +2,12 @@
 
 require "tempfile"
 
+# provide file ext thru arg
+# if not provided it's .txt
+ext = ARGV[0] || "txt"
+
 # define tmpfile
-tmp = Tempfile.create("pico-pastes-")
+tmp = Tempfile.create(["pico-pastes-", ".#{ext}"])
 tmpfp = tmp.path
 
 # use $EDITOR, if empty use `nano`
