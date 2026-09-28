@@ -278,6 +278,12 @@ bitrate() {
 	echo "$(file "$1" | sed 's/.*, \(.*\)kbps.*/\1/' | tr -d " " )" kbps
 }
 
+# this wouldn't work in a script
+# so it's here
+catfunc() {
+	declare -f "$1" || echo "$1 does not exist"
+}
+
 ######################################
 # misc
 ######################################
