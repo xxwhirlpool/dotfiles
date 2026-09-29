@@ -1,21 +1,20 @@
 #!/usr/bin/env bash
 
+shopt -s nullglob
+
 avi2mkv() {
 	for f in *.avi; do ffmpeg -fflags +genpts -i "$f" -c:v copy -c:a copy -c:s copy "${f%.*} AVI2MKV.mkv" || break; done
 }
 
 any2hevc() {
-	shopt -s nullglob
 	for f in *.{mkv,mp4,ts}; do ffmpeg -hwaccel cuda -hwaccel_output_format cuda -i "$f" -c:v hevc_nvenc -qmin 24 -qmax 24 -vtag hvc1 -profile main -preset slow -rc vbr_hq -c:a copy -c:s copy -map 0 "${f%.*} HEVC.mkv" || break; done
 }
 
 vid2frames() {
-	shopt -s nullglob
 	for f in *.{mkv,mp4,webm}; do ffmpeg -i "$f" -vf mpdecimate,setpts=N/FRAME_RATE/TB "%04d.png" || break; done
 }
 
 vidsubs() {
-	shopt -s nullglob
 	for sub in *.{srt,ass}; do
 		subext="${sub##*.}"
 	done
@@ -24,7 +23,6 @@ vidsubs() {
 }
 
 vidhash() {
-	shopt -s nullglob
 	# borrowed from my buddy neckspike:
 	# https://pastebin.com/mg3CVDiU
 	for f in *.{mkv,mp4}; do
