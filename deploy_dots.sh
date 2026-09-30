@@ -23,6 +23,5 @@ sync_site() {
 	rm -rf /home/kat/dotfiles/public/
 }
 
-case "$1" in
-	"") cd "$dots_home" && build_site && sync_site;;
-esac
+cd "$dots_home" || exit 1
+build_site && sync_site
