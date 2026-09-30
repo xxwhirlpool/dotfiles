@@ -8,4 +8,4 @@ pull:
   stow -v -t ~ "scripts" --adopt
 
 site:
-  ./dots_gotm_site.sh
+  ./deploy_dots.sh
