@@ -11,4 +11,4 @@ upload_filename=$(uuidgen)_$(basename "${1// /_}")
 
 rsync -avzqp --chmod=664 "$1" athena:/var/www/stash/dump/"$upload_filename" || exit 1
 
-echo "https://stash.4-walls.net/pics/dump/$upload_filename"
+echo "https://stash.4-walls.net/dump/$upload_filename"

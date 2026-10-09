@@ -15,7 +15,7 @@ use File::Temp qw(tempfile);
 use File::Copy;
 
 # find all logs recursively
-my $dir = "/home/kat/.irc_history/logs";
+my $dir = "/home/kat/.irc_history/4walls";
 my @logs; # create log array, empty for now
 my @findlogs = find(\&wanted, $dir); # this adds everything to @logs i think
 

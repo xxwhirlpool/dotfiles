@@ -7,3 +7,5 @@ MAILTO=""
 0 0 * * * crontab -l > /home/kat/dotfiles/config/.crontab-kwangya
 
 0 0 * * * cat /home/kat/.bashrc > /home/kat/dotfiles/config/.bashrc-kwangya
+
+0 * * * * ssh dw9020 "cd /home/dw/dw/etc/docker && ./worker_fix.sh" > /dev/null 2>&1

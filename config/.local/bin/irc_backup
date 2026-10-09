@@ -4,7 +4,7 @@
 # into personal DB for safekeeping
 
 # vars for file names/paths
-irchistpath="$HOME/.irc_history/logs"
+irchistpath="$HOME/.irc_history/4walls"
 irchistbasepath="$HOME/.irc_history"
 scrpath="$HOME/Scripts/perl"
 irctargz="irc_history.tar.gz"
