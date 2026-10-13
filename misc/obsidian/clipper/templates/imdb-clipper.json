@@ -41,12 +41,12 @@
 		},
 		{
 			"name": "created",
-			"value": "{{date}}",
+			"value": "{{date|date:\\\"YYYY-MM-DD\\\"}}",
 			"type": "date"
 		},
 		{
 			"name": "tags",
-			"value": "clippings-movies",
+			"value": "clippings-media",
 			"type": "multitext"
 		}
 	],
@@ -54,5 +54,5 @@
 		"/^https:\\/\\/www\\.imdb\\.com\\/title\\/tt\\d+(?!\\/reference\\/)(\\/[^\\s]*)?$/"
 	],
 	"noteNameFormat": "{{schema:name}} ({{schema:datePublished|split:\"-\"|slice:0,1}})",
-	"path": "clippings/movies"
+	"path": "clippings/media"
 }

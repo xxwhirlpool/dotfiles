@@ -1,0 +1,53 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "YouTube with transcript",
+	"behavior": "create",
+	"noteContentFormat": "## About\n\n![{{title}}]({{schema:@VideoObject:embedUrl|replace:\"embed/\":\"watch?v=\"}})\n\n## Description\n\n{{schema:@VideoObject:description}}\n\n## Notes\n\nYT=\n\n\n## Transcript\n\n{{transcript}}",
+	"properties": [
+		{
+			"name": "created",
+			"value": "{{date|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "url",
+			"value": "{{schema:@VideoObject:embedUrl|replace:\\\"embed/\\\":\\\"watch?v=\\\"}}",
+			"type": "multitext"
+		},
+		{
+			"name": "title",
+			"value": "{{schema:@VideoObject:name}}",
+			"type": "text"
+		},
+		{
+			"name": "channel",
+			"value": "{{schema:@VideoObject:author}}",
+			"type": "text"
+		},
+		{
+			"name": "published",
+			"value": "{{schema:@VideoObject:uploadDate|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "thumbnailUrl",
+			"value": "{{schema:@VideoObject:thumbnailUrl|first}}",
+			"type": "text"
+		},
+		{
+			"name": "duration",
+			"value": "{{schema:@VideoObject:duration|replace:\\\"PT\\\":\\\"\\\":\\\"S\\\",\\\"\\\"|duration}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings-videos",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://www.youtube.com/watch"
+	],
+	"noteNameFormat": "{{schema:@VideoObject:author}} - {{schema:@VideoObject:name|safe_name|trim}}",
+	"path": "clippings/videos"
+}

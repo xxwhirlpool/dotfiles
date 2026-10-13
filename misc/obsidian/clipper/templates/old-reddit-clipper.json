@@ -1,0 +1,43 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Old Reddit",
+	"behavior": "create",
+	"noteContentFormat": "[Post]({{url}}) made by [{{selector:.top-matter .tagline .author}}]({{selector:.top-matter .tagline .author?href}}) in [r/{{selector:.redditname|first}}]({{selector:.redditname a?href|first}}) at {{selector:.top-matter .tagline time?datetime|date:\"DD.MM.YYYY\"|first}}\n\n{{selector:.top-matter + .expando}}\n\n## Comments\n\n{{selector:.nestedlisting .usertext-body|join:\"\\n\\n---\\n\\n\"|blockquote}}",
+	"properties": [
+		{
+			"name": "title",
+			"value": "{{meta:property:og:title|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "subreddit",
+			"value": "{{selector:.redditname|first}}",
+			"type": "text"
+		},
+		{
+			"name": "source",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{selector:.top-matter .tagline .author}}",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{published|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "tags",
+			"value": "clippings-social",
+			"type": "multitext"
+		}
+	],
+	"triggers": [
+		"https://www.reddit.com"
+	],
+	"noteNameFormat": "{{meta:property:og:title|safe_name}}",
+	"path": "clippings/social"
+}

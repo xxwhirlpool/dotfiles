@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Medium Article",
+	"behavior": "create",
+	"noteContentFormat": "{{content}}",
+	"properties": [
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "multitext"
+		},
+		{
+			"name": "title",
+			"value": "{{title|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|safe_name}}",
+			"type": "multitext"
+		},
+		{
+			"name": "description",
+			"value": "{{description|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings-articles",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{published|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "created",
+			"value": "{{date|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		}
+	],
+	"triggers": [
+		"https://medium.com"
+	],
+	"noteNameFormat": "{{title|safe_name}}",
+	"path": "clippings/articles"
+}

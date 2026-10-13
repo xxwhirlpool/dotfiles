@@ -5,11 +5,6 @@
 	"noteContentFormat": "{{description}}",
 	"properties": [
 		{
-			"name": "categories",
-			"value": "[[Products]]",
-			"type": "multitext"
-		},
-		{
 			"name": "created",
 			"value": "{{date}}",
 			"type": "date"
