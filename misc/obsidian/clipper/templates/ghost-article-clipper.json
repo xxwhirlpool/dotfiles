@@ -1,0 +1,57 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Ghost Article",
+	"behavior": "create",
+	"noteContentFormat": "{{selectorHtml:.post-body|markdown}}",
+	"properties": [
+		{
+			"name": "url",
+			"value": "{{url}}",
+			"type": "multitext"
+		},
+		{
+			"name": "title",
+			"value": "{{title}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{author|safe_name}}",
+			"type": "multitext"
+		},
+		{
+			"name": "description",
+			"value": "{{description|safe_name}}",
+			"type": "text"
+		},
+		{
+			"name": "featuredImage",
+			"value": "{{image}}",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "clippings-articles",
+			"type": "multitext"
+		},
+		{
+			"name": "published",
+			"value": "{{schema:datePublished|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		},
+		{
+			"name": "created",
+			"value": "{{date|date:\\\"YYYY-MM-DD\\\"}}",
+			"type": "date"
+		}
+	],
+	"triggers": [
+		"https://404media.co",
+		"https://aftermath.site/",
+		"https://www.todayintabs.com/",
+		"https://hellgatenyc.com/",
+		"https://nygroove.nyc/"
+	],
+	"noteNameFormat": "{{title|safe_name}}",
+	"path": "clippings/articles"
+}
