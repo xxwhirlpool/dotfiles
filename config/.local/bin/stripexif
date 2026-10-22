@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 if [[ ! "$(command -v exiftool)" ]]; then
-	echo "missing required dependency: exiftool"
+	echo "missing required dep: exiftool"
 	exit 1
 fi
 
-if [[ $# -eq 0 ]]; then
+if [[ "$#" -eq 0 ]]; then
 	echo "usage: $(basename "$0") [FILENAME]"
 	exit 1
 fi

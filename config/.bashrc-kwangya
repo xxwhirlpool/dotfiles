@@ -93,7 +93,6 @@ alias rced="micro ~/.bashrc && source ~/.bashrc"
 alias icat="kitty +kitten icat"
 alias ps="ps auxww"
 alias dd="ask dd"
-alias freeze="freeze -c user"
 alias qrcode="qrencode -t ansiutf8"
 alias ffmpeg="ffmpeg -hide_banner"
 alias open="xdg-open"
@@ -101,10 +100,8 @@ alias c="clear"
 alias unfuckwifi="sudo systemctl restart NetworkManager"
 alias uptime="uptime -p"
 alias irc="senpai"
-alias xmpp="profanity"
 alias email="aerc"
 alias updupgr="sudo apt update && sudo apt upgrade"
-alias winek="wineserver -k"
 alias docker="sudo docker"
 
 # weather stuff
@@ -112,20 +109,19 @@ alias wttr="curl https://wttr.in/nyc?F0Au"
 alias weather="wttr"
 alias wttrlg="curl https://wttr.in/nyc?F1uq"
 alias weatherlg="wttrlg"
-alias sun="daylight --short --timezone='America/New_York' | lolcat"
+alias sun="daylight --short --timezone='America/New_York'"
 
 # git
 alias gitall="git remote | xargs -L1 git push --all"
 alias gyolo="git add . && git commit -m 'yolo'"
 alias gitd="git diff --staged"
-alias gdiff="gitd"
 alias gits="git status"
 alias gita="git add ."
 alias gitlc="git diff HEAD~"
 
 # dev
 alias irb="rv run irb"
-alias ipy="python3 -i"
+alias ijs="node"
 
 # vpn split tunnel aliases based on a small script @ ~/.local/bin/mvpn
 alias mftp="mvpn filezilla"
@@ -226,20 +222,7 @@ passgen() {
 	date +%s | sha256sum | base64 | head -c "$PASSLENGTH"; echo
 }
 
-# display random ASCII art from
-# custom dir of art in dotfiles
-# using arttime (github: poetaman/arttime)
-playart() {
-	ARTDIR="/home/kat/dotfiles/config/.local/share/arttime/textart"
-	ARTSHUF=$(find "$ARTDIR" -type f | shuf -n1)
-
-	for art in $ARTSHUF; do
-		arttime --nolearn -a "$art" --ac 5
-	done
-}
-
-# to get quick notifs
-# after long commands
+# to get quick notifs after long commands
 notif() {
 	notify-send "done!"
 	sfx chime

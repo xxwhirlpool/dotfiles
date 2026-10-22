@@ -9,10 +9,12 @@
 URL="$1"
 FILE_OUT_NAME="$2"
 
-if [[ $# -eq 0 || $# -ne 2 ]]; then
+# if no args or <2 args (needs 2),
+# print usage & exit
+if [[ "$#" -eq 0 || "$#" -ne 2 ]]; then
 	echo "usage: $(basename "$0") [URL] [FILENAME]"
 	exit 1
 fi
 
-# best audio + best video under 1080p (excl. AI upscale) && incl. file extension in output
-yt-dlp -f "ba+bv*[height<=1080p][format_id!*=-sr]" -o "$FILE_OUT_NAME.%(ext)s" "$URL" --merge-output-format mp4
+# best audio + best video under 1080p && incl. file extension in output
+yt-dlp -f "ba+bv*[height<=1080p]" -o "$FILE_OUT_NAME.%(ext)s" "$URL" --merge-output-format mp4

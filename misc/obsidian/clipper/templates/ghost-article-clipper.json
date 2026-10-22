@@ -2,7 +2,7 @@
 	"schemaVersion": "0.1.0",
 	"name": "Ghost Article",
 	"behavior": "create",
-	"noteContentFormat": "{{selectorHtml:.post-body|markdown}}",
+	"noteContentFormat": "{{selectorHtml:article|markdown}}",
 	"properties": [
 		{
 			"name": "url",

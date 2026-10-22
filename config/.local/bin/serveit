@@ -3,32 +3,34 @@
 # inspired by evan hahn:
 # https://codeberg.org/EvanHahn/dotfiles/src/commit/f7a9d94ae2254cb7e5f67e6e5bdb74b6467f6dec/home/bin/bin/serveit
 
+# vars
+port="6969"
+
+# usage text
 usage_help() {
-	echo "usage: $(basename "$0") [-p] [-r | -y | -c]"
-	echo "Options: -p (port, optional) | -r (ruby) | -y (python) | -c (python CGI)"
+	echo "usage: $(basename "$0") [-r | -y | -c]"
+	echo "options: -r (ruby) | -y (python) | -c (python CGI)"
 }
 
-if [[ $# -eq 0 ]]; then
+# print usage if no opts given
+if [[ "$#" -eq 0 ]]; then
 	usage_help
 fi
 
-port_default="6969"
-
 py_server() {
-	[[ "$(command -v python3)" ]]; python3 -m http.server "${port:-$port_default}" || echo "could not run python server"
+	[[ "$(command -v python3)" ]]; python3 -m http.server "$port" || echo "could not run python server"
 }
 
 pycgi_server() {
-	[[ "$(command -v python3)" ]]; python3 -m http.server --bind localhost --cgi "${port:-$port_default}" || echo "could not run python CGI server"
+	[[ "$(command -v python3)" ]]; python3 -m http.server --bind localhost --cgi "$port" || echo "could not run python CGI server"
 }
 
 rb_server() {
-	[[ "$(command -v ruby)" ]]; ruby -run -e httpd . -p "${port:-$port_default}" || echo "could not run ruby server"
+	[[ "$(command -v ruby)" ]]; ruby -run -e httpd . -p "$port" || echo "could not run ruby server"
 }
 
-while getopts "p:rych" opt; do
+while getopts "rych" opt; do
 	case "$opt" in
-		p) port="$OPTARG" ;;
 		y) py_server ;;
 		c) pycgi_server ;;
 		r) rb_server ;;

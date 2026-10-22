@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# check for deps
+if [[ ! "$(command -v festival)" ]]; then
+	echo "missing required dep: festival"
+	echo "github.com/festvox/festival"
+	exit 1
+fi
+
+# prompt for text to be read out
 readtxt=$(gum write --header "text to be read out loud")
 
+# pipe the text to tts engine
 echo "$readtxt" | festival --tts

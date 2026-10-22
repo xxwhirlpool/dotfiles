@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-#
-# usage:
-#   - `echo "EXAMPLE" | upperd`
-#   - `upperd "EXAMPLE"`
-#   - `upperd -i`
+
+usage() {
+	echo "usage: $(basename "$0") [TEXT]"
+	echo "options: -i (input text) | -h (print usage & exit)"
+}
 
 default() {
 	tr '[:lower:]' '[:upper:]' | tr -d "\n" | tee >(xclip -selection clipboard) && echo -e "\n"
@@ -20,5 +20,6 @@ stdinpaste() {
 case "$1" in
 	"") default ;;
 	"-i") stdinpaste ;;
+	"-h") usage ;;
 	*) takearg "$@" ;;
 esac

@@ -2,9 +2,25 @@
 #
 # open a temp file as a scratchpad
 
+# check if $EDITOR is defined
+# if empty, fall back to `nano`
+if [[ -z "$EDITOR" ]]; then
+	EDITOR="$(command -v nano)"
+fi
+
+# make the file
 file="$(mktemp --suffix _scratchpad)"
 
+# open file
 "$EDITOR" "$file"
 
+# if file is empty, exit
+if [[ ! -s "$file" ]]; then
+	echo "file is empty, nvm"
+	rm -f "$file"
+	exit 1
+fi
+
+# if file is not empty, show path to file
 gum_echo "FILEPATH: " | tr -d "\n"
-realpath "$file" | lolcat -p 1.5
+realpath "$file"

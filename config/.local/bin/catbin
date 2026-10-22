@@ -3,7 +3,7 @@
 # blatantly copied from evan hahn:
 # https://github.com/EvanHahn/dotfiles/blob/main/home/bin/bin/catbin
 
-if [[ $# -eq 0 ]]; then
+if [[ "$#" -eq 0 ]]; then
 	echo "usage: $(basename "$0") [FILENAME]"
 	exit 1
 fi

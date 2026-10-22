@@ -25,7 +25,7 @@ wdcount() {
 	WCTXTFL=$(mktemp --suffix .txt)
 	gum write --header="paste text below" > "$WCTXTFL"
 	WCNUM=$(wc -w "$WCTXTFL" | awk '{print $1}')
-	echo -e "$(gum style --foreground=#f4b8e4 --border none 'total word count'): $WCNUM"
+	echo "total word count: $WCNUM"
 	rm "$WCTXTFL"
 }
 
@@ -35,7 +35,7 @@ choice() {
 		*unwrap) unwraptxt ;;
 		*wrap) wraptxt ;;
 		*wordcount) wdcount ;;
-		*) exit 0;;
+		*) exit 1;;
 	esac
 }
 

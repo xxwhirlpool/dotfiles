@@ -2,11 +2,11 @@
 
 # check for deps (messily)
 if [[ ! "$(command -v timer)" ]]; then
-	echo "missing required dependency: timer"
+	echo "missing required dep: timer"
 	echo "github.com/caarlos0/timer"
 	exit 1
 elif [[ ! "$(command -v gum)" ]]; then
-	echo "missing required dependency: gum"
+	echo "missing required dep: gum"
 	echo "github.com/charmbracelet/gum"
 	exit 1
 fi
